@@ -1,0 +1,141 @@
+#@layout(1,"注册-手机号")
+#define tab()
+#end  
+#define banner() 
+#end 
+#define main()
+<!-- 中间区域 -->
+<div class="main">
+    <div class="content padd_tb">
+        <div class="reg_Box">
+            <ul class="path_list clearfix">
+                 <li class="active first">
+                     <div class="path"><i class="path_1"></i><p>设置账户</p></div>
+                 </li>
+                 <li class="active">
+                     <div class="path"><i class="path_2"></i><p>设置账户信息</p></div>
+                 </li>
+                 <li class="">
+                     <div class="path"><i class="path_3"></i><p>注册成功</p></div>
+                 </li>
+            </ul>
+            <form>
+            <div class="verify_Box">
+                 <div class="reg_item">
+                     <input class="reg_user" placeholder="请输入手机号码" type="text" id="phone" name="phone"/>
+                 </div>
+                 <div class="reg_item">
+                     <input class="reg_user" placeholder="请输入密码" type="password" id="password"  name="password"/>
+                 </div>
+                 <div class="reg_item bordernone clearfix">
+                     <input class="reg_code fl" placeholder="请输入验证码" type="text" id="code" name="code"/>
+                     <input class="code_btn fr" onclick="TestGetCode2(this)" value="点击发送验证码" type="button"/>
+                 </div>
+                 <div class="login_Btn tc pbtm ptop">
+                      <input class="BlueBtn" value="下一步" id="next"  type="button"/>
+                 </div>
+            </div></form>
+        </div>
+    </div>
+</div>
+#end #define script()
+<script type="text/javascript">
+	$(function(){
+		checkInit();	
+	})
+    function TestGetCode2(obj){
+        var params = {};
+        params.phone = $("#phone").val();
+        params.number = '#(number)';
+        TestGetCode(obj)
+        $.ajax({
+            url:'getCode',
+            async:true,
+            type:'POST',
+            data:params,
+            timeout: 6000,
+            error: function(data){
+                document.write("error"+data);
+            },
+            success: function(data){
+                if(data.code==1){
+                    layer.msg("验证码发送成功");
+                }else{
+                    layer.tips(data.message, '#phone', {
+                        tips: [1, '#3595CC'],
+                        time: 4000
+                    });
+                }
+            }
+        });
+    }
+	
+	$("form :input").blur(function(){
+    var $parent = $(this).parent();
+    if($(this).is("#phone")){
+        if($.trim(this.value) == "" || ($.trim(this.value) != "" && !/^1[0-9]{10}$/.test($.trim(this.value)))){
+            layer.tips("请输入正确的手机号！", '#phone', {
+    			  tips: [1, '#3595CC'],
+    			  time: 4000
+    			});
+        }
+    }
+    if($(this).is("#password")){
+        if($.trim(this.value) == "" || $.trim(this.value) == ""){
+            layer.tips("请输入密码", '#password', {
+    			  tips: [1, '#3595CC'],
+    			  time: 4000
+    			});
+        }
+    }
+    if($(this).is("#code")){
+        if($.trim(this.value) == "" || $.trim(this.value) == ""){
+            layer.tips(" 请输入验证码", '#code', {
+    			  tips: [1, '#3595CC'],
+    			  time: 4000
+    			});
+        }
+    }
+});
+	
+	$("#next").click(function(){
+		
+		 if($.trim(this.value) == "" || ($.trim(this.value) != "" && !/^1[0-9]{10}$/.test($.trim($("#phone").val())))){
+	            layer.tips("请输入正确的手机号！", '#phone', {
+	    			  tips: [1, '#3595CC'],
+	    			  time: 4000
+	    			});
+	            return;
+	        }
+		
+		 	var params = {};  
+		    params.phone = $("#phone").val();  
+		    params.password = $("#password").val();  
+		    params.number = '#(number)'; 
+		    params.code = $("#code").val();  
+			$.ajax({
+					url:'regist2',
+					async:true,  
+					type:'POST',
+					data:params,
+					timeout: 3000,
+		        error: function(data){
+		        	document.write("error"+data);
+		        },
+		        success: function(data){
+		        	if(data.code==1){
+		        		//登陆成功
+		        		location.href='go3';
+		        	}else{
+		        		layer.tips(data.message, '#phone', {
+		        			  tips: [1, '#3595CC'],
+		        			  time: 4000
+		        			});
+		        	}
+		        }
+			});
+	});
+	</script>
+	#end
+	</body>
+	</html>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/cf/cf.iml" filepath="$PROJECT_DIR$/cf/cf.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cfcommon/cf-common.iml" filepath="$PROJECT_DIR$/cfcommon/cf-common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/cfadmin/cfadmin.iml" filepath="$PROJECT_DIR$/cfadmin/cfadmin.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lon_root.iml" filepath="$PROJECT_DIR$/lon_root.iml" />
+    </modules>
+  </component>
+</project>

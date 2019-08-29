@@ -1,0 +1,66 @@
+@layout("/common/_curd/_container.html"){
+
+<script type="text/javascript">
+	var ctx = "${basePath}";
+	var grid_selector = "#grid-table";
+	var pager_selector = "#grid-pager";
+	
+	$(function(){
+		initGrid();
+		initMenuBtn("btns", "${code}");
+	});
+	
+	function initGrid(){
+		var grid_url = ctx + "/${code}/list";
+		var _colnames = ["", 
+						"", 
+						"", 
+						"", 
+						"", 
+						""];
+		var _colmodel = [{name:"id", index:"id", width:100},
+						{name:"crowdid", index:"crowdid", width:100},
+						{name:"title", index:"title", width:100},
+						{name:"desic", index:"desic", width:100},
+						{name:"goodid", index:"goodid", width:100},
+						{name:"price", index:"price", width:100}];
+		
+		jQuery(grid_selector).jqGrid({
+			url : grid_url,
+		    shrinkToFit : true,
+			colNames : _colnames,
+			colModel : _colmodel, 
+			jsonReader : {id :"id"},
+			pager : pager_selector,
+			postData : {sort : "id", order : "desc"}
+		});
+	}
+</script>
+
+
+	<!-- 配置 grid -->
+	<div class="row">
+		<div class="col-xs-12 tb-grid">
+			<!-- 配置 查询 -->
+			@ var _col=[
+@		{name:"", index:"id", type:"text"},
+			@		{name:"", index:"crowdid", type:"text"},
+			@		{name:"", index:"title", type:"text"},
+			@		{name:"", index:"desic", type:"text"},
+			@		{name:"", index:"goodid", type:"text"},
+			@		{name:"", index:"price", type:"text"}							
+			@];
+			@ include("/common/_function/_search.html",{"col":_col}){}
+			<!-- 按钮 -->
+			<div class="welljq well-sm" id="btns"></div>
+			<!-- grid -->
+			<table id="grid-table"></table>
+			<!-- 分页-->
+			<div id="grid-pager"></div>
+		</div>
+	</div>
+	
+	<!-- 引入所需的js -->
+	@include("/common/_listscript.html"){}
+	
+@}	

@@ -1,0 +1,390 @@
+#@layout(1,"发布需求") 
+#define search()
+  <div class="content">
+        <h3 class="h3_title">
+           <p class="t_english">FUNDING</p>
+           <p class="t_chinese">发布众筹</p>
+           <p class="btm_line"></p>
+        </h3>
+    </div>
+#end 
+#define tab() 
+#end 
+#define banner() 
+#end 
+#define main()
+<link rel="stylesheet" href="http://www.jq22.com/jquery/font-awesome.4.6.0.css">
+<link rel="stylesheet" type="text/css" href="/libs/datepicker/css/foundation-datepicker.min.css">
+<link rel="stylesheet" type="text/css" href="/upload/webuploader.css" />
+<script type="text/javascript" src="/upload/webuploader.html5only.js"></script>
+<!-- 中间区域 -->
+<form method="post" id="demand" enctype="multipart/form-data">
+<!-- 中间区域 -->
+<div class="main">
+    <div class="content pt20">
+       <div class="offer_wrap">
+           <h3 class="h3_rank">询价信息</h3>
+           <div class="menu_Info">
+               <div class="select_item clearfix">
+                   <div class="line_item fl">
+                       <span class="red_star">选择分类</span>
+                       <div class="item_rt">
+                           <div class="select_wrap item_select">
+                               <i class="i_drop2"></i>
+                               <span class="select_text"></span>
+                               <select id="type1" name="type1">
+
+                               </select>
+                           </div>
+                       </div>
+                   </div>
+                   <div class="line_item fr">
+                       <span class="red_star">选择分类</span>
+                       <div class="item_rt">
+                           <div class="select_wrap item_select">
+                               <i class="i_drop2"></i>
+                               <span class="select_text"></span>
+                               <select  id="type2" name="type2">
+                               </select>
+                           </div>
+                       </div>
+                   </div>
+               </div>
+               <div class="line_item">
+                    <span class="red_star">需求主题</span>
+                    <div class="item_rt">
+                       <input class="l_text" placeholder="请输入需求主题" name="title" type="text"/>
+                    </div>
+               </div>
+               <div class="line_item">
+                    <span class="red_star">需求截止日期</span>
+                    <div class="item_rt">
+                       <input class="l_text" id="date1" placeholder="请输入询价截止日期" name="endtime"  readonly type="text"/>
+                    </div>
+               </div>
+               <!--<div class="line_item">
+                    <span class="red_star">要求交付日期</span>
+                    <div class="item_rt">
+                       <input class="l_text" id="date2" placeholder="请输入要求交付日期" readonly type="text"/>
+                    </div>
+               </div>-->
+           </div>
+           <h3 class="h3_rank">众筹详情</h3>
+           <div class="menu_Info">
+               <div class="line_item">
+                   <span class="red_star">上传图片</span>
+                   <div class="item_rt">
+                       <ul class="upload_ul fl">
+                           <!-- <li id="first"><img src="images/Find_fw/Group 22.png" /><i
+                                   class="x_delete"></i>
+                                   </li>
+                            -->
+                           <li id="first"><div class="uploading fl" id="filePicker">
+                               <i class="i_upload" ></i>
+                           </div></li></ul>
+                   </div>
+               </div>
+               <div class="line_item">
+                    <span>上传附件</span>
+                    <div class="item_rt">
+                        <input type="file" name="files" value="添加附件">
+                    </div>
+               </div>
+               <div class="line_item">
+                   <span>项目简介</span>
+                   <div class="item_rt">
+                      <div class="textArae"><textarea placeholder="请输入项目简介" name="description"></textarea></div>
+                   </div>
+               </div>
+               <div class="line_item">
+                   <span>项目详细描述</span>
+                   <div class="item_rt">
+                      <div class="textArae"><textarea placeholder="请输入项目详细描述"></textarea></div>
+                   </div>
+               </div>
+           </div>
+           <h3 class="h3_rank">众筹项目</h3>
+           <input hidden value="0" id="num" name="num"/>
+           <div class="menu_Info">
+               <div class="Add_item"><a id="addObject" class="BBtn">添加子项</a></div>
+               <ul class="subItem_list">
+               </ul>
+           </div>
+           <h3 class="h3_rank">详细地址</h3>
+           <div class="menu_Info">
+               <div class="line_item">
+                   <span class="red_star">收货地址</span>
+                   <div class="item_rt select_width">
+                       <div class="select_wrap item_select fl mr51">
+                           <i class="i_drop2"></i>
+                           <span class="select_text"></span>
+                           <select id="province" name="province">
+
+                           </select>
+                       </div>
+                       <div class="select_wrap item_select fl mr51">
+                           <i class="i_drop2"></i>
+                           <span class="select_text"></span>
+                           <select id="city" name="city">
+
+                           </select>
+                       </div>
+                       <div class="select_wrap item_select fr">
+                           <i class="i_drop2"></i>
+                           <span class="select_text"></span>
+                           <select id="county" name="county">
+
+                           </select>
+                       </div>
+                   </div>
+               </div>
+               <div class="line_item">
+                    <span class="red_star">详细地址</span>
+                    <div class="item_rt">
+                       <input class="l_text" placeholder="请输入详细地址"  name="address"  type="text"/>
+                    </div>
+               </div>
+               <div class="line_item">
+                    <span class="red_star">联系人</span>
+                    <div class="item_rt">
+                       <input class="l_text" placeholder="请输入联系人"  name="contacts"  type="text"/>
+                    </div>
+               </div>
+               <div class="select_item clearfix">
+                    <div class="line_item fl">
+                        <span class="red_star">联系电话</span>
+                        <div class="item_rt">
+                            <div class="h_item"><i class="i_check"></i>注册手机号</div>
+                        </div>
+                    </div>
+                    <div class="line_item fr">
+                        <span class="red_star">其他联系电话</span>
+                        <div class="item_rt">
+                            <input class="s_text" name="phone" type="text"/>
+                        </div>
+                    </div>
+               </div>
+           </div>
+           <div class="submit_item">
+               <a class="BBtn mr30" id="releaseDemand">发布众筹</a>
+               <!-- <a class="YBtn mr30" href="javascript:;">预览</a>
+               <a class="RBtn" href="javascript:;">保存草稿</a> -->
+           </div>
+    </div>
+</div>
+</div>
+</form>
+#end #define script()
+<script type="text/javascript" src="/libs/datepicker/js/foundation-datepicker.js"></script>
+<script type="text/javascript" src="/libs/datepicker/js/locales/foundation-datepicker.zh-CN.js"></script>
+<script type="text/javascript" src="/js/city.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.form/4.2.2/jquery.form.min.js" integrity="sha384-FzT3vTVGXqf7wRfy8k4BiyzvbNfeYjK+frTVqZeNDFl8woCbF0CYG6g2fMEFFo/i" crossorigin="anonymous"></script>
+<script type="text/javascript" src="/js/layer.js"></script>
+<script type="text/javascript">
+$(function(){
+    addProvienceToCity3("province","city","county")
+    $("#btn").click(function(){
+        alert(getProvince("province")+"  "+getCity("city")+ "  "+getCounty("county"));
+    });
+    $(".check_item li .i_check").click(function(){
+        $(this).parents("li").addClass("active").siblings().removeClass("active");
+    })
+    $(".h_item .i_check").click(function(){
+        $(this).hasClass("i_checked")?$(this).removeClass("i_checked"):$(this).addClass("i_checked")
+    })
+	$(".check_item li .i_check").click(function(){
+		$(this).parents("li").addClass("active").siblings().removeClass("active");
+	})
+	$(".h_item .i_check").click(function(){
+		$(this).hasClass("i_checked")?$(this).removeClass("i_checked"):$(this).addClass("i_checked")
+	})
+	
+	var nowTemp = new Date();
+    var now = new Date(nowTemp.getFullYear(), nowTemp.getMonth(), nowTemp.getDate(), 0, 0, 0, 0);
+    var checkin = $('#date1').fdatepicker({
+        onRender: function (date) {
+            return date.valueOf() < now.valueOf() ? 'disabled' : '';
+        },
+        format:"yyyy-mm-dd"
+    }).on('changeDate', function (ev) {
+        /*if (ev.date.valueOf() > checkout.date.valueOf()) {
+            var newDate = new Date(ev.date)
+            newDate.setDate(newDate.getDate()+1);
+            checkout.update(newDate);
+        }*/
+        checkin.hide();
+        //$('#date2')[0].focus();
+
+    }).data('datepicker');
+
+    var city_obj = '#(types)';
+    var types=eval('('+city_obj+')');
+
+    for (var key in types)
+    {
+        $("#type1").append("<option value='"+key+"'>"+key+"</option>");
+    }
+    $("#type1").change(function(){
+        var now_province=$(this).val();
+        $("#type2").html('<option value="">请选择类别</option>');
+        for(var k in types[now_province])
+        {
+            var now_city=types[now_province][k];
+            $("#type2").append('<option value="'+now_city+'">'+now_city+'</option>');
+        }
+    });
+
+	var checkout = $('#date2').fdatepicker({
+        format:"yyyy-mm-dd",
+        onRender: function (date) {
+            return date.valueOf() < now.valueOf() ? 'disabled' : '';
+        }
+    }).on('changeDate', function (ev) {
+        checkout.hide();
+    }).data('datepicker');
+
+    $(".upload_ul").on("click",".x_delete",function(){
+        $(this).parent().parent().remove();
+    });
+
+    var uploader = WebUploader.create({
+        pick : '#filePicker',
+
+        // 选完文件后，是否自动上传。
+        auto : true,
+
+        // swf文件路径
+        swf : 'upload/Uploader.swf',
+
+        // 文件接收服务端。
+        server : '/upload/img',
+
+        // 选择文件的按钮。可选。
+        // 内部根据当前运行是创建，可能是input元素，也可能是flash.
+
+        // 只允许选择图片文件。
+        accept : {
+            title : 'Images',
+            extensions : 'gif,jpg,jpeg,bmp,png',
+            mimeTypes : 'image/*'
+        },
+
+        formData : {
+            token : '#(aut)'
+        }
+
+    });
+// 当有文件添加进来的时候
+    uploader.on('fileQueued', function(file) {
+        var $li = $('<li class=\'list_li\' id="list_li_'+file.id+ '" style=\'height: 100px;\'><div id="' + file.id + '" class=\'select\'><img class=\'am-img-thumbnail\' style=\'width: 100px;\'><span class=\'x_delete\' id=\''+ file.id +'\'></span></div></li>');
+        $img = $li.find('img');
+
+        // $list为容器jQuery实例
+        $("#first").before($li);
+
+        // 创建缩略图
+        // 如果为非图片文件，可以不用调用此方法。
+        // thumbnailWidth x thumbnailHeight 为 100 x 100
+        uploader.makeThumb(file, function(error, src) {
+            if (error) {
+                $img.replaceWith('<span>不能预览</span>');
+                return;
+            }
+            $img.attr('src', src);
+        }, 0.2, 0.2);
+    });
+// 文件上传过程中创建进度条实时显示。
+    uploader.on('uploadProgress', function(file, percentage) {
+        var $li = $('#' + file.id), $percent = $li.find('.progress span');
+        // 避免重复创建
+        if (!$percent.length) {
+            $percent = $('<p class="progress"><span></span></p>').appendTo($li).find('span');
+        }
+        console.log(percentage);
+        $percent.css('width', percentage * 100 + '%');
+    });
+
+// 文件上传成功，给item添加成功class, 用样式标记上传成功。
+    uploader.on('uploadSuccess', function(file, response) {
+        var text = "Array ";
+        jQuery.each(file, function(i, val) {
+            text = text + " #Index:" + i + ":" + val;
+        });
+        $('#' + file.id).addClass('sucess');
+        $('#' + file.id).append("<input name='photo' id='files' style=\"display: none;\" value='"+response.key+"'>");
+    });
+
+// 文件上传失败，显示上传出错。
+    uploader.on('uploadError', function(file) {
+        $('#' + file.id).addClass('fail');
+        alert("图片上传错误");
+    });
+
+// 完成上传完了，成功或者失败，先删除进度条。
+    uploader.on('uploadComplete', function(file) {
+        $('#' + file.id).find('.progress').remove();
+    });
+
+    var selects = new Array();
+
+    function removeByValue(array,val) {
+        for(var i=0; i<array.length; i++) {
+            if(array[i] == val) {
+                array.splice(i, 1);
+                break;
+            }
+        }
+    }
+
+    function isInArray(arr,value){
+        for(var i = 0; i < arr.length; i++){
+            if(value === arr[i]){
+                return true;
+            }
+        }
+        return false;
+    }
+
+    $("#addObject").click(function(){
+        var ul= $(".subItem_list ");
+        var rowNum= $(".subItem_list li").length+1;
+        var tempRow=rowNum-1;
+        ul.append("<li><div class=\"subItem\"> <h3>子项"+(tempRow+1)+"</h3>" +
+            "<div class=\"line_item\"><span class=\"red_star\">标题</span>" +
+            "<div class=\"item_rt\"><input class=\"l_text\" placeholder=\"请输入需求主题\"  name=\'title"+tempRow+"\' type=\"text\"/></div></div>" +
+            "<div class=\"line_item\"><span class=\"red_star\">简述</span><div class=\"item_rt\">" +
+            "<div class=\"textArae\"><textarea placeholder=\"请输入项目详细描述\" name='desic"+tempRow+"'></textarea></div> </div></div><div class=\"line_item\">" +
+            "<span class=\"red_star\">期望价格</span><div class=\"item_rt\"><input class=\"l_text\" placeholder=\"请输入期望价格\" name='price"+tempRow+"' type=\"text\"/>" +
+            "<div class=\"h_item mt24\"><i class=\"i_check\"></i>只允许通过实地认证供方报价</div></div></div>" +
+            "<div class=\"delete_item\"><a class=\"RBtn objectDelete\" id=\"objectDelete\"><i class=\"i_delete\"></i>删除</a></div></div></li>");
+        $("#num").val($("#num").val()*1+1);
+    });
+
+    $(".subItem_list").on("click","#objectDelete",function(){
+        $(this).parent().parent().parent().remove();
+    });
+
+
+    $("#releaseDemand").click(function() {
+        $("#demand").ajaxSubmit({
+            url : "/inquiry/crowdReview",
+            type : "post",
+            success : function(data) {
+                if (data.code == 1){
+                    window.location.href="/inquiry/result";
+                }else{
+                    layer.msg(data.message);
+                }
+//            alert("设置成功！"+data);
+            },
+            error : function(data) {
+//            alert("error:" + data.responseText);
+            }
+        });
+        return false;
+    });
+})
+</script>
+#end
+</body>
+</html>

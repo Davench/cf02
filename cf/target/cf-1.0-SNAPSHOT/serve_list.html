@@ -1,0 +1,189 @@
+#@list(1,"找服务")
+#define main()
+
+<!-- 中间区域 -->
+<div class="main">
+    <div class="content pt20">
+        <div class="screen_wrap">
+            <h3 class="h3_rank"><span class="fl">企业信息</span><span class="fr release">发布能力</span></h3>
+            <div class="screen_Box">
+                <div class="screen_list">
+                   <span class="label">分类：</span>
+                   <div class="sort">
+                      <span>全部</span>
+                      <span class="active">产品外协</span>
+                      <span>设计</span>
+                      <span>制造</span>
+                      <span>试验</span>
+                      <span>服务</span>
+                   </div>
+                </div>
+                <div class="screen_list">
+                   <span class="label">二级分类：</span>
+                   <div class="sort">
+                      <span class="active">全部</span>
+                      <span>装备技术保障和售后服务</span>
+                      <span>维护维修</span>
+                      <span>维修测试</span>
+                      <span>综合保障信息服务</span>
+                      <span>包装、装卸、贮存和运输保障服务</span>
+                      <span>软件测试</span>
+                      <span>信息系统集成</span>
+                      <span>环境检测</span>
+                      <span>声像服务</span>
+                      <span>标准化业务</span>
+                      <span>非传统安全保障</span>
+                      <span>高性能计算</span>
+                      <span>微波加热装备设计开发</span>
+                      <span>深水压力试验装备</span>
+                      <span>特种裁量设计</span>
+                      <span>其他</span>
+                   </div>
+                </div>
+                <div class="screen_list">
+                   <span class="label">企业类型：</span>
+                   <div class="sort">
+                      <span class="active">全部</span>
+                      <span>国有企业</span>
+                      <span>集体企业</span>
+                      <span>股份合作企业</span>
+                      <span>联营企业</span>
+                      <span>有限责任公司</span>
+                      <span>股份有限公司</span>
+                      <span>私营企业</span>
+                      <span>其他企业</span>
+                      <span>合资经营企业（港或澳、台资）</span>
+                      <span>港、澳、台商独资</span>
+                      <span>港、澳、台商投资有限公司</span>
+                      <span>港、澳、台商投资企业</span>
+                      <span>港、澳、台商投资有限公司</span>
+                      <span>其他港、澳、台商投资企业</span>
+                      <span>中外合资经营企业</span>
+                   </div>
+                </div>
+                <div class="screen_list">
+                   <span class="label">经营方式：</span>
+                   <div class="sort">
+                      <span class="active">全部</span>
+                      <span>生产型</span>
+                      <span>贸易型</span>
+                      <span>服务型</span>
+                      <span>研发型</span>
+                      <span>其他型</span>
+                   </div>
+                </div>
+                <div class="screen_list">
+                   <span class="label">企业规模：</span>
+                   <div class="sort">
+                      <span class="active">全部</span>
+                      <span>5人以下</span>
+                      <span>5-10人</span>
+                      <span>11-50人</span>
+                      <span>51-100人</span>
+                      <span>101-200人</span>
+                      <span>201-300人</span>
+                      <span>301-500人</span>
+                      <span>501-1000人</span>
+                      <span>1000人以上</span>
+                   </div>
+                </div>
+                <div class="screen_list">
+                   <span class="label">客户认证：</span>
+                   <div class="sort">
+                      <span class="active">全部</span>
+                      <span>安全认证</span>
+                      <span>质量认证</span>
+                   </div>
+                </div>
+                <div class="screen_list">
+                   <span class="label">信誉评分：</span>
+                   <div class="sort">
+                      <span class="active">全部</span>
+                      <span>0-4分</span>
+                      <span>5-7分</span>
+                      <span>8-10分</span>
+                   </div>
+                </div>
+            </div>
+        </div>
+        <div class="filter clearfix">
+            <div class="filter_list fl">
+                <span class="active">综合</span>
+                <span>发布时间</span>
+                <span>实名认证</span>
+                <span>质量认证</span>
+            </div>
+            <div class="select_wrap filter_select fl">
+                <i class="i_drop2"></i>
+                <span class="select_text ellips"></span>
+                <select>
+                   <option>全国</option>
+                </select>
+            </div>
+            <div class="search_box fr">
+                <input class="search_text fl mr30" placeholder="输入需求关键字" type="text"/>
+                <input class="butn fl" value="确定" type="button"/>
+            </div>
+        </div>
+        <!--报价列表-->
+        <ul class="demand_list">
+            #for(x:servers)
+            <li>
+                <div class="demand_Int clearfix">
+                    <div class="tab_Int th_1" style="width:20%;">
+                        <div class="t_cell">
+                            <p>#(x.title)</p>
+                            <p class="grey">发布时间：#(x.data)</p>
+                        </div>
+                    </div>
+                    <div class="tab_Int th_2" style="width:20%;">
+                        <div class="t_cell">
+                            <p>#(x.company.name??'未知')</p>
+                            <p><span class="icon icont_1"></span><span class="icon icont_2 ml20"></span></p>
+                        </div>
+                    </div>
+                    <div class="tab_Int th_3" style="width:20%;">
+                        <div class="t_cell">
+                            <p>服务能力：<b>#(x.goods)</b></p>
+                        </div>
+                    </div>
+                    <div class="tab_Int th_3" style="width:20%;">
+                        <div class="t_cell">
+                            <p>价格：<b>#(x.prices)</b></p>
+                            <p>所在地：#(x.address)</p>
+                        </div>
+                    </div>
+                    <div class="tab_Int th_4" style="width:10%;">
+                        <div class="t_cell">
+                            <a class="Yellow_Btn mb12" href="/serve/detail?id=#(x.id)">查看详情</a>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            #end
+        </ul>
+        <!--分页-->
+        <div class="pagination">
+            <span>共3条</span>
+            <a href="#">首页</a>
+            <a href="#">上页</a>
+            <a class="current" href="#">1</a>
+            <a href="#">下页</a>
+            <a href="#">尾页</a>
+            <span>共1页</span>
+        </div>
+        <!--分页 end-->
+    </div>
+</div>
+#end
+#define script()
+<script type="text/javascript">
+$(function(){
+	$(".sort span").click(function(){
+		$(this).addClass("active").siblings().removeClass("active");
+	})
+})
+</script>
+#end
+</body>
+</html>

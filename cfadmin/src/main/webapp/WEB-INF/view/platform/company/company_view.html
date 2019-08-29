@@ -1,0 +1,24 @@
+@layout("/common/_curd/_container.html"){
+
+	<form class="form-horizontal" role="form">
+		<!-- 表单 -->
+		@ var _col=[
+		@			  {name:"公司名称", index:"name", type:"text",newline:true,length:8},
+		@			  {name:"LOGO", index:"url", type:"image",newline:true,length:8,returnType:"url"},
+		@			  {name:"联系人", index:"contacts", type:"text",newline:true,length:8},
+		@			  {name:"联系电话", index:"mobile", type:"text",newline:true,length:8},
+		@			  {name:"QQ", index:"qq", type:"text",newline:true,length:8},
+		@			  {name:"Email", index:"email", type:"text",newline:true,length:8},
+		@			  {name:"网站", index:"web", type:"text",newline:true,length:8},
+		@			  {name:"产品", index:"goods", type:"text",newline:true,length:8},
+		@			  {name:"公司详细地址", index:"address", type:"text",newline:true,length:8},
+		@			  {name:"企业简介", index:"introduction", type:"ueditor",newline:true,length:8},
+		@			  {name:"企业描述", index:"describe", type:"ueditor",newline:true,length:8}
+		@		   ];
+		@ include("/common/_curd/_view.html", {"col":_col}){}
+		
+		<!-- 按钮 -->
+		@ include("/common/_curd/_btn.html", {btn_close:"关闭"}) {}
+	</form>
+
+@}

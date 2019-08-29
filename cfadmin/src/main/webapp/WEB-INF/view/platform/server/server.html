@@ -1,0 +1,99 @@
+@layout("/common/_curd/_container.html"){
+
+<script type="text/javascript">
+	var ctx = "${basePath}";
+	var grid_selector = "#grid-table";
+	var pager_selector = "#grid-pager";
+	
+	$(function(){
+		initGrid();
+		initMenuBtn("btns", "${code}");
+	});
+	
+	function initGrid(){
+		var grid_url = ctx + "/${code}/list";
+		var _colnames = ["", 
+						"需求一级类型", 
+						"需求二级类型", 
+						"询价主题", 
+						"询价结束日期", 
+						"规格", 
+						"", 
+						"需求图片附件", 
+						"详细描述", 
+						"", 
+						"", 
+						"", 
+						"", 
+						"", 
+						"", 
+						"草稿 还是预览", 
+						""];
+		var _colmodel = [{name:"id", index:"id", width:100},
+						{name:"demandtype1", index:"demandtype1", width:100},
+						{name:"demandtype2", index:"demandtype2", width:100},
+						{name:"title", index:"title", width:100},
+						{name:"prices", index:"prices", width:100},
+						{name:"unit", index:"unit", width:100},
+						{name:"creatdate", index:"creatdate", width:100},
+						{name:"photo", index:"photo", width:100},
+						{name:"description", index:"description", width:100},
+						{name:"provincial", index:"provincial", width:100},
+						{name:"cities", index:"cities", width:100},
+						{name:"counties", index:"counties", width:100},
+						{name:"address", index:"address", width:100},
+						{name:"contacts", index:"contacts", width:100},
+						{name:"phone", index:"phone", width:100},
+						{name:"type", index:"type", width:100},
+						{name:"companyid", index:"companyid", width:100}];
+		
+		jQuery(grid_selector).jqGrid({
+			url : grid_url,
+		    shrinkToFit : true,
+			colNames : _colnames,
+			colModel : _colmodel, 
+			jsonReader : {id :"id"},
+			pager : pager_selector,
+			postData : {sort : "id", order : "desc"}
+		});
+	}
+</script>
+
+
+	<!-- 配置 grid -->
+	<div class="row">
+		<div class="col-xs-12 tb-grid">
+			<!-- 配置 查询 -->
+			@ var _col=[
+@		{name:"", index:"id", type:"text"},
+			@		{name:"需求一级类型", index:"demandtype1", type:"text"},
+			@		{name:"需求二级类型", index:"demandtype2", type:"text"},
+			@		{name:"询价主题", index:"title", type:"text"},
+			@		{name:"询价结束日期", index:"prices", type:"text"},
+			@		{name:"规格", index:"unit", type:"text"},
+			@		{name:"", index:"creatdate", type:"text"},
+			@		{name:"需求图片附件", index:"photo", type:"text"},
+			@		{name:"详细描述", index:"description", type:"text"},
+			@		{name:"", index:"provincial", type:"text"},
+			@		{name:"", index:"cities", type:"text"},
+			@		{name:"", index:"counties", type:"text"},
+			@		{name:"", index:"address", type:"text"},
+			@		{name:"", index:"contacts", type:"text"},
+			@		{name:"", index:"phone", type:"text"},
+			@		{name:"草稿 还是预览", index:"type", type:"text"},
+			@		{name:"", index:"companyid", type:"text"}							
+			@];
+			@ include("/common/_function/_search.html",{"col":_col}){}
+			<!-- 按钮 -->
+			<div class="welljq well-sm" id="btns"></div>
+			<!-- grid -->
+			<table id="grid-table"></table>
+			<!-- 分页-->
+			<div id="grid-pager"></div>
+		</div>
+	</div>
+	
+	<!-- 引入所需的js -->
+	@include("/common/_listscript.html"){}
+	
+@}	

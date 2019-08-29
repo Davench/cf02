@@ -1,0 +1,133 @@
+#@layout(1,"提交报价")
+#define search()
+<div class="content">
+    <h3 class="h3_title">
+        <p class="t_english">OFFER</p>
+        <p class="t_chinese">提交报价</p>
+        <p class="btm_line"></p>
+    </h3>
+</div>
+#end
+#define tab()
+#end
+#define banner()
+#end
+#define main()
+
+<!-- 中间区域 -->
+<div class="main">
+    <div class="content pt20">
+       <div class="offer_wrap">
+           <h3 class="h3_rank">询价信息</h3>
+           <ul class="offer_Info clearfix">
+               <li><span class="li_th">需求主题</span><span class="li_td">需要ZY2321</span></li>
+               <li><span class="li_th">交付日期</span><span class="li_td">2017-12-09</span></li>
+               <li><span class="li_th">企业名称</span><span class="li_td">武汉海天制造科技有限公司</span></li>
+               <li><span class="li_th">发票要求</span><span class="li_td">增值税专用发票</span></li>
+               <li><span class="li_th">联系人</span><span class="li_td">王昭君</span></li>
+               <li><span class="li_th">运费承担</span><span class="li_td">供应商</span></li>
+               <li><span class="li_th">联系电话</span><span class="li_td">13263748372</span></li>
+               <li><span class="li_th">收货地址</span><span class="li_td">湖北省武汉市洪山区</span></li>
+           </ul>
+           <h3 class="h3_rank">报价</h3>
+           <div class="offer_form">
+               <table width="100%">
+                  <tr>
+                    <th width="160"><span class="red_star">对象名称</span></th>
+                    <th width="160"><span class="red_star">需求数量</span></th>
+                    <th width="160"><span class="">计量单位</span></th>
+                    <th width="205"><span class="">要求/备注</span></th>
+                    <th width="160"><span class="red_star">期望单价（元）</span></th>
+                    <th width="160"><span class="">总价</span></th>
+                    <th width="160"><span class="">操作</span></th>
+                  </tr>
+                  <tr>
+                    <td>波纹管DN65</td>
+                    <td>6</td>
+                    <td>件</td>
+                    <td>一定要好</td>
+                    <td>1201</td>
+                    <td>1201</td>
+                    <td><span class="delete_Btn">删除</span></td>
+                  </tr>
+                  <tr>
+                    <td>波纹管DN65</td>
+                    <td>6</td>
+                    <td>件</td>
+                    <td>一定要好</td>
+                    <td>1201</td>
+                    <td>1201</td>
+                    <td><span class="delete_Btn">删除</span></td>
+                  </tr>
+                  <tr>
+                    <td colspan="6" class="tl">附加收费项：运费10000</td>
+                    <td><span class="delete_Btn">删除</span></td>
+                  </tr>
+                  <tr>
+                    <td colspan="7" class="tl"><a class="BBtn" href="javascript:;">添加其他费用</a></td>
+                  </tr>
+               </table>
+           </div>
+           <div class="menu_Info">
+               <div class="line_item">
+                   <span>报价说明</span>
+                   <div class="item_rt">
+                      <div class="textArae"><textarea placeholder="请输入报价说明"></textarea></div>
+                   </div>
+               </div>
+               <div class="line_item">
+                    <span>上传附件</span>
+                    <div class="item_rt">
+                       <a class="YBtn" href="javascript:;">添加附件</a>
+                    </div>
+               </div>
+               <div class="line_item">
+                    <span>报价有效期</span>
+                    <div class="item_rt">
+                       <input class="l_text" id="date1" placeholder="请输入报价有效期" type="text"/>
+                    </div>
+               </div>
+               <div class="line_item">
+                    <span>联系人</span>
+                    <div class="item_rt">
+                       <input class="l_text" placeholder="请输入报价有效期" type="text"/>
+                    </div>
+               </div>
+               <div class="line_item">
+                    <span>联系电话</span>
+                    <div class="item_rt">
+                       <input class="l_text" placeholder="请输入联系电话" type="text"/>
+                    </div>
+               </div>
+           </div>
+           <div class="submit_item">
+               <a class="BBtn mr30" href="javascript:;">提交</a>
+               <a class="soild_Btn" href="javascript:;">取消</a>
+           </div>
+    </div>
+</div>
+</div>
+#end #define script()
+<script type="text/javascript" src="/js/jquery-1.11.1.min.js"></script>
+<script type="text/javascript" src="/libs/datepicker/js/foundation-datepicker.js"></script>
+<script type="text/javascript" src="/libs/datepicker/js/locales/foundation-datepicker.zh-CN.js"></script>
+<script type="text/javascript" src="/js/base.js"></script>
+<script type="text/javascript">
+$(function(){
+	var nowTemp = new Date();
+    var now = new Date(nowTemp.getFullYear(), nowTemp.getMonth(), nowTemp.getDate(), 0, 0, 0, 0);
+    var checkin = $('#date1').fdatepicker({
+        onRender: function (date) {
+            return date.valueOf() < now.valueOf() ? 'disabled' : '';
+        },
+        format:"yyyy-mm-dd"
+    }).on('changeDate', function (ev) {
+    
+        checkin.hide();
+
+    }).data('datepicker');
+})
+</script>
+#end
+</body>
+</html>

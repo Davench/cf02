@@ -1,0 +1,95 @@
+#@admin2(1,"我的服务")
+#define main()
+        <!--内容区域-->
+        <div class="m_main">
+            <h3 class="h3_rank">我的服务</h3>
+            <div class="approve_info">
+                <div class="demand_tab clearfix">
+                   <span class="lab fl">需求状态</span>
+                   <div class="select_demand fl">
+                       <i class="i_drop3"></i>
+                       <span class="select_show"></span>
+                       <ul class="">
+                           <li>待审核</li>
+                           <li>招标中</li>
+                           <li>暂停招标</li>
+                           <li>已完结</li>
+                           <li>已关闭</li>
+                       </ul>
+                   </div>
+                   <div class="select_demand fl"><input class="time_text" id="date1" readonly placeholder="发布时间" type="text"/></div>
+                   <a href="javascript:;" class="Wbg_btn fl">筛选</a>
+                </div> 
+                <div class="demand_table" style="width:1140px;">
+                   <table width="100%">
+                      <tr>
+                         <th width="6%"></th>
+                         <th width="19%">服务名称</th>
+                         <th width="10%">发布时间</th>
+                         <th width="20%">类别</th>
+                         <th width="10%">当前状态</th>
+                         <th width="15%">询价次数</th>
+                         <th width="20%">操作</th>
+                      </tr>
+                       #for(x:servers)
+                      <tr>
+                         <td>#(x.id)</td>
+                         <td>#(x.title)</td>
+                         <td>#(x.data)</td>
+                         <td>#(x.from1)</td>
+                         <td>发布中</td>
+                         <td>1</td>
+                         <td>
+                             <a class="Blue_Btn" href="/admin/myServersDetail?id=#(x.id)">查看服务</a>
+                             <a class="Bsoild_btn" href="#">查看询价</a>
+                         </td>
+                      </tr>
+                       #end
+                   </table>
+                </div>
+            </div> 
+        </div>
+#end
+#define script()
+<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+<script type="text/javascript" src="libs/datepicker/js/foundation-datepicker.js"></script>
+<script type="text/javascript" src="libs/datepicker/js/locales/foundation-datepicker.zh-CN.js"></script>
+<script type="text/javascript" src="js/base.js"></script>
+<script type="text/javascript">
+$(function(){
+	var nowTemp = new Date();
+    var now = new Date(nowTemp.getFullYear(), nowTemp.getMonth(), nowTemp.getDate(), 0, 0, 0, 0);
+    var checkin = $('#date1').fdatepicker({
+        onRender: function (date) {
+            return date.valueOf() < now.valueOf() ? 'disabled' : '';
+        },
+        format:"yyyy-mm-dd"
+    }).on('changeDate', function (ev) {
+        if (ev.date.valueOf() > now.valueOf()) {
+            var newDate = new Date(ev.date)
+            newDate.setDate(newDate.getDate()+1);
+        }
+        checkin.hide();
+
+    }).data('datepicker');
+	
+
+	
+	
+	$(".select_demand>ul li").each(function(index, element) {
+		if(index==0){
+		   $(".select_demand span.select_show").text($(".select_demand>ul li").eq(0).text())
+		}
+    });
+	$(".select_demand span.select_show,.i_drop3").on("click", function(){
+		$(this).siblings().show();
+	})
+	$(".select_demand>ul li").on("click",function(){
+		$(".select_demand span.select_show").text($(this).text());
+		$(".select_demand>ul").hide();
+	})
+})
+</script>
+#end
+</body>
+</html>

@@ -1,0 +1,249 @@
+#@list(1,"众筹详情")
+#define main()
+
+<!-- 中间区域 -->
+<div class="main">
+    <div class="content pt20">
+        <div class="breadcrumb">您的位置：<span>首页</span><span>众创空间</span><span>#(crowd.from1)</span><span>#(crowd.from2)</span></div>
+       <div class="Details clearfix mb32">
+           <!--有图-->
+           #if(crowd.photo!=null)
+           <div class="Details_Img mr38 fl"><img src="/upload/#(crowd.photo)"/></div>
+           #end
+           <div class="Details_Info fl">
+               <h3>#(crowd.title)</h3>
+               <div class="info_int">
+                  <p>能力分类：生产加工>其他</p>
+                  <p>可投标项目： #(crowd.num)</p>
+                  <p>以确认中标： 4 家</p>
+                  <p>投标结束时间：<b class="red_color f18"> 2天12小时</b></p>
+                  <p>发布日期 : #(crowd.data)</p>
+                  <div class="sectorImg">  
+                     <div class="circle">  
+                        <div class="percent icont_lt"></div>  
+                        <div class="percent icont_rt wth0"></div>  
+                     </div>  
+                     <div class="icont_num"><span>40</span>%</div>   
+                  </div>
+               </div>
+               <p class="p_hint">提示：只有当前项目全部中标，众筹才算成功</p>
+               <!--已登录-->
+               <!--<div class="relation">
+                   <span class="mr30">联系人： 阮贵学</span>
+                   <span>联系方式： 085128612240</span>
+               </div>-->
+               <!--未登录-->
+               <div class="relation_2">
+                   <!--<a href="#" class="mr30 blue_link">登录后查看完整信息</a>-->
+                   <span class="mr30">联系人： #(crowd.contacts)</span>
+                   <span>联系方式：  #(crowd.phone)</span>
+               </div>
+           </div>
+           <div class="Company_Info fr">
+               <h3 class="h3_rank">企业信息</h3>
+               <div class="company_intro">
+                   <p>#(crowd.company.name)</p>
+                   <p>所在地区：#(crowd.company.address)</p>
+                   <p>注册时间：2016-07-25</p>
+                   <p>主营行业：制造业</p>
+                   <div class="examine"><a class="Yellow_Btn" href="/company?id=#(crowd.company.id)">查看企业</a></div>
+               </div>
+           </div>
+       </div>
+       <!--详情与留言-->
+       <div class="Info_Box">
+           <ul class="Info_tab clearfix">
+               <li class="active">需求详情</li>
+               <li class="">咨询留言</li>
+           </ul>
+           <div class="Info_wrap">
+               <div class="Info_item active">
+                   <div class="Det_model">
+                      <h3 class="h3_rank">项目基本信息</h3>
+                      <dl class="dl_item">
+                        <dt>项目简介：</dt>
+                        <dd>#(crowd.title)</dd>
+                      </dl>
+                      <dl class="dl_item">
+                        <dt>项目描述：</dt>
+                        <dd>#(crowd.description)</dd>
+                      </dl>
+                   </div>
+                   <div class="Det_model">
+                      <h3 class="h3_rank">项目投标信息</h3>
+                      <ul class="tender_list">
+                          #if(crowd.items!=null)
+                          #for(sell:crowd.items)
+                          <li>
+                              <div class="tender_Int blue_active">
+                                  <table width="100%">
+                                      <tr>
+                                          <th colspan="2">#(sell.title)</th>
+                                      </tr>
+                                      <tr>
+                                          <td width="440">
+                                              <p>需求描述：#(sell.desic)</p>
+                                              <p>期望价格：#(sell.price)</p>
+                                              <p>已投标企业： 0</p>
+                                              <!--<p>中标企业： 南京晨光汉森柔性管有限公司</p>-->
+                                          </td>
+                                          <td class="tc">
+                                              <!--<span class="state">可投标</span>-->
+                                              <a class="Blue_Btn"   href="/need/submitPrice?id=#(crowd.id)">我要投标</a>
+                                          </td>
+                                      </tr>
+                                  </table>
+                              </div>
+                          </li>
+                          #end
+                          #end
+                          <!--<li>-->
+                              <!--<div class="tender_Int grey_active">-->
+                                  <!--<table width="100%">-->
+                                      <!--<tr>-->
+                                          <!--<th colspan="2">生产XXXXXXXXXX</th>-->
+                                      <!--</tr>-->
+                                      <!--<tr>-->
+                                          <!--<td width="440">-->
+                                              <!--<p>需求描述：可根据客户需求定制工作台，提供上门安装服务。由于工作台形式样式较多，请客户根据具体情况与我方联系。提供产品设计。详情欢迎垂询：13512487164 ; 徐培根</p>-->
+                                              <!--<p>期望价格：1232元</p>-->
+                                              <!--<p>已投标企业： 10</p>-->
+                                              <!--<p>中标企业： 南京晨光汉森柔性管有限公司</p></td>-->
+                                          <!--<td class="tc"><span class="state">未中标</span></td>-->
+                                      <!--</tr>-->
+                                  <!--</table>-->
+                              <!--</div>-->
+                          <!--</li>-->
+                          <!--<li>-->
+                              <!--<div class="tender_Int blue_active">-->
+                                  <!--<table width="100%">-->
+                                      <!--<tr>-->
+                                          <!--<th colspan="2">生产XXXXXXXXXX</th>-->
+                                      <!--</tr>-->
+                                      <!--<tr>-->
+                                          <!--<td width="440">-->
+                                              <!--<p>需求描述：可根据客户需求定制工作台，提供上门安装服务。由于工作台形式样式较多，请客户根据具体情况与我方联系。提供产品设计。详情欢迎垂询：13512487164 ; 徐培根</p>-->
+                                              <!--<p>期望价格：1232元</p>-->
+                                              <!--<p>已投标企业： 10</p>-->
+                                              <!--<p>中标企业： 南京晨光汉森柔性管有限公司</p></td>-->
+                                          <!--<td class="tc"><span class="state">已中标</span></td>-->
+                                      <!--</tr>-->
+                                  <!--</table>-->
+                              <!--</div>-->
+                          <!--</li>-->
+                          <!--<li>-->
+                              <!--<div class="tender_Int grey_active">-->
+                                  <!--<table width="100%">-->
+                                      <!--<tr>-->
+                                          <!--<th colspan="2">生产XXXXXXXXXX</th>-->
+                                      <!--</tr>-->
+                                      <!--<tr>-->
+                                          <!--<td width="440">-->
+                                              <!--<p>需求描述：可根据客户需求定制工作台，提供上门安装服务。由于工作台形式样式较多，请客户根据具体情况与我方联系。提供产品设计。详情欢迎垂询：13512487164 ; 徐培根</p>-->
+                                              <!--<p>期望价格：1232元</p>-->
+                                              <!--<p>已投标企业： 10</p>-->
+                                              <!--<p>中标企业： 南京晨光汉森柔性管有限公司</p></td>-->
+                                          <!--<td class="tc"><span class="state">流标</span></td>-->
+                                      <!--</tr>-->
+                                  <!--</table>-->
+                              <!--</div>-->
+                          <!--</li>-->
+                      </ul>
+                   </div>
+                   #if(crowd.enclosure!=null)
+                   <div class="Det_model">
+                       <h3 class="h3_rank">附件</h3>
+                       <a class="soild_Btn" href="#(crowd.enclosure.url)" download>点击下载附件</a>
+                   </div>
+                   #end
+                   <!--<div class="grey_model"><a class="Blue_Btn" href="/wework/submit">我要参与</a></div>-->
+                   <!--<div class="grey_model"><a class="Blue_Btn"   href="/wework/submit">我要参与</a></div>-->
+               </div>
+               <div class="Info_item">
+                   <div class="Det_model">
+                      <h3 class="h3_rank">咨询留言：<span>4</span></h3>
+                      <!--评论-->
+                      <div class="comment_Div">
+                          <!--未登录-->
+                          <!--<div class="Det_model"><a class="soild_Btn" href="javascript:;">登录后评论</a></div>-->
+                          <!--已登录-->
+                          <div class="comment_item clearfix">
+                              <img class="comment_head fl" src="images/Index/Group 48.png"/>
+                              <input class="comment_text fl" placeholder="留下您的足迹吧，最多可以输入200字" type="text"/>
+                              <input class="comment_Btn fl" value="留言" type="button"/>
+                          </div>
+                      </div>
+                      <ul class="comment_list">
+                          <li>
+                             <div class="comment_Int">
+                                <img src="images/Index/Group 48.png"/>
+                                <div class="coment_intro">
+                                     <p>王昭君</p>
+                                     <p class="datetime">2017-09-19 14:32:00</p>
+                                     <p>我想知道你那边的居住环境怎么样，卫生环境如何，建议可以在官网上面展示更多的内部照片！</p>
+                                </div>
+                             </div>
+                          </li>
+                          <li>
+                             <div class="comment_Int">
+                                <img src="images/Index/Group 48.png"/>
+                                <div class="coment_intro">
+                                     <p>王昭君</p>
+                                     <p class="datetime">2017-09-19 14:32:00</p>
+                                     <p>我想知道你那边的居住环境怎么样，卫生环境如何，建议可以在官网上面展示更多的内部照片！</p>
+                                </div>
+                             </div>
+                          </li>
+                          <li>
+                             <div class="comment_Int">
+                                <img src="images/Index/Group 48.png"/>
+                                <div class="coment_intro">
+                                     <p>王昭君</p>
+                                     <p class="datetime">2017-09-19 14:32:00</p>
+                                     <p>我想知道你那边的居住环境怎么样，卫生环境如何，建议可以在官网上面展示更多的内部照片！</p>
+                                </div>
+                             </div>
+                          </li>
+                          <li>
+                             <div class="comment_Int">
+                                <img src="images/Index/Group 48.png"/>
+                                <div class="coment_intro">
+                                     <p>王昭君</p>
+                                     <p class="datetime">2017-09-19 14:32:00</p>
+                                     <p>我想知道你那边的居住环境怎么样，卫生环境如何，建议可以在官网上面展示更多的内部照片！</p>
+                                </div>
+                             </div>
+                          </li>
+                      </ul> 
+                   </div
+                ></div>
+           </div>
+       </div>
+    </div>
+</div>
+#end
+#define script()
+<script type="text/javascript">
+    $(function(){
+        $(".Info_tab li").click(function(){
+            var _index=$(this).index();
+            $(this).addClass("active").siblings().removeClass("active");
+            $(".Info_wrap .Info_item").eq(_index).addClass("active").siblings().removeClass("active");
+        })
+        sectorImg(40)
+    })
+    function sectorImg(percent){
+        if(percent>100){
+            percent=0;
+            $('.circle').removeClass('clip-auto');
+            $('.icont_rt').addClass('wth0');
+        }else if(percent>50){
+            $('.circle').addClass('clip-auto');
+            $('.icont_rt').removeClass('wth0');
+        }
+        $('.icont_lt').css("-webkit-transform","rotate("+(18/5)*percent+"deg)");
+    }
+</script>
+#end
+</body>
+</html>

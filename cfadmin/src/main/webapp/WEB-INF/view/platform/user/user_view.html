@@ -1,0 +1,21 @@
+@layout("/common/_curd/_container.html"){
+
+	<form class="form-horizontal" role="form">
+		<!-- 表单 -->
+		@ var _col=[
+			
+		@			  {name:"", index:"id", type:"text",newline:true,length:8},
+		@			  {name:"", index:"number", type:"text",newline:true,length:8},
+		@			  {name:"", index:"password", type:"text",newline:true,length:8},
+		@			  {name:"", index:"phone", type:"text",newline:true,length:8},
+		@			  {name:"默认为0 为未完善用户信息", index:"iscomplete", type:"text",newline:true,length:8},
+		@			  {name:"", index:"company", type:"text",newline:true,length:8},
+		@			  {name:"", index:"creatdate", type:"text",newline:true,length:8}		
+		@		   ];
+		@ include("/common/_curd/_view.html", {"col":_col}){}
+		
+		<!-- 按钮 -->
+		@ include("/common/_curd/_btn.html", {btn_close:"关闭"}) {}
+	</form>
+
+@}

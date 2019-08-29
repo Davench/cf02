@@ -1,0 +1,117 @@
+#@list(1,"找企业")
+#define main()
+<!-- 中间区域 -->
+<div class="main">
+    <div class="content pt20">
+        <div class="screen_wrap">
+            <h3 class="h3_rank"><span class="fl">企业信息</span><span class="fr release">发布能力</span></h3>
+            <div class="screen_Box">
+                <div class="screen_list">
+                   <span class="label">需求类型：</span>
+                   <div class="sort">
+                      <span>全部</span>
+                      <span class="active">产品需求</span>
+                      <span>技术需求</span>
+                      <span>制造需求</span>
+                      <span>设备需求</span>
+                      <span>服务需求</span>
+                   </div>
+                </div>
+                <div class="screen_list">
+                   <span class="label">企业规模：</span>
+                   <div class="sort">
+                      <span class="active">全部</span>
+                      <span>5人以下</span>
+                      <span>5-10人</span>
+                      <span>11-50人</span>
+                      <span>51-100人</span>
+                      <span>101-200人</span>
+                      <span>201-300人</span>
+                      <span>301-500人</span>
+                      <span>501-1000人</span>
+                      <span>1000人以上</span>
+                   </div>
+                </div>
+            </div>
+        </div>
+        <div class="filter clearfix">
+            <div class="filter_list fl">
+                <span class="active">实名认证</span>
+                <span>质量认证</span>
+            </div>
+            <div class="select_wrap filter_select fl">
+                <i class="i_drop2"></i>
+                <span class="select_text ellips"></span>
+                <select>
+                   <option>全国</option>
+                </select>
+            </div>
+            <div class="search_box fr">
+                <input class="search_text fl mr30" placeholder="输入需求关键字" type="text"/>
+                <input class="butn fl" value="确定" type="button"/>
+            </div>
+        </div>
+        <!--报价列表-->
+        <ul class="demand_list">
+            #for(x:companies)
+            <li>
+               <div class="demand_Int clearfix">
+                   <div class="tab_Int td_1">
+                       <div class="t_cell">
+                           <img src="/upload/#(x.photo)"/>
+                           <p>#(x.name)</p>
+                       </div>
+                   </div>
+                   <div class="tab_Int td_2">
+                       <div class="t_cell">
+                           <span class="icon icont_1"></span><span class="icon icont_2 ml20"></span>
+                       </div>
+                   </div>
+                   <div class="tab_Int td_3">
+                       <div class="t_cell">
+                           <p>主营产品：#(x.goods)</p>
+                           <p>经营模式：研发型</p>
+                           <p>企业地址：#(x.address)</p>
+                       </div>
+                   </div>
+                   <div class="tab_Int td_4">
+                       <div class="t_cell">
+                           <p>销售区域：全国范围</p>
+                           <p>注册时间：1965-08-09</p>
+                           <p>主营行业：制造业-专用设备制造业</p>
+                       </div>
+                   </div>
+                   <div class="tab_Int td_5">
+                       <div class="t_cell">
+                           <a class="Yellow_Btn" href="/company?id=#(x.id)">查看详情</a>
+                       </div>
+                   </div>
+               </div>
+            </li>
+            #end
+        </ul>
+        <!--分页-->
+        <div class="pagination">
+            <span>共3条</span>
+            <a href="#">首页</a>
+            <a href="#">上页</a>
+            <a class="current" href="#">1</a>
+            <a href="#">下页</a>
+            <a href="#">尾页</a>
+            <span>共1页</span>
+        </div>
+        <!--分页 end-->
+    </div>
+</div>
+#end
+#define script()
+<script type="text/javascript">
+$(function(){
+	$(".sort span").click(function(){
+		$(this).addClass("active").siblings().removeClass("active");
+	})
+})
+</script>
+#end
+</body>
+</html>

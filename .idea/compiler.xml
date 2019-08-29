@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="cf" />
+        <module name="cf-common" />
+        <module name="cfadmin" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="cf" target="1.7" />
+      <module name="cf-common" target="1.7" />
+      <module name="cfadmin" target="1.7" />
+      <module name="lon_root" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

@@ -1,0 +1,21 @@
+@layout("/common/_curd/_container.html"){
+
+	<form data-url="${basePath}/${code}/save" method="post" class="form-horizontal" role="form">
+		<!-- 表单 -->
+		@ var _table="user";
+		@ var _col=[
+@			  {name:"", index:"id", type:"text",newline:true,length:8,required:"required"},
+		@			  {name:"", index:"number", type:"text",newline:true,length:8,required:"required"},
+		@			  {name:"", index:"password", type:"text",newline:true,length:8,required:"required"},
+		@			  {name:"", index:"phone", type:"text",newline:true,length:8,required:"required"},
+		@			  {name:"默认为0 为未完善用户信息", index:"iscomplete", type:"text",newline:true,length:8,required:"required"},
+		@			  {name:"", index:"company", type:"text",newline:true,length:8,required:"required"},
+		@			  {name:"", index:"creatdate", type:"text",newline:true,length:8,required:"required"}		
+		@		   ];
+		@ include("/common/_curd/_add.html", {"col":_col, "table":_table}){}
+		
+		<!-- 按钮 -->
+		@ include("/common/_curd/_btn.html", {btn_save:"新增", btn_close:"关闭"}) {}
+	</form>
+
+@}

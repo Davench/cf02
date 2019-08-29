@@ -1,0 +1,28 @@
+@layout("/common/_curd/_container.html"){
+
+	<form class="form-horizontal" role="form">
+		<!-- 表单 -->
+		@ var _col=[
+		@			  {name:"是否三证合一", index:"isThree", type:"text",newline:true,length:8},
+		@			  {name:"企业全称", index:"name", type:"text",newline:true,length:8},
+		@			  {name:"企业信用代码", index:"creditCode", type:"text",newline:true,length:8},
+		@			  {name:"法人姓名", index:"representative", type:"text",newline:true,length:8},
+		@			  {name:"法人身份证", index:"representativeCard", type:"text",newline:true,length:8},
+		@			  {name:"法人手机号", index:"representativePhone", type:"text",newline:true,length:8},
+		@			  {name:"联系人", index:"contacts", type:"text",newline:true,length:8},
+		@			  {name:"电话号码", index:"phone", type:"text",newline:true,length:8},
+		@			  {name:"工商注册号", index:"businessNumber", type:"text",newline:true,length:8},
+		@			  {name:"组织机构代码", index:"organizationCode", type:"text",newline:true,length:8},
+		@			  {name:"纳税人识别号", index:"taxpayersAlias", type:"text",newline:true,length:8},
+		@			  {name:"营业执照", index:"photoUrl", type:"image",newline:true,length:8,returnType:"url"},
+		@			  {name:"身份证", index:"cardPhotoUrl", type:"image",newline:true,length:8,returnType:"url"},
+		@			  {name:"税务登记证", index:"taxCardUrl", type:"image",newline:true,length:8,returnType:"url"},
+		@			  {name:"组织机构代码证", index:"organizationCardUrl", type:"image",newline:true,length:8,returnType:"url"}
+		@		   ];
+		@ include("/common/_curd/_view.html", {"col":_col}){}
+		
+		<!-- 按钮 -->
+		@ include("/common/_curd/_btn.html", {btn_close:"关闭"}) {}
+	</form>
+
+@}

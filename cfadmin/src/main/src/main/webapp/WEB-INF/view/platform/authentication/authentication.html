@@ -1,0 +1,102 @@
+@layout("/common/_curd/_container.html"){
+
+<script type="text/javascript">
+	var ctx = "${basePath}";
+	var grid_selector = "#grid-table";
+	var pager_selector = "#grid-pager";
+	
+	$(function(){
+		initGrid();
+		initMenuBtn("btns", "${code}");
+	});
+	
+	function initGrid(){
+		var grid_url = ctx + "/${code}/list";
+		var _colnames = ["", 
+						"是否三证合一", 
+						"企业全称", 
+						"企业信用代码", 
+						"法人姓名", 
+						"法人身份证", 
+						"法人手机号", 
+						"联系人", 
+						"电话号码", 
+						"营业执照", 
+						"身份证", 
+						"", 
+						"工商注册号", 
+						"组织机构代码", 
+						"税务登记证", 
+						"组织机构代码证", 
+						"纳税人识别号", 
+						""];
+		var _colmodel = [{name:"id", index:"id", width:100},
+						{name:"isThree", index:"isThree", width:100},
+						{name:"name", index:"name", width:100},
+						{name:"creditCode", index:"creditCode", width:100},
+						{name:"representative", index:"representative", width:100},
+						{name:"representativeCard", index:"representativeCard", width:100},
+						{name:"representativePhone", index:"representativePhone", width:100},
+						{name:"contacts", index:"contacts", width:100},
+						{name:"phone", index:"phone", width:100},
+						{name:"photo", index:"photo", width:100},
+						{name:"cardPhoto", index:"cardPhoto", width:100},
+						{name:"creatTime", index:"creatTime", width:100},
+						{name:"businessNumber", index:"businessNumber", width:100},
+						{name:"organizationCode", index:"organizationCode", width:100},
+						{name:"taxCard", index:"taxCard", width:100},
+						{name:"organizationCard", index:"organizationCard", width:100},
+						{name:"taxpayersAlias", index:"taxpayersAlias", width:100},
+						{name:"status", index:"status", width:100}];
+		
+		jQuery(grid_selector).jqGrid({
+			url : grid_url,
+		    shrinkToFit : true,
+			colNames : _colnames,
+			colModel : _colmodel, 
+			jsonReader : {id :"ID"},
+			pager : pager_selector,
+			postData : {sort : "ID", order : "desc"}
+		});
+	}
+</script>
+
+
+	<!-- 配置 grid -->
+	<div class="row">
+		<div class="col-xs-12 tb-grid">
+			<!-- 配置 查询 -->
+			@ var _col=[
+@		{name:"", index:"id", type:"text"},
+			@		{name:"是否三证合一", index:"isThree", type:"text"},
+			@		{name:"企业全称", index:"name", type:"text"},
+			@		{name:"企业信用代码", index:"creditCode", type:"text"},
+			@		{name:"法人姓名", index:"representative", type:"text"},
+			@		{name:"法人身份证", index:"representativeCard", type:"text"},
+			@		{name:"法人手机号", index:"representativePhone", type:"text"},
+			@		{name:"联系人", index:"contacts", type:"text"},
+			@		{name:"电话号码", index:"phone", type:"text"},
+			@		{name:"营业执照", index:"photo", type:"text"},
+			@		{name:"身份证", index:"cardPhoto", type:"text"},
+			@		{name:"", index:"creatTime", type:"text"},
+			@		{name:"工商注册号", index:"businessNumber", type:"text"},
+			@		{name:"组织机构代码", index:"organizationCode", type:"text"},
+			@		{name:"税务登记证", index:"taxCard", type:"text"},
+			@		{name:"组织机构代码证", index:"organizationCard", type:"text"},
+			@		{name:"纳税人识别号", index:"taxpayersAlias", type:"text"},
+			@		{name:"", index:"status", type:"text"}							
+			@];
+			@ include("/common/_function/_search.html",{"col":_col}){}
+			<!-- 按钮 -->
+			<div class="welljq well-sm" id="btns"></div>
+			<!-- grid -->
+			<table id="grid-table"></table>
+			<!-- 分页-->
+			<div id="grid-pager"></div>
+		</div>
+	</div>
+	
+	<!-- 引入所需的js -->
+	@include("/common/_listscript.html"){}
+	
+@}	

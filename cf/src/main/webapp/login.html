@@ -1,0 +1,70 @@
+#@layout(1,"登陆")
+#define tab()
+#end 
+#define banner() 
+#end 
+#define main()
+<!-- 中间区域 -->
+<div class="main">
+	<div class="login_bg">
+		<div class="content rel">
+			<div class="login_Box">
+				<div class="login_form">
+					<h3>手机/邮箱/用户名登录</h3>
+					<div class="login_item icont_user">
+						<input id="name" placeholder="请输入手机号/邮箱/用户名登录" type="text" />
+					</div>
+					<div class="login_item icont_password">
+						<input id="password" placeholder="请输入密码" type="password" />
+					</div>
+					<div class="login_password clearfix">
+						<span class="fl"><i class="i_check i_checked"></i>记住密码</span> <a
+							class="fr" href="/login/forgetto">忘记密码？</a>
+					</div>
+					<div class="login_Btn">
+						<input class="BlueBtn" value="登录" id="loginbt" type="button" />
+					</div>
+					<p class="tc t_register">
+						<a class="red_color underline" href="/regist/go">立即注册</a>
+					</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+#end #define script()
+<script type="text/javascript">
+	$(function(){
+		checkInit();	
+	})
+	
+	$("#loginbt").click(function(){
+		 	var params = {};  
+		    params.name = $("#name").val();  
+		    params.password = $("#password").val();  
+			$.ajax({
+					url:'/login/submit',
+					async:true,  
+					type:'POST',
+					data:params,
+					timeout: 3000,
+		        error: function(data){
+		        	document.write("error"+data);
+		        },
+		        success: function(data){
+		        	if(data.code==1){
+		        		//登陆成功
+		        		location.href='/index'
+		        	}else{
+		        		layer.tips(data.message, '#name', {
+		        			  tips: [1, '#3595CC'],
+		        			  time: 4000
+		        			});
+		        	}
+		        }
+			});
+	});
+</script>
+#end
+</body>
+</html>

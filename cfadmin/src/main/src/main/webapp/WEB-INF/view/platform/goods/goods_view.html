@@ -1,0 +1,25 @@
+@layout("/common/_curd/_container.html"){
+
+	<form class="form-horizontal" role="form">
+		<!-- 表单 -->
+		@ var _col=[
+			
+@			  {name:"", index:"id", type:"text",newline:true,length:8},
+		@			  {name:"", index:"name", type:"text",newline:true,length:8},
+		@			  {name:"", index:"type1", type:"text",newline:true,length:8},
+		@			  {name:"", index:"type2", type:"text",newline:true,length:8},
+		@			  {name:"", index:"code", type:"text",newline:true,length:8},
+		@			  {name:"", index:"unit", type:"text",newline:true,length:8},
+		@			  {name:"", index:"model", type:"text",newline:true,length:8},
+		@			  {name:"", index:"attribute", type:"text",newline:true,length:8},
+		@			  {name:"", index:"effective", type:"text",newline:true,length:8},
+		@			  {name:"", index:"expected", type:"text",newline:true,length:8},
+		@			  {name:"", index:"creatTime", type:"text",newline:true,length:8}		
+		@		   ];
+		@ include("/common/_curd/_view.html", {"col":_col}){}
+		
+		<!-- 按钮 -->
+		@ include("/common/_curd/_btn.html", {btn_close:"关闭"}) {}
+	</form>
+
+@}

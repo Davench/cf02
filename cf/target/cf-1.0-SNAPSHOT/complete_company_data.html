@@ -1,0 +1,444 @@
+#@layout(1,"完善企业资料") 
+#define search()
+ <div class="content">
+       <h3 class="h3_title">
+           <p class="t_english">DATA</p>
+           <p class="t_chinese">完善企业资料</p>
+           <p class="btm_line"></p>
+       </h3>
+    </div> 
+#end 
+#define tab() 
+#end 
+#define banner() 
+#end 
+#define main()
+<!-- 中间区域 -->
+<link rel="stylesheet" type="text/css" href="/upload/webuploader.css" />
+  <script type="text/javascript" src="/upload/webuploader.html5only.js"></script>
+<div class="main">
+	<div class="content padd_tb">
+		<div class="reg_Box">
+			<h3 class="h3_rank">企业信息</h3>
+			<div class="data_Box">
+				<p class="blue_color">&nbsp;企业编号：&nbsp;&nbsp;&nbsp;&nbsp;#(companyNumber)</p>
+				<input class="l_text" hidden="ture" placeholder="请输入企业名称" id="companyNumber" name="companyNumber" value="#(companyNumber)" type="text" />
+				<div class="line_item">
+					<span class="red_star">企业名称</span>
+					<div class="item_rt">
+						<input class="l_text" placeholder="请输入企业名称" id="name" name="name" type="text" />
+					</div>
+				</div>
+				<div class="line_item">
+					<span class="red_star">联系人</span>
+					<div class="item_rt">
+						<input class="l_text" placeholder="请输入联系人" id="contacts" name="contacts"  type="text" />
+					</div>
+				</div>
+				<div class="line_item">
+					<span class="red_star">电话号码</span>
+					<div class="item_rt">
+						<input class="l_text" placeholder="请输入电话号码" id="mobile" name="mobile"   type="text" />
+					</div>
+				</div>
+				<div class="line_item">
+					<span class="red_star">验证码</span>
+					<div class="item_rt">
+						<input class="s_text fl" placeholder="请输入验证码" id="code" name="code"   type="text" /> <input
+							class="code_btn fl ml20" onclick="TestGetCode2(this)"
+							value="点击发送验证码" type="button" />
+					</div>
+				</div>
+				<div class="line_item">
+					<span >&nbsp;QQ</span>
+					<div class="item_rt">
+						<input class="l_text" placeholder="请输入QQ" id="qq" name="qq"   type="text" />
+					</div>
+				</div>
+				<div class="line_item">
+					<span class="red_star">邮箱</span>
+					<div class="item_rt">
+						<input class="l_text" placeholder="请输入邮箱" id="email" name="email"   type="text" />
+					</div>
+				</div>
+				<div class="line_item">
+					<span >&nbsp;企业官网</span>
+					<div class="item_rt">
+						<input class="l_text" placeholder="请输入企业官网" id="web" name="web"   type="text" />
+					</div>
+				</div>
+				<div class="line_item">
+					<span class="red_star">主营业务</span>
+					<div class="item_rt">
+						<div class="select_wrap item_select">
+							<i class="i_drop2"></i> <span class="select_text"></span> <select id="types" name="types">
+								<option value="0">全部</option>
+							#for(x : demands)
+								<option value="#(x.id)">#(x.name)</option>
+							#end
+							</select>
+						</div>
+					</div>
+				</div>
+				<div class="line_item">
+					<span >&nbsp;主营产品</span>
+					<div class="item_rt">
+						<input class="l_text" placeholder="请输入产品名称" id="goods" name="goods"   type="text" />
+					</div>
+				</div>
+				<div class="line_item">
+					<span class="red_star">经营方式</span>
+					<div class="item_rt">
+						<div class="select_wrap item_select">
+							<i class="i_drop2"></i> <span class="select_text"></span> <select id="operation" name="operation">
+							<option value="1">生产型</option>
+							<option value="2">贸易型</option>
+							<option value="3">服务型</option>
+							<option value="4">研发型</option>
+							<option value="5">其他型</option>
+						</select>
+						</div>
+					</div>
+				</div>
+				<div class="line_item">
+				<span class="red_star">企业类型</span>
+				<div class="item_rt">
+					<div class="select_wrap item_select">
+						<i class="i_drop2"></i> <span class="select_text"></span> <select id="type" name="type">
+						<option value="0">国有企业</option>
+						<option value="1">集体所有制</option>
+						<option value="2">私营企业</option>
+						<option value="3">股份制企业</option>
+						<option value="4">有限合伙企业</option>
+						<option value="5">联营企业</option>
+						<option value="6">外商投资企业</option>
+						<option value="7">个人独资企业</option>
+						<option value="8">港、澳、台</option>
+						<option value="9">股份合作企业</option>
+					</select>
+					</div>
+				</div>
+			</div>
+				<div class="line_item">
+					<span class="red_star">企业规模</span>
+					<div class="item_rt">
+						<div class="select_wrap item_select">
+							<i class="i_drop2"></i> <span class="select_text"></span> <select id="scale" name="scale">
+							<option value="0">5人以下</option>
+							<option value="1">5-10人</option>
+							<option value="2">11-50人</option>
+							<option value="3">51-100人</option>
+							<option value="4">101-200人</option>
+							<option value="5">201-300人</option>
+							<option value="6">301-500人</option>
+							<option value="7">501-1000人</option>
+							<option value="8">1000人以上</option>
+						</select>
+						</div>
+					</div>
+				</div>
+				<div class="line_item">
+					<span class="red_star">企业简介</span>
+					<div class="item_rt">
+						<div class="textArae">
+							<textarea placeholder="请输入企业简介"  id="introduction" name="introduction"  ></textarea>
+						</div>
+					</div>
+				</div>
+				<div class="line_item">
+					<span class="red_star">企业地址</span>
+					<div class="item_rt">
+						<input class="l_text" placeholder="请输入企业地址" id="address" name="address"   type="text" />
+					</div>
+				</div>
+				<div class="line_item">
+					<span class="red_star">上传图片</span>
+					<div class="item_rt">
+						<ul class="upload_ul fl">
+						<!-- <li id="first"><img src="images/Find_fw/Group 22.png" /><i
+								class="x_delete"></i>
+								</li>
+						 -->
+						<li id="first"><div class="uploading fl" id="filePicker">
+							<i class="i_upload" ></i> 
+						</div></li></ul>
+					</div>
+				</div>
+				<div class="line_item">
+					<span class="red_star">企业描述</span>
+					<div class="item_rt">
+						<div class="textArae">
+							<textarea placeholder="请输入企业描述" id="describe" name="describe"  ></textarea>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="line_Btn">
+			<a class="Bbg_btn" id="complete" >完善资料</a>
+		</div>
+	</div>
+</div>
+#end #define script()
+<script type="text/javascript">
+$(function(){
+	checkInit();	
+})
+
+function TestGetCode2(obj){
+    var params = {};
+    params.phone = $("#mobile").val();
+    TestGetCode(obj)
+    $.ajax({
+        url:'regist/getCode2',
+        async:true,
+        type:'POST',
+        data:params,
+        timeout: 6000,
+        error: function(data){
+            document.write("error"+data);
+        },
+        success: function(data){
+            if(data.code==1){
+                layer.msg("验证码发送成功");
+            }else{
+                layer.tips(data.message, '#phone', {
+                    tips: [1, '#3595CC'],
+                    time: 4000
+                });
+            }
+        }
+    });
+}
+
+$("#complete").click(function(){
+		 	var params = {};  
+		    params.name = $("#name").val();  
+		    params.password = $("#password").val();  
+			$.ajax({
+					url:'login',
+					async:true,  
+					type:'POST',
+					data:params,
+					timeout: 3000,
+		        error: function(data){
+		        	document.write("error"+data);
+		        },
+		        success: function(data){
+		        	if(data.code==1){
+		        		//登陆成功
+		        		location.href='/index'
+		        	}else{
+		        		layer.tips(data.message, '#name', {
+		        			  tips: [1, '#3595CC'],
+		        			  time: 4000
+		        			});
+		        	}
+		        }
+			});
+	});
+$("form :input").blur(function(){
+    var $parent = $(this).parent();
+    //验证姓名
+    if($(this).is("#name")){
+        if($.trim(this.value) == "" || $.trim(this.value).length < 2){
+        	layer.tips("请输入至少2位的名字", '#name', {
+  			  tips: [1, '#3595CC'],
+  			  time: 4000
+  			});
+        }
+    }
+    //验证邮箱
+    if($(this).is("#email")){
+        if($.trim(this.value) == "" || ($.trim(this.value) != "" && !/.+@.+\.[a-zA-Z]{2,4}$/.test($.trim(this.value)))){
+            layer.tips("请输入正确的E-Mail住址！", '#email', {
+    			  tips: [1, '#3595CC'],
+    			  time: 4000
+    			});
+        }
+    }
+    if($(this).is("#contacts")){
+        if($.trim(this.value) == "" || $.trim(this.value) == ""){
+            layer.tips("请输入联系人", '#contacts', {
+    			  tips: [1, '#3595CC'],
+    			  time: 4000
+    			});
+        }
+    }
+    if($(this).is("#mobile")){
+        if($.trim(this.value) == "" || ($.trim(this.value) != "" && !/^1[0-9]{10}$/.test($.trim(this.value)))){
+            layer.tips(" 请输入正确的手机号！", '#mobile', {
+    			  tips: [1, '#3595CC'],
+    			  time: 4000
+    			});
+        }
+    }
+    if($(this).is("#code")){
+        if($.trim(this.value) == "" || $.trim(this.value) == ""){
+            layer.tips(" 请输入手机验证码", '#code', {
+    			  tips: [1, '#3595CC'],
+    			  time: 4000
+    			});
+        }
+    }
+    if($(this).is("#describe")){
+        if($.trim(this.value) == "" || $.trim(this.value) == ""){
+            layer.tips(" 请输入描述", '#describe', {
+    			  tips: [1, '#3595CC'],
+    			  time: 4000
+    			});
+        }
+    }
+    if($(this).is("#introduction")){
+        if($.trim(this.value) == "" || $.trim(this.value) == ""){
+            layer.tips(" 请输入简介", '#introduction', {
+    			  tips: [1, '#3595CC'],
+    			  time: 4000
+    			});
+        }
+    }
+    if($(this).is("#address")){
+        if($.trim(this.value) == "" || $.trim(this.value) == ""){
+            layer.tips(" 请输入公司地址！", '#address', {
+    			  tips: [1, '#3595CC'],
+    			  time: 4000
+    			});
+        }
+    }
+    if($(this).is("#goods")){
+        if($.trim(this.value) == "" || $.trim(this.value) == ""){
+            layer.tips(" 请输入主营产品！", '#goods', {
+                tips: [1, '#3595CC'],
+                time: 4000
+            });
+        }
+    }
+});
+
+$(".upload_ul").on("click",".x_delete",function(){
+　　　　$(this).parent().parent().remove();
+  });
+
+var uploader = WebUploader.create({
+	pick : '#filePicker',
+
+	// 选完文件后，是否自动上传。
+	auto : true,
+
+	// swf文件路径
+	swf : 'upload/Uploader.swf',
+
+	// 文件接收服务端。
+	server : '/upload/img',
+
+	// 选择文件的按钮。可选。
+	// 内部根据当前运行是创建，可能是input元素，也可能是flash.
+
+	// 只允许选择图片文件。
+	accept : {
+		title : 'Images',
+		extensions : 'gif,jpg,jpeg,bmp,png',
+		mimeTypes : 'image/*'
+	},
+
+	formData : {
+		token : '#(aut)'
+	}
+
+});
+// 当有文件添加进来的时候
+uploader.on('fileQueued', function(file) {
+	var $li = $('<li class=\'list_li\' id="list_li_'+file.id+ '" style=\'height: 100px;\'><div id="' + file.id + '" class=\'select\'><img class=\'am-img-thumbnail\' style=\'width: 100px;\'><span class=\'x_delete\' id=\''+ file.id +'\'></span></div></li>');
+	$img = $li.find('img');
+
+	// $list为容器jQuery实例
+	$("#first").before($li);
+
+	// 创建缩略图
+	// 如果为非图片文件，可以不用调用此方法。
+	// thumbnailWidth x thumbnailHeight 为 100 x 100
+	uploader.makeThumb(file, function(error, src) {
+		if (error) {
+			$img.replaceWith('<span>不能预览</span>');
+			return;
+		}
+		$img.attr('src', src);
+	}, 0.2, 0.2);
+});
+// 文件上传过程中创建进度条实时显示。
+uploader.on('uploadProgress', function(file, percentage) {
+	var $li = $('#' + file.id), $percent = $li.find('.progress span');
+	// 避免重复创建
+	if (!$percent.length) {
+		$percent = $('<p class="progress"><span></span></p>').appendTo($li).find('span');
+	}
+	console.log(percentage);
+	$percent.css('width', percentage * 100 + '%');
+});
+
+// 文件上传成功，给item添加成功class, 用样式标记上传成功。
+uploader.on('uploadSuccess', function(file, response) {
+	var text = "Array ";
+	jQuery.each(file, function(i, val) {
+		text = text + " #Index:" + i + ":" + val;
+	});
+	$('#' + file.id).addClass('sucess');
+	$('#' + file.id).append("<input name='files' id='files' style=\"display: none;\" value='"+response.key+"'>");
+});
+
+// 文件上传失败，显示上传出错。
+uploader.on('uploadError', function(file) {
+	$('#' + file.id).addClass('fail');
+	alert("图片上传错误");
+});
+
+// 完成上传完了，成功或者失败，先删除进度条。
+uploader.on('uploadComplete', function(file) {
+	$('#' + file.id).find('.progress').remove();
+});
+
+$("#complete").click(function(){
+	
+ 	var params = {};  
+ 	params.number = $("#companyNumber").val();  
+    params.name = $("#name").val();  
+    params.contacts = $("#contacts").val();  
+    params.mobile = $("#mobile").val();  
+    params.code = $("#code").val();  
+    params.qq = $("#qq").val();  
+    params.email = $("#email").val();  
+    params.web = $("#web").val();  
+    params.introduction = $("#introduction").val();  
+    params.address = $("#address").val();  
+    params.describe = $("#describe").val();  
+    params.files = $("#files").val();
+    params.goods = $("#goods").val();
+    params.types = $("#types").val();
+    params.type = $("#type").val();
+    params.operation = $("#operation").val();
+    params.scale = $("#scale").val();
+
+    $.ajax({
+			url:'/login/userinfo',
+			async:true,  
+			type:'POST',
+			data:params,
+			timeout: 3000,
+        error: function(data){
+            layer.msg(data.message);
+        },
+        success: function(data){
+        	if(data.code==1){
+        		//登陆成功
+        		location.href='/admin/authi'
+        	}else{
+                layer.msg(data.message);
+        	}
+        }
+	});
+});
+
+</script>
+#end
+</body>
+</html>

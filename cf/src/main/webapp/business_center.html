@@ -1,0 +1,83 @@
+#@admin(1,"注册-手机号")
+#define main()
+        <!--内容区域-->
+        <div class="m_main">
+            <h3 class="h3_rank">我的信息#(CONTEXT_PATH)</h3>
+            <div class="mine_info">
+                <div class="infoImg fl"><img src="#(company.photo)"/></div>
+                <div class="infoRt">
+                    <h3>#(company.name)</h3>
+                    <p class="m_state">状态<span class="#(company.authentication==3?'blue_bg':'grey_bg')"><a style="color: white;font-size: 10px;" href="#(company.authentication==3?'':'/admin/authentication')">#(company.authentication==3?'实名已认证':(company.authentication==5?'等待认证':'未认证'))</a></span><span class="blue_bg" style="font-size: 10px;">质量未认证</span></p>
+                    <p>好评：2 | 中评：1 | 差评：0</p>
+                    <p>服务态度：4.8 | 完成速度：4.4 | 完成质量：4.1</p>
+                </div>
+            </div>
+            <h3 class="h3_rank">我发布的需求</h3>
+            <div class="chart_Item">
+                <canvas id="myChart1" width="600" height="400"></canvas>
+            </div>
+            <h3 class="h3_rank">我发布的服务</h3>
+            <div class="chart_Item">
+                <canvas id="myChart2" width="600" height="400"></canvas>
+            </div>
+        </div>
+#end
+#define script()
+<script type="text/javascript">
+
+var config = {
+	type: 'doughnut',
+	data: {
+		datasets: [{
+			data: ["3","3","1","3","1","3","4","2"],
+			backgroundColor: [
+				"#378AD6",
+				"#4F69FF",
+				"#7951F5",
+				"#E35FDB",
+				"#EC8F57",
+				"#2CC591",
+				"#0CA39A",
+				"#1D92B4"	
+			]
+			
+		}],
+		labels: [
+			"询价中",
+			"待优选",
+			"服务中",
+			"待确认",
+			"待验收",
+			"待评价",
+			"已完成",
+			"已关闭"
+		]
+	},
+	options: {
+		responsive: false,
+		legend: {
+			position: 'left',
+		},
+		title: {
+			display: true,
+			text: ''
+		},
+		animation: {
+			animateScale: true,
+			animateRotate: true
+		}
+		
+	}
+};
+window.onload = function() {
+        var ctx1 = document.getElementById("myChart1").getContext("2d");
+        window.myDoughnut = new Chart(ctx1, config);
+		
+		var ctx2 = document.getElementById("myChart2").getContext("2d");
+        window.myDoughnut = new Chart(ctx2, config);
+};
+
+</script>
+#end
+</body>
+</html>

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no" name="format-detection">
+    <!--公共样式-->
+    <link rel="stylesheet" type="text/css" href="css/common.css">
+    <!--页面样式-->
+    <link rel="stylesheet" type="text/css" href="css/Lstyle.css">
+    <title>交易完成（评价）</title>
+</head>
+<body>
+<div class="manage_wrap">
+    <div class="manage_Left">
+        <h3><a href="#"><i class="icontm"></i>商务中心</a></h3>
+        <ul class="manage_Nav">
+            <li>
+               <div class="show"><i class="icontm_1"></i>发布的需求</div>
+               <ul class="sub_Nav">
+                  <li><a href="#">我的需求</a></li>
+                  <li class="active"><a href="#">需求订单</a></li>
+               </ul>
+            </li>
+            <li>
+               <div class="show"><i class="icontm_2"></i>我提供的服务</div>
+               <ul class="sub_Nav">
+                  <li><a href="#">我的服务</a></li>
+                  <li><a href="#">我的报价</a></li>
+                  <li><a href="#">服务订单</a></li>
+               </ul>
+            </li>
+            <li>
+               <div class="show"><i class="icontm_3"></i>合同管理</div>
+               <ul class="sub_Nav">
+                  <li><a href="#">合同管理</a></li>
+               </ul>
+            </li>
+            <li>
+               <div class="show"><i class="icontm_4"></i>众创空间</div>
+               <ul class="sub_Nav">
+                  <li><a href="#">我的众筹</a></li>
+                  <li><a href="#">参与众筹</a></li>
+               </ul>
+            </li>
+            <li>
+               <div class="show"><i class="icontm_5"></i>企业管理</div>
+               <ul class="sub_Nav">
+                  <li><a href="#">企业信息</a></li>
+                  <li><a href="#">企业认证</a></li>
+               </ul>
+            </li>
+            <li>
+               <div class="show"><i class="icontm_6"></i>质量认证</div>
+               <ul class="sub_Nav">
+                  <li><a href="#">质量认证申请</a></li>
+               </ul>
+            </li>
+        </ul> 
+    </div>
+    <div class="manage_Right">
+        <!--头部-->
+        <div class="m_headerTop clearfix">
+            <a class="m_logo fl" href="#"><img src="images/manage/Group 26.png"/></a>
+            <div class="m_user fr">
+               <span class="user_info">
+                  <img src="images/manage/Group 31.png"/>
+                  <a class="userName" title="暂无提示" href="#">王昭君</a>
+               </span>
+               <a class="news" href="#"></a>
+               <a class="logoff" href="#"></a>
+            </div>
+        </div>
+        <!--内容区域-->
+        <div class="m_main">
+            <h3 class="h3_rank">需求订单详情</h3>
+            <div class="demand_info">
+                <div class="demand_box">
+                    <h3>需求名称需求名称需求名称</h3>
+                    <div class="dem_state">
+                       <span class="fr">
+                           <a href="#" class="Bbg_btn mr24">查看合同</a>
+                       </span>
+                       <span>订单总金额：<b class="red_color">10000</b></span>
+                       <span class="blue_color  ml40">订单已完成，等待双方评价</span>
+                    </div>
+                    <p class="grey_color">当前订单实时状态</p>
+                    <p>2017-01-03  21：12：14   订单已完成，等待双方评价</p>
+                </div>
+            </div>
+            <h3 class="h3_rank">评价</h3>
+            <div class="demand_info">
+                <div class="comment_grade">
+                   <div class="comment_line">
+                     <span>服务态度</span>
+                     <div class="grade"><span></span><span></span><span></span><span></span><span></span></div>
+                   </div>
+                   <div class="comment_line">
+                     <span>完成速度</span>
+                     <div class="grade"><span></span><span></span><span></span><span></span><span></span></div>
+                   </div>
+                   <div class="comment_line">
+                     <span>完成质量</span>
+                     <div class="grade"><span></span><span></span><span></span><span></span><span></span></div>
+                   </div>
+                   <div class="comment_line">
+                     <span>评价内容</span>
+                     <div class="grade"><textarea placeholder="请输入评价内容"></textarea></div>
+                   </div>
+                   <div class="progress"><a class="Bbg_btn" href="#">提交评价</a></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+<script type="text/javascript" src="js/base.js"></script>
+<script type="text/javascript">
+$(function(){
+	$(".grade span").on("click",function(){
+		var _idx=$(this).index();
+		$(this).parent().find("span:lt("+_idx+1+")").addClass("active");
+		$(this).parent().find("span:gt("+_idx+")").removeClass("active");
+	})
+})
+</script>
+</body>
+</html>

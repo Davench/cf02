@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="cf:war">
+    <output-path>$PROJECT_DIR$/cf/target</output-path>
+    <root id="archive" name="cf-1.0-SNAPSHOT.war">
+      <element id="artifact" artifact-name="cf:war exploded" />
+    </root>
+  </artifact>
+</component>

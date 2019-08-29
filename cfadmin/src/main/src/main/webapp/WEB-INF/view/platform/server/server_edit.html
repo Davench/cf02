@@ -1,0 +1,32 @@
+@layout("/common/_curd/_container.html"){
+
+	<form data-url="${basePath}/${code}/update" method="post" class="form-horizontal" role="form">
+		<!-- 表单 -->
+		@ var _table="server";
+		@ var _key="id";
+		@ var _col=[
+@			  {name:"", index:"id", type:"text",newline:true,length:8,required:"required"},
+		@			  {name:"需求一级类型", index:"demandtype1", type:"text",newline:true,length:8,required:"required"},
+		@			  {name:"需求二级类型", index:"demandtype2", type:"text",newline:true,length:8,required:"required"},
+		@			  {name:"询价主题", index:"title", type:"text",newline:true,length:8,required:"required"},
+		@			  {name:"询价结束日期", index:"prices", type:"text",newline:true,length:8,required:"required"},
+		@			  {name:"规格", index:"unit", type:"text",newline:true,length:8,required:"required"},
+		@			  {name:"", index:"creatdate", type:"text",newline:true,length:8,required:"required"},
+		@			  {name:"需求图片附件", index:"photo", type:"text",newline:true,length:8,required:"required"},
+		@			  {name:"详细描述", index:"description", type:"text",newline:true,length:8,required:"required"},
+		@			  {name:"", index:"provincial", type:"text",newline:true,length:8,required:"required"},
+		@			  {name:"", index:"cities", type:"text",newline:true,length:8,required:"required"},
+		@			  {name:"", index:"counties", type:"text",newline:true,length:8,required:"required"},
+		@			  {name:"", index:"address", type:"text",newline:true,length:8,required:"required"},
+		@			  {name:"", index:"contacts", type:"text",newline:true,length:8,required:"required"},
+		@			  {name:"", index:"phone", type:"text",newline:true,length:8,required:"required"},
+		@			  {name:"草稿 还是预览", index:"type", type:"text",newline:true,length:8,required:"required"},
+		@			  {name:"", index:"companyid", type:"text",newline:true,length:8,required:"required"}		
+		@		   ];
+		@ include("/common/_curd/_edit.html", {"col":_col, "table":_table, "key":_key}){}
+		
+		<!-- 按钮 -->
+		@ include("/common/_curd/_btn.html", {btn_save:"修改", btn_close:"关闭"}) {}
+	</form>
+
+@}

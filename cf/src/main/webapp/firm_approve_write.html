@@ -1,0 +1,390 @@
+#@admin(1,"企业认证")
+#define main()
+<link rel="stylesheet" type="text/css" href="/upload/webuploader.css" />
+<script type="text/javascript" src="/upload/webuploader.html5only.js"></script>
+        <!--内容区域-->
+        <div class="m_main">
+            <h3 class="h3_rank">企业认证</h3>
+            <div class="approve_info">
+                <h3>填写认证信息</h3>
+                <div class="line_item">
+                   <span>是否三证合一</span>
+                   <div class="item_rt">
+                      <div class="choice_style clearfix">
+                        <span class="active" id="type1"><i class="i_check"></i>三证合一</span>
+                        <span  id="type2"><i class="i_check"></i>非三证合一</span>
+                      </div>
+                   </div>
+                </div>
+                <div class="approve_wrap">
+                    <div class="approve_item active">
+                        <form method="post" id="aut1">
+                            <input hidden type="text" name="subtype" value="0"/>
+                            <div class="appro_line clearfix">
+                           <div class="line_item fl">
+                                <span>企业全称</span>
+                                <div class="item_rt">
+                                   <input class="m_text" placeholder="请输入企业全称" type="text" id="name" name="name"/>
+                                </div>
+                            </div>
+                       </div>
+                       <div class="appro_line clearfix">
+                            <div class="line_item fl">
+                                <span>统一社会信用代码</span>
+                                <div class="item_rt">
+                                   <input class="m_text" placeholder="请输入统一社会信用代码" type="text" id="creditCode" name="creditCode"/>
+                                </div>
+                            </div>
+                            <div class="line_item fl">
+                                <span>法人代表姓名</span>
+                                <div class="item_rt">
+                                   <input class="m_text" placeholder="请输入法人姓名" type="text" id="representative" name="representative"/>
+                                </div>
+                            </div>
+                       </div>
+                       <div class="appro_line clearfix">
+                            <div class="line_item fl">
+                                <span>法人身份证号</span>
+                                <div class="item_rt">
+                                   <input class="m_text" placeholder="请输入法人身份证号" type="text" id="representativeCard" name="representativeCard"/>
+                                </div>
+                            </div>
+                            <div class="line_item fl">
+                                <span>法人手机号</span>
+                                <div class="item_rt">
+                                   <input class="m_text" placeholder="请输入法人手机号" type="text" id="representativePhone" name="representativePhone"/>
+                                </div>
+                            </div>
+                       </div>
+                       <div class="appro_line clearfix">
+                            <div class="line_item fl">
+                                <span>申请联系人</span>
+                                <div class="item_rt">
+                                   <input class="m_text" placeholder="请输入申请联系人" type="text" id="contacts" name="contacts"/>
+                                </div>
+                            </div>
+                            <div class="line_item fl">
+                                <span>联系人手机号</span>
+                                <div class="item_rt">
+                                   <input class="m_text" placeholder="请输入联系人手机号" type="text" id="phone" name="phone"/>
+                                </div>
+                            </div>
+                       </div>
+                       <div class="appro_line clearfix">
+                            <div class="line_item fl">
+                                <span>营业执照证</span>
+                                <div class="item_rt item_wh">
+                                   <div class="uploading">
+                                       <div class="item_rt">
+                                           <ul class="upload_ul fl">
+                                               <!-- <li id="first"><img src="images/Find_fw/Group 22.png" /><i
+                                                       class="x_delete"></i>
+                                                       </li>
+                                                -->
+                                               <li class="first1"><div class="uploading fl filePicker" id="pick1"  data="1">
+                                                   <i class="i_upload"></i>
+                                               </div></li></ul>
+                                       </div>
+                                   </div>
+                                </div>
+                            </div>
+                            <div class="line_item fl">
+                                <span>法人身份证</span>
+                                <div class="item_rt item_wh">
+                                    <div class="uploading">
+                                        <div class="item_rt">
+                                            <ul class="upload_ul fl">
+                                                <!-- <li id="first"><img src="images/Find_fw/Group 22.png" /><i
+                                                        class="x_delete"></i>
+                                                        </li>
+                                                 -->
+                                                <li class="first2"><div class="uploading fl filePicker"  id="pick2"  data="2">
+                                                    <i class="i_upload"></i>
+                                                </div></li></ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                       </div>
+                        </form>
+                    </div>
+                    <div class="approve_item">
+                        <form method="post" id="aut2">
+                            <input hidden type="text" name="subtype" value="1"/>
+                       <div class="appro_line clearfix">
+                            <div class="line_item fl">
+                                <span>企业全称</span>
+                                <div class="item_rt">
+                                   <input class="m_text" placeholder="请输入企业全称" type="text" id="name2" name="name"/>
+                                </div>
+                            </div>
+                       </div>
+                       <div class="appro_line clearfix">
+                            <div class="line_item fl">
+                                <span>工商注册号</span>
+                                <div class="item_rt">
+                                   <input class="m_text" placeholder="请输入工商注册号" type="text" id="businessNumber" name="businessNumber"/>
+                                </div>
+                            </div>
+                            <div class="line_item fl">
+                                <span>组织机构代码</span>
+                                <div class="item_rt">
+                                   <input class="m_text" placeholder="请输入组织机构代码" type="text" id="organizationCode" name="organizationCode"/>
+                                </div>
+                            </div>
+                       </div>
+                       <div class="appro_line clearfix">
+                            <div class="line_item fl">
+                                <span>纳税人识别号</span>
+                                <div class="item_rt">
+                                   <input class="m_text" placeholder="请输入纳税人识别号" type="text" id="taxpayersAlias" name="taxpayersAlias"/>
+                                </div>
+                            </div>
+                            <div class="line_item fl">
+                                <span>法人代表姓名</span>
+                                <div class="item_rt">
+                                   <input class="m_text" placeholder="请输入法人代表姓名" type="text" id="representative2" name="representative"/>
+                                </div>
+                            </div>
+                       </div>
+                       <div class="appro_line clearfix">
+                            <div class="line_item fl">
+                                <span>法人身份证号</span>
+                                <div class="item_rt">
+                                   <input class="m_text" placeholder="请输入法人身份证" type="text" id="representativeCard2" name="representativeCard"/>
+                                </div>
+                            </div>
+                            <div class="line_item fl">
+                                <span>法人手机号</span>
+                                <div class="item_rt">
+                                   <input class="m_text" placeholder="请输入法人手机号" type="text" id="representativePhone2" name="representativePhone"/>
+                                </div>
+                            </div>
+                       </div>
+                       <div class="appro_line clearfix">
+                            <div class="line_item fl">
+                                <span>申请联系人</span>
+                                <div class="item_rt">
+                                   <input class="m_text" placeholder="请输入申请联系人" type="text" id="contacts2" name="contacts"/>
+                                </div>
+                            </div>
+                            <div class="line_item fl">
+                                <span>联系人手机号</span>
+                                <div class="item_rt">
+                                   <input class="m_text" placeholder="请输入联系人手机号" type="text" id="phone2" name="phone"/>
+                                </div>
+                            </div>
+                       </div>
+                       <div class="appro_line clearfix">
+                            <div class="line_item fl">
+                                <span>税务登记证</span>
+                                <div class="item_rt item_wh">
+                                    <div class="uploading">
+                                        <div class="item_rt">
+                                            <ul class="upload_ul fl">
+                                                <!-- <li id="first"><img src="images/Find_fw/Group 22.png" /><i
+                                                        class="x_delete"></i>
+                                                        </li>
+                                                 -->
+                                                <li class="first3"><div class="uploading fl filePicker" id="pick3"  data="3">
+                                                    <i class="i_upload"></i>
+                                                </div></li></ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="line_item fl">
+                                <span>组织机构代码证</span>
+                                <div class="item_rt item_wh">
+                                    <div class="uploading">
+                                        <div class="item_rt">
+                                            <ul class="upload_ul fl">
+                                                <!-- <li id="first"><img src="images/Find_fw/Group 22.png" /><i
+                                                        class="x_delete"></i>
+                                                        </li>
+                                                 -->
+                                                <li class="first4"><div class="uploading fl filePicker" id="pick4" data="4">
+                                                    <i class="i_upload"></i>
+                                                </div></li></ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                       </div>
+                       <div class="appro_line clearfix">
+                            <div class="line_item fl">
+                                <span>营业执照证</span>
+                                <div class="item_rt item_wh">
+                                    <div class="uploading">
+                                        <div class="item_rt">
+                                            <ul class="upload_ul fl">
+                                                <!-- <li id="first"><img src="images/Find_fw/Group 22.png" /><i
+                                                        class="x_delete"></i>
+                                                        </li>
+                                                 -->
+                                                <li class="first5"><div class="uploading fl filePicker" id="pick5" data="5">
+                                                    <i class="i_upload"></i>
+                                                </div></li></ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="line_item fl">
+                                <span>法人身份证</span>
+                                <div class="item_rt item_wh">
+                                    <div class="uploading">
+                                        <div class="item_rt">
+                                            <ul class="upload_ul fl">
+                                                <!-- <li id="first"><img src="images/Find_fw/Group 22.png" /><i
+                                                        class="x_delete"></i>
+                                                        </li>
+                                                 -->
+                                                <li class="first6"><div class="uploading fl filePicker" id="pick6" data="6">
+                                                    <i class="i_upload"></i>
+                                                </div></li></ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                       </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="line_item">
+                    <div class="h_item"><i class="i_check i_checked"></i>我已阅读并同意<a class="blue_color" href="#">《企业认证协议》</a></div>
+                </div>
+                <div class="line_item pt50">
+                    <a class="Bbg_btn" id="autsub">提交</a>
+                </div>
+            </div> 
+        </div>
+#end
+#define script()
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.form/4.2.2/jquery.form.min.js" integrity="sha384-FzT3vTVGXqf7wRfy8k4BiyzvbNfeYjK+frTVqZeNDFl8woCbF0CYG6g2fMEFFo/i" crossorigin="anonymous"></script>
+<script type="text/javascript">
+$(function(){
+	$(".choice_style span").on("click",function(){
+		var _index=$(this).index();
+		$(this).addClass("active").siblings().removeClass("active");
+		$(".approve_wrap .approve_item").eq(_index).addClass("active").siblings().removeClass("active");
+	})
+	
+	$(".h_item .i_check").click(function(){
+		$(this).hasClass("i_checked")?$(this).removeClass("i_checked"):$(this).addClass("i_checked")
+	})
+})
+$(".upload_ul").on("click",".x_delete",function(){
+    $(this).parent().parent().remove();
+});
+
+$(".filePicker").each(function(){
+    var id = $(this).attr("id");
+    var index = $(this).attr("data");
+    var uploader = WebUploader.create({
+        pick : '#'+id,
+
+        // 选完文件后，是否自动上传。
+        auto : true,
+
+        // swf文件路径
+        swf : 'upload/Uploader.swf',
+
+        // 文件接收服务端。
+        server : '/upload/img',
+
+        // 选择文件的按钮。可选。
+        // 内部根据当前运行是创建，可能是input元素，也可能是flash.
+
+        // 只允许选择图片文件。
+        accept : {
+            title : 'Images',
+            extensions : 'gif,jpg,jpeg,bmp,png',
+            mimeTypes : 'image/*'
+        },
+
+        formData : {
+            token : '#(aut)'
+        }
+
+    });
+    uploader.on('beforeFileQueued', function (file,data ) {
+        //如果是单文件上传，把旧的文件地址传过去
+        console.log(data);
+    });
+// 当有文件添加进来的时候
+    uploader.on('fileQueued', function(file,data) {
+        console.log(data);
+        var $li = $('<li class=\'list_li\' id="list_li_'+file.id+ '" style=\'height: 100px;\'><div id="' + file.id + '" class=\'select\'><img class=\'am-img-thumbnail\' style=\'width: 100px;\'><span class=\'x_delete\' id=\''+ file.id +'\'></span></div></li>');
+        $img = $li.find('img');
+
+        // $list为容器jQuery实例
+        $(".first"+index).before($li);
+
+        // 创建缩略图
+        // 如果为非图片文件，可以不用调用此方法。
+        // thumbnailWidth x thumbnailHeight 为 100 x 100
+        uploader.makeThumb(file, function(error, src) {
+            if (error) {
+                $img.replaceWith('<span>不能预览</span>');
+                return;
+            }
+            $img.attr('src', src);
+        }, 0.2, 0.2);
+    });
+// 文件上传过程中创建进度条实时显示。
+    uploader.on('uploadProgress', function(file, percentage) {
+        var $li = $('#' + file.id), $percent = $li.find('.progress span');
+        // 避免重复创建
+        if (!$percent.length) {
+            $percent = $('<p class="progress"><span></span></p>').appendTo($li).find('span');
+        }
+        console.log(percentage);
+        $percent.css('width', percentage * 100 + '%');
+    });
+
+// 文件上传成功，给item添加成功class, 用样式标记上传成功。
+    uploader.on('uploadSuccess', function(file, response) {
+        var text = "Array ";
+        jQuery.each(file, function(i, val) {
+            text = text + " #Index:" + i + ":" + val;
+        });
+        $('#' + file.id).addClass('sucess');
+        $('#' + file.id).append("<input name='files"+index+"'id='files' style=\"display: none;\" value='"+response.key+"'>");
+    });
+
+// 文件上传失败，显示上传出错。
+    uploader.on('uploadError', function(file) {
+        $('#' + file.id).addClass('fail');
+        alert("图片上传错误");
+    });
+
+// 完成上传完了，成功或者失败，先删除进度条。
+    uploader.on('uploadComplete', function(file) {
+        $('#' + file.id).find('.progress').remove();
+    });
+});
+
+$("#autsub").click(function() {
+    var id = ($("#type1").attr("class")=="active"?"aut1":"aut2");
+    $("#"+id).ajaxSubmit({
+        url : "/admin/authenticationSub",
+        type : "post",
+        success : function(data) {
+            if (data.code == 1){
+                layer.msg("认证已提交，请等待审核");
+//                window.location.href="/inquiry/result";
+            }
+            if (data.code == 0){
+                layer.msg(data.message);
+            }
+        },
+        error : function(data) {
+            alert("error:" + data.responseText);
+        }
+    });
+    return false;
+});
+</script>
+#end
+</body>
+</html>

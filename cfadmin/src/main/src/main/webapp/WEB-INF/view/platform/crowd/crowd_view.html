@@ -1,0 +1,33 @@
+@layout("/common/_curd/_container.html"){
+
+	<form class="form-horizontal" role="form">
+		<!-- 表单 -->
+		@ var _col=[
+			
+@			  {name:"", index:"id", type:"text",newline:true,length:8},
+		@			  {name:"需求一级类型", index:"demandtype1", type:"text",newline:true,length:8},
+		@			  {name:"需求二级类型", index:"demandtype2", type:"text",newline:true,length:8},
+		@			  {name:"询价主题", index:"title", type:"text",newline:true,length:8},
+		@			  {name:"询价结束日期", index:"endtime", type:"text",newline:true,length:8},
+		@			  {name:"企业ID", index:"companyid", type:"text",newline:true,length:8},
+		@			  {name:"", index:"creatdate", type:"text",newline:true,length:8},
+		@			  {name:"需求图片附件", index:"photo", type:"text",newline:true,length:8},
+		@			  {name:"详细描述", index:"description", type:"text",newline:true,length:8},
+		@			  {name:"", index:"provincial", type:"text",newline:true,length:8},
+		@			  {name:"", index:"cities", type:"text",newline:true,length:8},
+		@			  {name:"", index:"counties", type:"text",newline:true,length:8},
+		@			  {name:"", index:"address", type:"text",newline:true,length:8},
+		@			  {name:"", index:"contacts", type:"text",newline:true,length:8},
+		@			  {name:"", index:"phone", type:"text",newline:true,length:8},
+		@			  {name:"原材料提供商 供应方1 采购方2 其他0", index:"rawmaterial", type:"text",newline:true,length:8},
+		@			  {name:"是否需要开票", index:"billing", type:"text",newline:true,length:8},
+		@			  {name:"草稿 还是预览", index:"type", type:"text",newline:true,length:8},
+		@			  {name:"需求状态0审核1招标中2签署合同3项目进行中4锁定暂停5已完结6已关闭", index:"status", type:"text",newline:true,length:8}		
+		@		   ];
+		@ include("/common/_curd/_view.html", {"col":_col}){}
+		
+		<!-- 按钮 -->
+		@ include("/common/_curd/_btn.html", {btn_close:"关闭"}) {}
+	</form>
+
+@}

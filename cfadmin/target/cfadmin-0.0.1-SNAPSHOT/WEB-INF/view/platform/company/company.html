@@ -1,0 +1,68 @@
+@layout("/common/_curd/_container.html"){
+<script type="text/javascript">
+    var ctx = "${basePath}";
+    var grid_selector = "#aaaaa";
+    var pager_selector = "#grid-pager";
+
+    $(function () {
+        initGrid();
+        initMenuBtn("btns", "${code}");
+    });
+
+    function initGrid() {
+        var grid_url = ctx + "/${code}/list";
+        var _colnames = ["ID", "公司名称", "联系人", "联系电话", "qq", "email", "主营业务", "公司详细地址","公司认证审核", '注册审核'];
+        var _colmodel = [{name: "id", index: "id", width: 100, hidden: true},
+            {name: "name", index: "name", width: 100},
+            {name: "contacts", index: "contacts", width: 30},
+            {name: "mobile", index: "mobile", width: 50},
+            {name: "qq", index: "qq", width: 30},
+            {name: "email", index: "email", width: 50},
+            {name: "goods", index: "goods", width: 100},
+            {name: "address", index: "address", width: 100},
+            {name: "AUT", index: "authentication", width: 100},
+            {name: "STATUS", index: "status", width: 50}];
+
+        jQuery(grid_selector).jqGrid({
+            url: grid_url,
+            shrinkToFit: true,
+            colNames: _colnames,
+            colModel: _colmodel,
+            jsonReader: {id: "id"},
+            pager: pager_selector,
+            ondblClickRow: page_view,
+            postData: {sort: "id", order: "desc"}
+        });
+    }
+
+    function page_view() {
+        $("#${code}_view").click();
+    }
+</script>
+
+
+<!-- 配置 grid -->
+<div class="row">
+    <div class="col-xs-12 tb-grid">
+        <!-- 配置 查询 -->
+        @ var _col=[
+        @ {name:"ID", index:"id", type:"text"},
+        @ {name:"公司名称", index:"name", type:"text"},
+        @ {name:"联系人", index:"contacts", type:"text"},
+        @ {name:"公司详细地址", index:"address", type:"date"},
+        @ {name:"状态", index:"del", type:"select_902"}
+        @];
+        @ include("/common/_function/_search.html",{"col":_col}){}
+        <!-- 按钮 -->
+        <div class="welljq well-sm" id="btns"></div>
+        <!-- grid -->
+        <table id="aaaaa"></table>
+        <!-- 分页-->
+        <div id="grid-pager"></div>
+    </div>
+</div>
+
+<!-- 引入所需的js -->
+@include("/common/_listscript.html"){}
+
+@}	

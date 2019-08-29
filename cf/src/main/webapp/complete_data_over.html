@@ -1,0 +1,54 @@
+#@layout(1,"注册-手机号") 
+#define search()
+ <div class="content">
+       <h3 class="h3_title">
+           <p class="t_english">DATA</p>
+           <p class="t_chinese">完善企业资料</p>
+           <p class="btm_line"></p>
+       </h3>
+    </div> 
+#end 
+#define tab() 
+#end 
+#define banner() 
+#end 
+#define main()
+
+<!-- 中间区域 -->
+<div class="main">
+    <div class="content padd_tb">
+        <div class="reg_Box">
+            <div class="verify_Box">
+                 <div class="cont_hint ptop pbtm">
+                     <img src="/images/Login/Group 18.png"/>
+                     <p>您的企业资料编辑成功，<b class="second blue_color">3</b>秒后会自动跳转到平台首页</p>
+                     <p class="pt50"><a class="blue_color" onClick="location.href='/go3'">如果未跳转，点击跳转>></a></p>
+                 </div>
+            </div>
+        </div>
+    </div>
+</div>
+#end #define script()
+<script type="text/javascript">
+$(function(){
+	checkInit();
+	
+	/*3秒跳转*/
+	var t=3;  
+	function countTine(){
+		if(t==0){
+			 window.location="/go3";
+		}else{
+		   $(".second").html(t);	
+		   t--;
+		   setTimeout(countTine,1000);
+		}
+	} 
+	setTimeout(countTine,1000);
+	
+})
+
+</script>
+#end
+</body>
+</html>

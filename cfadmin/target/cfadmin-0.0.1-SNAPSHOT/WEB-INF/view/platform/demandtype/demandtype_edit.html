@@ -1,0 +1,34 @@
+@layout("/common/_curd/_container.html"){
+
+	<form data-url="${basePath}/${code}/update" method="post" class="form-horizontal" role="form">
+		<!-- 表单 -->
+		@ var _table="demandtype";
+		@ var _key="id";
+		@ var _col=[
+		@			  {name:"ID", index:"id", type:"text",newline:true,length:8,required:"required"},
+		@			  {name:"类型名", index:"name", type:"text",newline:true,length:8,required:"required"},
+		@			  {name:"父级", index:"paraent", type:"text",newline:true,length:8,required:"required"}
+		@		   ];
+		@ include("/common/_curd/_edit.html", {"col":_col, "table":_table, "key":_key}){}
+		<div class="form-group" style="display:block">
+			<label class="col-sm-2 control-label no-padding-right">上级类别</label>
+			<div class="col-sm-8">
+				<select id="type1" name="type1">
+					<option value="0">无</option>
+				</select>
+				<!--<input type="text" id="_id" name="goods.id" required="" value="" placeholder="暂无" class="form-control">-->
+			</div>
+		</div>
+		<!-- 按钮 -->
+		@ include("/common/_curd/_btn.html", {btn_save:"修改", btn_close:"关闭"}) {}
+	</form>
+<script type="text/javascript">
+    var city_obj = '${types!}';
+    var types=eval('('+city_obj+')');
+
+    for (var key in types)
+    {
+        $("#type1").append("<option value='"+key+"'>"+key+"</option>");
+    }
+</script>
+@}

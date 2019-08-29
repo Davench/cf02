@@ -1,0 +1,53 @@
+#@layout(1,"敬请期待")
+#define search()
+ <div class="content">
+       <h3 class="h3_title">
+           <p class="t_chinese">敬请期待</p>
+           <p class="btm_line"></p>
+       </h3>
+    </div> 
+#end 
+#define tab() 
+#end 
+#define banner() 
+#end 
+#define main()
+
+<!-- 中间区域 -->
+<div class="main">
+    <div class="content padd_tb">
+        <div class="reg_Box">
+            <div class="verify_Box">
+                 <div class="cont_hint ptop pbtm">
+                     <img src="/images/Login/Group 18.png"/>
+                     <p>当前板块暂未开放<b class="second blue_color">5</b>秒后会自动跳转到平台首页</p>
+                     <p class="pt50"><a class="blue_color" onClick="location.href='/'">如果未跳转，点击跳转>></a></p>
+                 </div>
+            </div>
+        </div>
+    </div>
+</div>
+#end #define script()
+<script type="text/javascript">
+$(function(){
+	checkInit();
+	
+	/*3秒跳转*/
+	var t=5;
+	function countTine(){
+		if(t==0){
+			 window.location="/";
+		}else{
+		   $(".second").html(t);	
+		   t--;
+		   setTimeout(countTine,1000);
+		}
+	} 
+	setTimeout(countTine,1000);
+	
+})
+
+</script>
+#end
+</body>
+</html>

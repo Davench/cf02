@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="FrameworkDetectionExcludesConfiguration">
+    <file url="file://$PROJECT_DIR$/cfcommon/overlays" />
+    <file type="web" url="file://$PROJECT_DIR$/cf" />
+    <file type="web" url="file://$PROJECT_DIR$/cfadmin" />
+    <file type="web" url="file://$PROJECT_DIR$/cfcommon" />
+  </component>
+  <component name="MavenProjectsManager">
+    <option name="originalFiles">
+      <list>
+        <option value="$PROJECT_DIR$/cfcommon/pom.xml" />
+        <option value="$PROJECT_DIR$/cfadmin/pom.xml" />
+        <option value="$PROJECT_DIR$/cf/pom.xml" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/out" />
+  </component>
+</project>

@@ -1,0 +1,43 @@
+#define search()
+        <!--搜索栏-->
+        <div class="search_form">
+            <div class="search_wrap clearfix">
+                <div class="search_lt fl">
+                    <div class="select_wrap">
+                        <i class="i_drop"></i>
+                        <span class="select_text"></span>
+                        <select id="types">
+                           <option value="0">找需求</option>
+                           <option value="1">找服务</option>
+                           <option value="2">找企业</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="search_cent fl">
+                    <i class="bl_line"></i>
+                    <input class="search_text" id="keyword" placeholder="找需求，找服务，找企业，应有尽有" type="text"/>
+                </div>
+                <div class="search_rt fr">
+                    <input class="search_btn" value="搜索" id="search" type="button"/>
+                </div>
+            </div>
+            <div class="hot_search clearfix">
+                <span>热门搜索</span>
+                <a href="#">光纤代工</a>
+                <a href="#">XX维修</a>
+                <a class="blue_color" href="#">生产线专家</a>
+                <a href="#">光纤检测 </a>
+            </div>
+        </div>
+        <script type="text/javascript">
+        $("#search").click(function(){
+		 	if($("#types").val() == 0){
+		 		location.href='/need/list?keyword='+$("#keyword").val();
+		 	}else if($("#types").val() == 1){
+		 		location.href='/serve/list?keyword='+$("#keyword").val();
+		 	}else if($("#types").val() == 2){
+		 		location.href='/company/list?keyword='+$("#keyword").val();
+		 	}
+		});
+        </script>
+#end

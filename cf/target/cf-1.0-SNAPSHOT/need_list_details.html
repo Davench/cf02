@@ -1,0 +1,194 @@
+#@list(1,"需求详情")
+#define main()
+<!-- 中间区域 -->
+<div class="main">
+    <div class="content pt20">
+       <div class="breadcrumb">您的位置：<span>首页</span><span>需求大厅</span><span>#(demand.from1)</span><span>#(demand.from2)</span></div>
+       <div class="Details clearfix mb32">
+           <!--有图-->
+           #if(demand.photo!=null)
+           <div class="Details_Img mr38 fl"><img src="/upload/#(demand.photo)"/></div>
+           #end
+           <div class="Details_Info fl">
+               <h3 class="pb24">#(demand.title)</h3>
+               <div class="info_list clearfix">
+                   <p>发布日期 : #(demand.data)</p>
+                   <p>截止日期 : #(demand.data2)</p>
+                   <p>报价企业数 : #(demand.quotecount)</p>
+                   <p>分类: 制造>表面工程</p>
+                   <p>附件：  #(demand.enclosure!=null?'有':'无')</p>
+                   <p>期望总价： #(demand.allPrice)元</p>
+               </div>
+               <div class="info_Btm clearfix">
+                   <span class="Countdown fl">还剩： <b class="red_color">#(time<=0?'招标时间已过':limittime)</b></span>
+                   #if(demand.quotedprice == null||demand.quotedprice.size()==0)
+                   #if(time<=0)
+                    <a class="offer_Btn fl ml10">无法报价</a>
+                   #end
+                   #if(time>0&&demand.status == 1)
+                   <a class="offer_Btn fl ml10" href="/need/submitPrice?id=#(demand.id)">我要报价</a>
+                   #end
+                   #if(time>0&&(demand.status == 8||demand.status == 2||demand.status == 3))
+                   <a class="offer_Btn fl ml10">项目进行中</a>
+                   #end
+                   #if(time>0&&(demand.status == 4))
+                   <a class="offer_Btn fl ml10">项目锁定</a>
+                   #end
+                   #end
+                   #if(demand.quotedprice != null && demand.quotedprice.size()>0)
+                   <a class="offer_Btn fl ml10" href="/admin/demandDetail?id=#(demand.id)">查看我的报价</a>
+                   #end
+               </div>
+               <div class="relation mt50">
+                   <span class="mr30">联系人： #(demand.contacts)</span>
+                   <span>联系方式：  #(demand.phone)</span>
+               </div>
+           </div>
+           #if(demand.company!=null)
+           <div class="Company_Info fr">
+               <h3 class="h3_rank">企业信息</h3>
+               <div class="company_intro">
+                   <p>#(demand.company.name)</p>
+                   <p>所在地区：#(demand.company.address)</p>
+                   <p>注册时间：2016-07-25</p>
+                   <p>主营行业：制造业</p>
+                   <div class="examine"><a class="Yellow_Btn" href="/company?id=#(demand.company.id)">查看企业</a></div>
+               </div>
+           </div>
+           #end
+       </div>
+       <!--详情与留言-->
+       <div class="Info_Box">
+           <ul class="Info_tab clearfix">
+               <li class="active">需求详情</li>
+               <li class="">咨询留言</li>
+           </ul>
+           <div class="Info_wrap">
+               <div class="Info_item active">
+                   <div class="listbox">
+                      <table width="100%;">
+                         <tr>
+                            <th>对象名称</th>
+                            <th>对象数量</th>
+                            <th>计量单位</th>
+                            <th>要求/备注</th>
+                            <th>期望单价（元）</th>
+                         </tr>
+                          #if(demand.inquirys!=null)
+                          #for(sell:demand.inquirys)
+                         <tr>
+                            <td>#(sell.name)</td>
+                            <td>#(sell.number)</td>
+                            <td>#(sell.unit)</td>
+                            <td>#(sell.info)</td>
+                            <td>#(sell.price)</td>
+                         </tr>
+                          #end
+                          #end
+                      </table>
+                   </div>
+                   #if(demand.enclosure!=null)
+                   <div class="Det_model">
+                      <h3 class="h3_rank">附件</h3>
+                      <a class="soild_Btn" href="#(demand.enclosure.url)" download>点击下载附件</a>
+                   </div>
+                   #end
+                   <div class="Det_model">
+                      <h3 class="h3_rank">基本信息</h3>
+                      <div class="basic_Info clearfix">
+                         <p><span class="mes_lt">要求交货日期</span><span class="mes_rt">2017-09-18</span></p>
+                         <p><span class="mes_lt">交易方式</span><span class="mes_rt">其他</span></p>
+                         <p><span class="mes_lt">付款方式</span><span class="mes_rt">货到付款</p>
+                         <p><span class="mes_lt">发票类型</span><span class="mes_rt">需发票</p>
+                         <p><span class="mes_lt">运费承担</span><span class="mes_rt">供应方</p>
+                         <p><span class="mes_lt">收货地区</span><span class="mes_rt">#(demand.address)</p>
+                         <p><span class="mes_lt">原材料提供方</span><span class="mes_rt">需求方提供</p>
+                         <p><span class="mes_lt">是否需要实名</span><span class="mes_rt">否</p>
+                      </div>
+                   </div>
+                   <div class="Det_model">
+                      <h3 class="h3_rank">需求描述</h3>
+                      <div class="intro_Text">
+                         <p>#(demand.description)</p>
+                      </div>
+                   </div>
+               </div>
+               <div class="Info_item">
+                   <div class="Det_model">
+                      <h3 class="h3_rank">咨询留言：<span>4</span></h3>
+                      <!--评论-->
+                      <div class="comment_Div">
+                         #if(islogin!=null)
+                          <!--已登录-->
+                          <div class="comment_item clearfix">
+                              <img class="comment_head fl" src="images/Index/Group 48.png"/>
+                              <input class="comment_text fl" placeholder="留下您的足迹吧，最多可以输入200字" type="text"/>
+                              <input class="comment_Btn fl" value="留言" type="button"/>
+                          </div>
+                           #else	
+                            <!--未登录-->
+                          <div class="Det_model"><a class="soild_Btn" href="javascript:;">登录后评论</a></div>
+                            #end
+                      </div>
+                      <ul class="comment_list">
+                          <li>
+                             <div class="comment_Int">
+                                <img src="/images/Index/Group 48.png"/>
+                                <div class="coment_intro">
+                                     <p>王昭君</p>
+                                     <p class="datetime">2017-09-19 14:32:00</p>
+                                     <p>我想知道你那边的居住环境怎么样，卫生环境如何，建议可以在官网上面展示更多的内部照片！</p>
+                                </div>
+                             </div>
+                          </li>
+                          <li>
+                             <div class="comment_Int">
+                                <img src="/images/Index/Group 48.png"/>
+                                <div class="coment_intro">
+                                     <p>王昭君</p>
+                                     <p class="datetime">2017-09-19 14:32:00</p>
+                                     <p>我想知道你那边的居住环境怎么样，卫生环境如何，建议可以在官网上面展示更多的内部照片！</p>
+                                </div>
+                             </div>
+                          </li>
+                          <li>
+                             <div class="comment_Int">
+                                <img src="/images/Index/Group 48.png"/>
+                                <div class="coment_intro">
+                                     <p>王昭君</p>
+                                     <p class="datetime">2017-09-19 14:32:00</p>
+                                     <p>我想知道你那边的居住环境怎么样，卫生环境如何，建议可以在官网上面展示更多的内部照片！</p>
+                                </div>
+                             </div>
+                          </li>
+                          <li>
+                             <div class="comment_Int">
+                                <img src="/images/Index/Group 48.png"/>
+                                <div class="coment_intro">
+                                     <p>王昭君</p>
+                                     <p class="datetime">2017-09-19 14:32:00</p>
+                                     <p>我想知道你那边的居住环境怎么样，卫生环境如何，建议可以在官网上面展示更多的内部照片！</p>
+                                </div>
+                             </div>
+                          </li>
+                      </ul> 
+                   </div>
+               </div>
+           </div>
+       </div>
+    </div>
+</div>
+#end
+#define script()
+<script type="text/javascript">
+$(function(){
+	$(".Info_tab li").click(function(){
+	   var _index=$(this).index();	
+       $(this).addClass("active").siblings().removeClass("active");
+	   $(".Info_wrap .Info_item").eq(_index).addClass("active").siblings().removeClass("active");
+	})
+})
+</script>
+#end
+</body>
+</html>

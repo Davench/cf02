@@ -1,0 +1,502 @@
+#@layout(1,"发布需求") 
+#define search()
+  <div class="content">
+        <h3 class="h3_title">
+           <p class="t_english">DEMAND</p>
+           <p class="t_chinese">发布需求</p>
+           <p class="btm_line"></p>
+        </h3>
+    </div>
+#end 
+#define tab() 
+#end 
+#define banner() 
+#end 
+#define main()
+<link rel="stylesheet" href="http://www.jq22.com/jquery/font-awesome.4.6.0.css">
+<link rel="stylesheet" type="text/css" href="/libs/datepicker/css/foundation-datepicker.min.css">
+<link rel="stylesheet" type="text/css" href="/upload/webuploader.css" />
+<script type="text/javascript" src="/upload/webuploader.html5only.js"></script>
+<!-- 中间区域 -->
+<form method="post" id="demand" enctype="multipart/form-data">
+<div class="main">
+    <div class="content pt20">
+       <div class="offer_wrap">
+           <h3 class="h3_rank">询价信息</h3>
+           <div class="menu_Info">
+               <div class="select_item clearfix">
+                    <div class="line_item fl">
+                        <span class="red_star">选择分类</span>
+                        <div class="item_rt">
+                            <div class="select_wrap item_select">
+                                <i class="i_drop2"></i>
+                                <span class="select_text"></span>
+                                <select id="type1" name="type1">
+
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="line_item fr">
+                        <span class="red_star">选择分类</span>
+                        <div class="item_rt">
+                            <div class="select_wrap item_select">
+                                <i class="i_drop2"></i>
+                                <span class="select_text"></span>
+                                <select  id="type2" name="type2">
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+               </div>
+               <div class="line_item">
+                    <span class="red_star">需求标题</span>
+                    <div class="item_rt">
+                       <input class="l_text" placeholder="请输入需求主题" name="title" type="text"/>
+                    </div>
+               </div>
+               <div class="line_item">
+                    <span class="red_star">需求截止日期</span>
+                    <div class="item_rt">
+                       <input class="l_text" id="date1" placeholder="请输入询价截止日期" name="endtime" readonly type="text"/>
+                    </div>
+               </div>
+               <div class="line_item">
+                    <span class="red_star">要求交付日期</span>
+                    <div class="item_rt">
+                       <input class="l_text" id="date2" placeholder="请输入要求交付日期" name="deliverydate" readonly type="text"/>
+                    </div>
+               </div>
+           </div>
+           <h3 class="h3_rank">需求对象信息</h3>
+           <div class="add_item"><a id="addObject" class="BBtn">添加需求对象</a></div>
+           <div class="offer_form">
+               <input hidden value="0" id="num" name="num"/>
+               <table width="100%" id="objectTable">
+                  <tr>
+                    <th width="200"><span class="red_star">对象名称</span></th>
+                    <th width="200"><span class="red_star">需求数量</span></th>
+                    <th width="200"><span class="red_star">计量单位</span></th>
+                    <th width="200"><span class="">要求/备注</span></th>
+                    <th width="200"><span class="red_star">期望单价（元）</span></th>
+                    <th width="200"><span class="">操作</span></th>
+                  </tr>
+               </table>
+           </div>
+           <div class="menu_Info">
+               <div class="line_item">
+                    <span class="red_star">上传图片</span>
+                   <div class="item_rt">
+                       <ul class="upload_ul fl">
+                           <!-- <li id="first"><img src="images/Find_fw/Group 22.png" /><i
+                                   class="x_delete"></i>
+                                   </li>
+                            -->
+                           <li id="first"><div class="uploading fl" id="filePicker">
+                               <i class="i_upload" ></i>
+                           </div></li></ul>
+                   </div>
+               </div>
+               <div class="line_item">
+                    <span>上传附件</span>
+                    <div class="item_rt">
+                        <input type="file" name="files" value="添加附件">
+                    </div>
+               </div>
+               <div class="line_item">
+                   <span>报价说明</span>
+                   <div class="item_rt">
+                      <div class="textArae"><textarea placeholder="请输入需求说明" name="description"></textarea></div>
+                   </div>
+               </div>
+               <div class="line_item" hidden>
+                    <span class="red_star">要求关键字</span>
+                    <div class="item_rt">
+                       <input class="l_text" placeholder="用逗号隔开" type="text"/>
+                    </div>
+               </div>
+           </div>
+           <h3 class="h3_rank">详细地址</h3>
+           <div class="menu_Info">
+               <div class="line_item">
+                    <span class="red_star">收货地址</span>
+                    <div class="item_rt select_width">
+                       <div class="select_wrap item_select fl mr51">
+                            <i class="i_drop2"></i>
+                            <span class="select_text"></span>
+                            <select id="province" name="province">
+
+                            </select>
+                       </div>
+                       <div class="select_wrap item_select fl mr51">
+                            <i class="i_drop2"></i>
+                            <span class="select_text"></span>
+                            <select id="city" name="city">
+
+                            </select>
+                       </div>
+                       <div class="select_wrap item_select fr">
+                            <i class="i_drop2"></i>
+                            <span class="select_text"></span>
+                            <select id="county" name="county">
+
+                            </select>
+                       </div>
+                    </div>
+               </div>
+               <div class="line_item">
+                    <span class="red_star">详细地址</span>
+                    <div class="item_rt">
+                       <input class="l_text" placeholder="请输入详细地址" name="address" type="text"/>
+                    </div>
+               </div>
+               <div class="line_item">
+                    <span class="red_star">联系人</span>
+                    <div class="item_rt">
+                       <input class="l_text" placeholder="请输入联系人" name="contacts" type="text"/>
+                    </div>
+               </div>
+               <div class="select_item clearfix">
+                    <div class="line_item fl">
+                        <span class="red_star">选择分类</span>
+                        <div class="item_rt">
+                            <div class="h_item"><i class="i_check"></i>注册手机号</div>
+                        </div>
+                    </div>
+                    <div class="line_item fr">
+                        <span class="red_star">手机号</span>
+                        <div class="item_rt">
+                            <input class="l_text" placeholder="请输入手机号" name="phone" type="text"/>
+                        </div>
+                    </div>
+               </div>
+           </div>
+           <h3 class="h3_rank">商务条款</h3>
+           <div class="menu_Info">
+               <div class="line_item">
+                    <span class="red_star">交易方式</span>
+                   <input hidden value="0" id="mode" name="mode"/>
+                    <div class="item_rt">
+                       <ul class="check_item clearfix">
+                           <li><i class="i_check"></i><span>担保交易</span></li>
+                           <li><i class="i_check"></i><span>货到付款</span></li>
+                           <li><i class="i_check"></i><span>预付款</span></li>
+                           <li><i class="i_check"></i><span>其他</span></li>
+                       </ul>
+                    </div>
+               </div>
+               <div class="line_item">
+                    <span class="red_star">付款方式</span>
+                   <input hidden value="0" id="payment" name="payment"/>
+                    <div class="item_rt">
+                       <ul class="check_item clearfix">
+                           <li><i class="i_check"></i><span>第三方支付</span></li>
+                           <li><i class="i_check"></i><span>现金</span></li>
+                           <li><i class="i_check"></i><span>银行转账</span></li>
+                           <li><i class="i_check"></i><span>支票</span></li>
+                           <li><i class="i_check"></i><span>汇票</span></li>
+                           <li><i class="i_check"></i><span>本票</span></li>
+                           <li><i class="i_check"></i><span>其他</span></li>
+                       </ul>
+                    </div>
+               </div>
+               <div class="line_item">
+                    <span class="">发票要求</span>
+                   <input hidden value="0" id="invoice" name="invoice"/>
+                    <div class="item_rt">
+                       <ul class="check_item clearfix">
+                           <li><i class="i_check"></i><span>无需发票</span></li>
+                           <li><i class="i_check"></i><span>增值税普通发票</span></li>
+                           <li><i class="i_check"></i><span>增值税专用发票</span></li>
+                           <li><i class="i_check"></i><span>个人发票</span></li>
+                       </ul>
+                    </div>
+               </div>
+               <div class="line_item">
+                    <span class="">运费承担方</span>
+                   <input hidden value="0" id="freight" name="freight"/>
+                    <div class="item_rt">
+                       <ul class="check_item clearfix">
+                           <li><i class="i_check"></i><span>供应方</span></li>
+                           <li><i class="i_check"></i><span>采购方</span></li>
+                           <li><i class="i_check"></i><span>其他</span></li>
+                       </ul>
+                    </div>
+               </div>
+               <div class="line_item">
+                    <span class="">原材料提供商</span>
+                   <input hidden value="0" id="rawmaterial" name="rawmaterial"/>
+                    <div class="item_rt">
+                       <ul class="check_item clearfix">
+                           <li><i class="i_check"></i><span>供应方</span></li>
+                           <li><i class="i_check"></i><span>采购方</span></li>
+                           <li><i class="i_check"></i><span>其他</span></li>
+                       </ul>
+                    </div>
+               </div>
+               <div class="line_item">
+                    <span class="">是否需要开票</span>
+                   <input hidden value="0" id="billing" name="billing"/>
+                    <div class="item_rt">
+                       <ul class="check_item clearfix">
+                           <li><i class="i_check"></i><span>是</span></li>
+                           <li><i class="i_check"></i><span>否</span></li>
+                       </ul>
+                    </div>
+               </div>
+           </div>
+           <h3 class="h3_rank">限制</h3>
+           <div class="menu_Info">
+               <input hidden value="0" id="certification" name="certification"/>
+               <div class="line_item">
+                    <div class="h_item"><i class="i_check"></i>只允许通过实地认证供方报价</div>
+               </div>
+           </div>
+           <div class="submit_item">
+               <input hidden value="0" id="type" name="type"/>
+               <a class="BBtn mr30" id="releaseDemand" href="">发布需求</a>
+               <!-- <a class="YBtn mr30" href="javascript:;">预览</a> -->
+               <!--<a class="RBtn" href="javascript:;">保存草稿</a> -->
+           </div>
+    </div>
+</div>
+</div>
+</form>
+#end #define script()
+<script type="text/javascript" src="/libs/datepicker/js/foundation-datepicker.js"></script>
+<script type="text/javascript" src="/libs/datepicker/js/locales/foundation-datepicker.zh-CN.js"></script>
+<script type="text/javascript" src="/js/city.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.form/4.2.2/jquery.form.min.js" integrity="sha384-FzT3vTVGXqf7wRfy8k4BiyzvbNfeYjK+frTVqZeNDFl8woCbF0CYG6g2fMEFFo/i" crossorigin="anonymous"></script>
+<script type="text/javascript" src="/js/layer.js"></script>
+<script type="text/javascript">
+$(function(){
+    addProvienceToCity3("province","city","county")
+        $("#btn").click(function(){
+        alert(getProvince("province")+"  "+getCity("city")+ "  "+getCounty("county"));
+     });
+	$(".check_item li .i_check").click(function(){
+		$(this).parents("li").addClass("active").siblings().removeClass("active");
+	})
+	$(".h_item .i_check").click(function(){
+		$(this).hasClass("i_checked")?$(this).removeClass("i_checked"):$(this).addClass("i_checked")
+	})
+	
+	var nowTemp = new Date();
+    var now = new Date(nowTemp.getFullYear(), nowTemp.getMonth(), nowTemp.getDate(), 0, 0, 0, 0);
+    var checkin = $('#date1').fdatepicker({
+        onRender: function (date) {
+            return date.valueOf() < now.valueOf() ? 'disabled' : '';
+        },
+        format:"yyyy-mm-dd"
+    }).on('changeDate', function (ev) {
+        /*if (ev.date.valueOf() > checkout.date.valueOf()) {
+            var newDate = new Date(ev.date)
+            newDate.setDate(newDate.getDate()+1);
+            checkout.update(newDate);
+        }*/
+        checkin.hide();
+        //$('#date2')[0].focus();
+    }).data('datepicker');
+	var checkout = $('#date2').fdatepicker({
+        format:"yyyy-mm-dd",
+        onRender: function (date) {
+            return date.valueOf() < now.valueOf() ? 'disabled' : '';
+        }
+    }).on('changeDate', function (ev) {
+        checkout.hide();
+    }).data('datepicker');
+})
+
+$("#releaseDemand").click(function() {
+    $("#demand").ajaxSubmit({
+        url : "/inquiry/review",
+        type : "post",
+        success : function(data) {
+            if (data.code == 1){
+                window.location.href="/inquiry/result";
+            }else{
+                layer.msg(data.message);
+            }
+//            alert("设置成功！"+data);
+        },
+        error : function(data) {
+//            alert("error:" + data.responseText);
+        }
+    });
+    return false;
+});
+
+$("#addObject").click(function(){
+    layer.open({
+        type: 2,
+        area: ['1000px', '500px'],
+        fixed: false, //不固定
+        maxmin: true,
+        content: '/goods/?type=1'
+    });
+});
+
+$("#objectTable").on("click","#objectDelete",function(){
+    $(this).parent().parent().remove();
+    $("#num").val($("#num").val()*1-1);
+    removeByValue(selects,$('#ids',$(this).parent().parent()).val());
+});
+
+var city_obj = '#(types)';
+var types=eval('('+city_obj+')');
+
+for (var key in types)
+{
+    $("#type1").append("<option value='"+key+"'>"+key+"</option>");
+}
+$("#type1").change(function(){
+    var now_province=$(this).val();
+    $("#type2").html('<option value="">请选择类别</option>');
+    for(var k in types[now_province])
+    {
+        var now_city=types[now_province][k];
+        $("#type2").append('<option value="'+now_city+'">'+now_city+'</option>');
+    }
+});
+
+$(".upload_ul").on("click",".x_delete",function(){
+    $(this).parent().parent().remove();
+});
+
+var uploader = WebUploader.create({
+    pick : '#filePicker',
+
+    // 选完文件后，是否自动上传。
+    auto : true,
+
+    // swf文件路径
+    swf : 'upload/Uploader.swf',
+
+    // 文件接收服务端。
+    server : '/upload/img',
+
+    // 选择文件的按钮。可选。
+    // 内部根据当前运行是创建，可能是input元素，也可能是flash.
+
+    // 只允许选择图片文件。
+    accept : {
+        title : 'Images',
+        extensions : 'gif,jpg,jpeg,bmp,png',
+        mimeTypes : 'image/*'
+    },
+
+    formData : {
+        token : '#(aut)'
+    }
+
+});
+// 当有文件添加进来的时候
+uploader.on('fileQueued', function(file) {
+    var $li = $('<li class=\'list_li\' id="list_li_'+file.id+ '" style=\'height: 100px;\'><div id="' + file.id + '" class=\'select\'><img class=\'am-img-thumbnail\' style=\'width: 100px;\'><span class=\'x_delete\' id=\''+ file.id +'\'></span></div></li>');
+    $img = $li.find('img');
+
+    // $list为容器jQuery实例
+    $("#first").before($li);
+
+    // 创建缩略图
+    // 如果为非图片文件，可以不用调用此方法。
+    // thumbnailWidth x thumbnailHeight 为 100 x 100
+    uploader.makeThumb(file, function(error, src) {
+        if (error) {
+            $img.replaceWith('<span>不能预览</span>');
+            return;
+        }
+        $img.attr('src', src);
+    }, 0.2, 0.2);
+});
+// 文件上传过程中创建进度条实时显示。
+uploader.on('uploadProgress', function(file, percentage) {
+    var $li = $('#' + file.id), $percent = $li.find('.progress span');
+    // 避免重复创建
+    if (!$percent.length) {
+        $percent = $('<p class="progress"><span></span></p>').appendTo($li).find('span');
+    }
+    console.log(percentage);
+    $percent.css('width', percentage * 100 + '%');
+});
+
+// 文件上传成功，给item添加成功class, 用样式标记上传成功。
+uploader.on('uploadSuccess', function(file, response) {
+    var text = "Array ";
+    jQuery.each(file, function(i, val) {
+        text = text + " #Index:" + i + ":" + val;
+    });
+    $('#' + file.id).addClass('sucess');
+    $('#' + file.id).append("<input name='photo' id='files' style=\"display: none;\" value='"+response.key+"'>");
+});
+
+// 文件上传失败，显示上传出错。
+uploader.on('uploadError', function(file) {
+    $('#' + file.id).addClass('fail');
+    alert("图片上传错误");
+});
+
+// 完成上传完了，成功或者失败，先删除进度条。
+uploader.on('uploadComplete', function(file) {
+    $('#' + file.id).find('.progress').remove();
+});
+
+var selects = new Array();
+
+function removeByValue(array,val) {
+    for(var i=0; i<array.length; i++) {
+        if(array[i] == val) {
+            array.splice(i, 1);
+            break;
+        }
+    }
+}
+
+function isInArray(arr,value){
+    for(var i = 0; i < arr.length; i++){
+        if(value === arr[i]){
+            return true;
+        }
+    }
+    return false;
+}
+
+function test(obj) {
+    if(!isInArray(selects,obj['id'])) {
+        selects.push(obj['id']);
+    }else{
+        layer.msg("该产品已经选择了");
+        return;
+    }
+
+    var rowNum= $("#objectTable tr").size();
+    var tempRow=rowNum-1;
+    var $tr = $("<tr id=\'_tr_"+tempRow+"\' class=\'in-opt\'></tr>");
+    var $tdName = $("<td class='in-ctt'></td>");
+    $tdName.html("<input hidden readonly id='ids' name=\'id"+tempRow+"\' value=\'"+obj['id']+"\'/><input placeholder=\"请输入对象名称\" readonly name=\'objectName"+tempRow+"\' value=\'"+obj['name']+"\'/>");
+    $tr.append($tdName);
+    $tdName = $("<td class='in-ctt'></td>");
+    $tdName.html("<input placeholder=\"请输入需求数量\" name=\'objectNumber"+tempRow+"\'  value=\'\'/>");
+    $tr.append($tdName);
+    $tdName = $("<td class='in-ctt'></td>");
+    $tdName.html("<input placeholder=\"请输入计量单位\" readonly name=\'object"+tempRow+"\' value=\'"+obj['unit']+"\'/>");
+    $tr.append($tdName);
+    $tdName = $("<td class='in-ctt'></td>");
+    $tdName.html("<input  placeholder=\"请输入要求/备注\" name=\'objectExt"+tempRow+"\' value=\'\'/>");
+    $tr.append($tdName);
+    $tdName = $("<td class='in-ctt'></td>");
+    $tdName.html("<input  placeholder=\"请输入期望单价\" name=\'objectPrice"+tempRow+"\' value=\'"+obj['expected']+"\'/>");
+    $tr.append($tdName);
+    $tdName = $("<td class='in-ctt'></td>");
+    $tdName.html("<span class=\"delete_Btn\" id=\"objectDelete\" name=\"objectDelete"+tempRow+"\">删除</span>");
+    $tr.append($tdName);
+    $("#objectTable").append($tr);
+    $("#num").val($("#num").val()*1+1);
+}
+function test2(obj) {
+    window.location.href="/serve/list?goodsId="+obj;
+}
+</script>
+#end
+</body>
+</html>

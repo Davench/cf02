@@ -1,0 +1,137 @@
+#@admin(1,"我参与的需求")
+#define main()
+        <!--内容区域-->
+        <div class="m_main">
+            <h3 class="h3_rank">我的报价</h3>
+            <div class="demand_info">
+                <div class="demand_box">
+                    <div class="dem_state">
+                        <span class="fr">
+                             <!--<a href="#" class="Rbg_btn">取消交易</a>&nbsp;&nbsp;&nbsp;-->
+                            #if(demand.status == 8 && demand.isTaked!=null && demand.isTaked)
+                            <a class="Blue_Btn fr selects" id="select" href="/admin/confirm?id=#(demand.id)" >确认中标</a>
+                            #end
+                       </span>
+
+                       我的报价&nbsp;(&nbsp;
+                        <span>订单金额：<b class="red_color">#(demand.allPrice)</b></span>
+                        <span>运费金额：<b class="red_color">#(demand.quotedprice.get(0).freight)</b></span>
+                        <span>订单总金额：<b class="red_color">#(demand.allPrice+demand.quotedprice.get(0).freight)</b></span>&nbsp;)
+                       <span class="blue_color ml120">
+                           #if(demand.status == 8)
+                             等待我方确认后，<span class="blue_color">《#(demand.company.name)》</span>发起合同
+                           #end
+                           #if(demand.status == 2)
+                             等待《#(demand.company.name)》发起合同
+                           #end
+                            #if(demand.status == 3)
+                             双方项目进行中
+                           #end
+                            #if(demand.status == 4)
+                             《#(demand.company.name)》锁定暂停了项目
+                           #end
+                            #if(demand.status == 5)
+                             当前项目已完结
+                           #end
+                            #if(demand.status == 6)
+                             当前项目已关闭
+                           #end
+                       </span>
+                    </div>
+                    <p class="grey_color">当前订单实时状态</p>
+                    <p>#if(demand.status == 8)
+                        等待我方确认
+                        #end
+                        #if(demand.status == 2)
+                        我方已经确认，等待《#(demand.company.name)》发起合同
+                        #end
+                        #if(demand.status == 3)
+                        双方项目进行中
+                        #end
+                        #if(demand.status == 4)
+                        《#(demand.company.name)》锁定暂停了项目
+                        #end
+                        #if(demand.status == 5)
+                        当前项目已完结
+                        #end
+                        #if(demand.status == 6)
+                        当前项目已关闭
+                        #end
+                </div>
+            </div>
+            <h3 class="h3_rank">需求信息</h3>
+            <div class="demand_info">
+                <div class="demand_head">
+                    <div class="demand_lt fl"><img src="/img/002.jpg"/></div>
+                    <div class="demand_cent fl">
+                        <h3 class="h3_name">#(demand.company==null?'未认证':demand.company.name)</h3>
+                        <p><span>联系人：#(demand.contacts)</span><span class="ml20">联系电话：#(demand.phone)</span><!--<span class="ml20">邮箱：27289910@163.com</span>--></p>
+                    </div>
+                </div>
+                <div class="demand_table" style="width:1140px;">
+                    <div class="demand_intro">
+                        <div class="dem_intro">
+                            <span style="color: blue">需求内容：</span>
+                            <p>#(demand.title)</p>
+                        </div>
+                    </div>
+                    <div class="demand_th">
+                        <span>#(demand.data)</span>
+                        <span>订单编号：#(demand.id)</span>
+                        <span class="red_color">总价：#(demand.allPrice+500)</span>
+                    </div>
+                    <table width="100%">
+                       <tr>
+                          <th width="100">对象名称</th>
+                          <th>需求数量</th>
+                          <th>计量单位</th>
+                          <th>需求/备注</th>
+                          <th>报价单位（元）</th>
+                          <th>总价</th>
+                       </tr>
+                        #if(demand.inquirys!=null)
+                        #for(sell:demand.inquirys)
+                       <tr>
+                           <td>#(sell.name)</td>
+                           <td>#(sell.number)</td>
+                           <td>#(sell.unit)</td>
+                           <td>#(sell.info)</td>
+                           <td>#(sell.price)</td>
+                           <td>#(sell.price*sell.number)</td>
+                       </tr>
+                        #end
+                        #end
+                       <tr class="borderno">
+                          <td colspan="2" style="text-align: left;padding-left: 20px;">附加收费项：运费</td>
+                          <td colspan="3"></td>
+                          <td>500</td>
+                       </tr>
+                    </table>
+                </div>
+                <div class="demand_address">
+                    <h3>收货地址</h3>
+                    <p><span>联系人：#(demand.contacts)</span><span>联系电话:#(demand.phone)</span></p>
+                    <p>收货地址：#(demand.address)</p>
+                </div>
+                <div class="demand_intro">
+                   <div class="dem_intro">
+                     <span>报价说明</span>
+                     <p>#(demand.pricedescribe)</p>
+                   </div>
+                    #if(demand.enclosure!=null)
+                    <p><span class="grey_color">附件</span><a class="Ybg_btn ml20" href="#(demand.enclosure.url)" download>下载附件</a></p>
+                    #end
+                </div>
+            </div>
+          
+        </div>
+   #end
+#define script()
+<script type="text/javascript">
+$(function(){
+	
+})
+</script>
+#end
+</body>
+</html>

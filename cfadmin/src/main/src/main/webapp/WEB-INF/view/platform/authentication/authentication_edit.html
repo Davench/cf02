@@ -1,0 +1,33 @@
+@layout("/common/_curd/_container.html"){
+
+	<form data-url="${basePath}/${code}/update" method="post" class="form-horizontal" role="form">
+		<!-- 表单 -->
+		@ var _table="authentication";
+		@ var _key="ID";
+		@ var _col=[
+@			  {name:"", index:"id", type:"text",newline:true,length:8,required:"required"},
+		@			  {name:"是否三证合一", index:"isThree", type:"text",newline:true,length:8,required:"required"},
+		@			  {name:"企业全称", index:"name", type:"text",newline:true,length:8,required:"required"},
+		@			  {name:"企业信用代码", index:"creditCode", type:"text",newline:true,length:8,required:"required"},
+		@			  {name:"法人姓名", index:"representative", type:"text",newline:true,length:8,required:"required"},
+		@			  {name:"法人身份证", index:"representativeCard", type:"text",newline:true,length:8,required:"required"},
+		@			  {name:"法人手机号", index:"representativePhone", type:"text",newline:true,length:8,required:"required"},
+		@			  {name:"联系人", index:"contacts", type:"text",newline:true,length:8,required:"required"},
+		@			  {name:"电话号码", index:"phone", type:"text",newline:true,length:8,required:"required"},
+		@			  {name:"营业执照", index:"photo", type:"text",newline:true,length:8,required:"required"},
+		@			  {name:"身份证", index:"cardPhoto", type:"text",newline:true,length:8,required:"required"},
+		@			  {name:"", index:"creatTime", type:"text",newline:true,length:8,required:"required"},
+		@			  {name:"工商注册号", index:"businessNumber", type:"text",newline:true,length:8,required:"required"},
+		@			  {name:"组织机构代码", index:"organizationCode", type:"text",newline:true,length:8,required:"required"},
+		@			  {name:"税务登记证", index:"taxCard", type:"text",newline:true,length:8,required:"required"},
+		@			  {name:"组织机构代码证", index:"organizationCard", type:"text",newline:true,length:8,required:"required"},
+		@			  {name:"纳税人识别号", index:"taxpayersAlias", type:"text",newline:true,length:8,required:"required"},
+		@			  {name:"", index:"status", type:"text",newline:true,length:8,required:"required"}		
+		@		   ];
+		@ include("/common/_curd/_edit.html", {"col":_col, "table":_table, "key":_key}){}
+		
+		<!-- 按钮 -->
+		@ include("/common/_curd/_btn.html", {btn_save:"修改", btn_close:"关闭"}) {}
+	</form>
+
+@}

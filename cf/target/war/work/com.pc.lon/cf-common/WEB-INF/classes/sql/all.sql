@@ -1,0 +1,19 @@
+#namespace("user")
+	#include("user.sql")
+#end
+#namespace("company")
+	#include("company.sql")
+#end
+#namespace("inquiry")
+	#include("inquiry.sql")
+#end
+#namespace("demand")
+	#include("demand.sql")
+#end
+#namespace("enclosure")
+	#include("enclosure.sql")
+#end
+#namespace("goods")
+	#include("goods.sql")
+#end
+

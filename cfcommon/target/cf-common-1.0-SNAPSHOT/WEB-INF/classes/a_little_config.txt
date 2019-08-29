@@ -1,0 +1,29 @@
+jdbcUrl = jdbc:mysql://47.100.97.5:3306/cf?characterEncoding=utf8&zeroDateTimeBehavior=convertToNull
+user = root
+password = uAiqwVwjJ8-i
+devMode = true
+
+#上传目录
+upload=upload
+path=upload
+
+#域名
+baseUrl=http://39.107.121.224
+
+# 微信服务器回调所用的 token
+token=asfasefasdf
+
+# 图片域名
+imgUrl=http://39.107.121.224/
+
+# 测试用的账号
+AK=kByefnqz6GcMbcpbTxkgfFrEmJo9Y8bCw50YZDAF
+SK=yLgo7GsW9AofRbPNQnrrSDm1lVpmyjBigISqiSx1
+
+# 七牛
+appId=wxc83207bd647fee8a
+appSecret=79d7b2b9380d5b36dc52eab6fa7e1166
+
+#是否对消息进行加密，是否对消息进行加密，对应于微信平台的消息加解密方式，false支持明文模式及兼容模式，true支持安全模式及兼容模式
+encryptMessage=false
+encodingAesKey=hGrhA5JUrNyPRT7YT3NSqgnVxDmEFzmZH4aBszMHBTJ

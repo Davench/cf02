@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<FileZilla3>
+    <Servers>
+        <Server>
+            <Host>v0.ftp.upyun.com</Host>
+            <Port>21</Port>
+            <Protocol>6</Protocol>
+            <Type>0</Type>
+            <User>root/interview</User>
+            <Pass encoding="base64">cGFuMTM5MTgzODczNTQ=</Pass>
+            <Logontype>1</Logontype>
+            <TimezoneOffset>0</TimezoneOffset>
+            <PasvMode>MODE_DEFAULT</PasvMode>
+            <MaximumMultipleConnections>0</MaximumMultipleConnections>
+            <EncodingType>Auto</EncodingType>
+            <BypassProxy>0</BypassProxy>
+            <Name>图片服务器</Name>
+            <Comments />
+            <LocalDir />
+            <RemoteDir />
+            <SyncBrowsing>0</SyncBrowsing>图片服务器&#x0A;        
+        </Server>
+        <Server>
+            <Host>61.153.100.21</Host>
+            <Port>21</Port>
+            <Protocol>0</Protocol>
+            <Type>0</Type>
+            <User>ubuntu</User>
+            <Pass encoding="base64">cGFuMTM5MTgzODczNTQ=</Pass>
+            <Logontype>1</Logontype>
+            <TimezoneOffset>0</TimezoneOffset>
+            <PasvMode>MODE_DEFAULT</PasvMode>
+            <MaximumMultipleConnections>10</MaximumMultipleConnections>
+            <EncodingType>Auto</EncodingType>
+            <BypassProxy>0</BypassProxy>
+            <Name>新站点</Name>
+            <Comments />
+            <LocalDir />
+            <RemoteDir />
+            <SyncBrowsing>0</SyncBrowsing>新站点&#x0A;        
+        </Server>
+        <Server>
+            <Host>121.40.132.219</Host>
+            <Port>22</Port>
+            <Protocol>1</Protocol>
+            <Type>0</Type>
+            <User>root</User>
+            <Pass encoding="base64">V1VIQU5ibHVlbW9iaTIwMTQ=</Pass>
+            <Logontype>1</Logontype>
+            <TimezoneOffset>0</TimezoneOffset>
+            <PasvMode>MODE_DEFAULT</PasvMode>
+            <MaximumMultipleConnections>0</MaximumMultipleConnections>
+            <EncodingType>Auto</EncodingType>
+            <BypassProxy>0</BypassProxy>
+            <Name>新站点 3</Name>
+            <Comments />
+            <LocalDir />
+            <RemoteDir />
+            <SyncBrowsing>0</SyncBrowsing>新站点 3&#x0A;        
+        </Server>
+        <Server>
+            <Host>121.40.132.219</Host>
+            <Port>22</Port>
+            <Protocol>1</Protocol>
+            <Type>0</Type>
+            <User>bluemobi1</User>
+            <Pass encoding="base64">Ymx1ZW1vYmkx</Pass>
+            <Logontype>1</Logontype>
+            <TimezoneOffset>0</TimezoneOffset>
+            <PasvMode>MODE_DEFAULT</PasvMode>
+            <MaximumMultipleConnections>0</MaximumMultipleConnections>
+            <EncodingType>Auto</EncodingType>
+            <BypassProxy>0</BypassProxy>
+            <Name>新站点 4</Name>
+            <Comments />
+            <LocalDir />
+            <RemoteDir />
+            <SyncBrowsing>0</SyncBrowsing>新站点 4&#x0A;        
+        </Server>
+        <Server>
+            <Host>101.66.255.95</Host>
+            <Port>22</Port>
+            <Protocol>1</Protocol>
+            <Type>0</Type>
+            <User>ubuntu</User>
+            <Pass encoding="base64">cGFuMTM5MTgzODczNTQ=</Pass>
+            <Logontype>1</Logontype>
+            <TimezoneOffset>0</TimezoneOffset>
+            <PasvMode>MODE_DEFAULT</PasvMode>
+            <MaximumMultipleConnections>0</MaximumMultipleConnections>
+            <EncodingType>Auto</EncodingType>
+            <BypassProxy>0</BypassProxy>
+            <Name>面霸</Name>
+            <Comments />
+            <LocalDir />
+            <RemoteDir />
+            <SyncBrowsing>0</SyncBrowsing>面霸&#x0A;        
+        </Server>
+    </Servers>
+    <Settings>
+        <Setting name="Use Pasv mode">1</Setting>
+        <Setting name="Limit local ports">0</Setting>
+        <Setting name="Limit ports low">6000</Setting>
+        <Setting name="Limit ports high">7000</Setting>
+        <Setting name="External IP mode">0</Setting>
+        <Setting name="External IP" />
+        <Setting name="External address resolver">http://ip.filezilla-project.org/ip.php</Setting>
+        <Setting name="Last resolved IP" />
+        <Setting name="No external ip on local conn">1</Setting>
+        <Setting name="Pasv reply fallback mode">0</Setting>
+        <Setting name="Timeout">20</Setting>
+        <Setting name="Logging Debug Level">0</Setting>
+        <Setting name="Logging Raw Listing">0</Setting>
+        <Setting name="fzsftp executable" />
+        <Setting name="Allow transfermode fallback">1</Setting>
+        <Setting name="Reconnect count">2</Setting>
+        <Setting name="Reconnect delay">5</Setting>
+        <Setting name="Enable speed limits">0</Setting>
+        <Setting name="Speedlimit inbound">100</Setting>
+        <Setting name="Speedlimit outbound">20</Setting>
+        <Setting name="Speedlimit burst tolerance">0</Setting>
+        <Setting name="View hidden files">0</Setting>
+        <Setting name="Preserve timestamps">0</Setting>
+        <Setting name="Socket recv buffer size (v2)">4194304</Setting>
+        <Setting name="Socket send buffer size (v2)">262144</Setting>
+        <Setting name="FTP Keep-alive commands">0</Setting>
+        <Setting name="FTP Proxy type">0</Setting>
+        <Setting name="FTP Proxy host" />
+        <Setting name="FTP Proxy user" />
+        <Setting name="FTP Proxy password" />
+        <Setting name="FTP Proxy login sequence" />
+        <Setting name="SFTP keyfiles" />
+        <Setting name="Proxy type">0</Setting>
+        <Setting name="Proxy host" />
+        <Setting name="Proxy port">0</Setting>
+        <Setting name="Proxy user" />
+        <Setting name="Proxy password" />
+        <Setting name="Logging file" />
+        <Setting name="Logging filesize limit">10</Setting>
+        <Setting name="Trusted root certificate" />
+        <Setting name="Size format">0</Setting>
+        <Setting name="Size thousands separator">1</Setting>
+        <Setting name="Size decimal places">1</Setting>
+        <Setting name="Number of Transfers">2</Setting>
+        <Setting name="Ascii Binary mode">0</Setting>
+        <Setting name="Auto Ascii files">am|asp|bat|c|cfm|cgi|conf|cpp|css|dhtml|diz|h|hpp|htm|html|in|inc|java|js|jsp|lua|m4|mak|md5|nfo|nsi|pas|patch|php|phtml|pl|po|py|qmail|sh|shtml|sql|svg|tcl|tpl|txt|vbs|xhtml|xml|xrc</Setting>
+        <Setting name="Auto Ascii no extension">1</Setting>
+        <Setting name="Auto Ascii dotfiles">1</Setting>
+        <Setting name="Theme">opencrystal/</Setting>
+        <Setting name="Language Code" />
+        <Setting name="Last Server Path">1 0 3 var 3 www 9 konwledge 6 assets 3 apk</Setting>
+        <Setting name="Concurrent download limit">0</Setting>
+        <Setting name="Concurrent upload limit">0</Setting>
+        <Setting name="Update Check">1</Setting>
+        <Setting name="Update Check Interval">7</Setting>
+        <Setting name="Last automatic update check">2015-04-20 23:38:05</Setting>
+        <Setting name="Update Check New Version">nightly 2015-04-17 http://filezilla-project.org/nightlies/2015-04-17/x86_64-w64-mingw32/FileZilla_3_setup.exe 7091152 sha512 033637980ca5962ec4fa778d36c84a5b19735f420c054a8dfaf1a13d696d7585a107a0046d6e53a0a4f28543873284254a7b94434253747e0f8bc2d755042861 &#x0A;release 3.10.3 http://downloads.sourceforge.net/filezilla/FileZilla_3.10.3_win64-setup.exe 6420600 sha512 2b0fb2b3ab0bce7351862acb99f41a347bf9cfe3f7ad9af5213dde10e91caeb3029515e130c67b37e7a755a5e876fe4728e81e2609128d28db9fa65c3a5caff7&#x0A;</Setting>
+        <Setting name="Update Check Check Beta">0</Setting>
+        <Setting name="Update Check Download Dir" />
+        <Setting name="Show debug menu">0</Setting>
+        <Setting name="File exists action download">0</Setting>
+        <Setting name="File exists action upload">0</Setting>
+        <Setting name="Allow ascii resume">0</Setting>
+        <Setting name="Greeting version">3.10.3</Setting>
+        <Setting name="Onetime Dialogs" />
+        <Setting name="Show Tree Local">1</Setting>
+        <Setting name="Show Tree Remote">1</Setting>
+        <Setting name="File Pane Layout">0</Setting>
+        <Setting name="File Pane Swap">0</Setting>
+        <Setting name="Last local directory">I:\xampp\htdocs\konwledge\assets\apk\</Setting>
+        <Setting name="Filelist directory sort">0</Setting>
+        <Setting name="Queue successful autoclear">0</Setting>
+        <Setting name="Queue column widths">494 60 180 80 60 150</Setting>
+        <Setting name="Local filelist colwidths">152 80 50 194</Setting>
+        <Setting name="Remote filelist colwidths">366 285 80 13 80 150</Setting>
+        <Setting name="Window position and size">1 224 85 884 659 </Setting>
+        <Setting name="Splitter positions (v2)">87 -122 300146411 141 117 500000000</Setting>
+        <Setting name="Local filelist sortorder">1 3</Setting>
+        <Setting name="Remote filelist sortorder">1 1</Setting>
+        <Setting name="Time Format" />
+        <Setting name="Date Format" />
+        <Setting name="Show message log">1</Setting>
+        <Setting name="Show queue">1</Setting>
+        <Setting name="Default editor" />
+        <Setting name="Always use default editor">0</Setting>
+        <Setting name="Inherit system associations">1</Setting>
+        <Setting name="Custom file associations">. I:\软件\Notepad++\notepad++.exe</Setting>
+        <Setting name="Comparison mode">1</Setting>
+        <Setting name="Comparison threshold">1</Setting>
+        <Setting name="Site Manager position">0 405 218 522 460 </Setting>
+        <Setting name="Theme icon size" />
+        <Setting name="Timestamp in message log">0</Setting>
+        <Setting name="Sitemanager last selected">0/面霸</Setting>
+        <Setting name="Local filelist shown columns">1111</Setting>
+        <Setting name="Remote filelist shown columns">111111</Setting>
+        <Setting name="Local filelist column order">0,1,2,3</Setting>
+        <Setting name="Remote filelist column order">0,1,2,3,4,5</Setting>
+        <Setting name="Filelist status bar">1</Setting>
+        <Setting name="Filter toggle state">0</Setting>
+        <Setting name="Show quickconnect bar">1</Setting>
+        <Setting name="Messagelog position">0</Setting>
+        <Setting name="Last connected site">0/面霸</Setting>
+        <Setting name="File doubleclock action">0</Setting>
+        <Setting name="Dir doubleclock action">0</Setting>
+        <Setting name="Minimize to tray">0</Setting>
+        <Setting name="Search column widths" />
+        <Setting name="Search column shown" />
+        <Setting name="Search column order" />
+        <Setting name="Search window size">0 300 94 750 500 </Setting>
+        <Setting name="Comparison hide identical">0</Setting>
+        <Setting name="Search sort order" />
+        <Setting name="Edit track local">1</Setting>
+        <Setting name="Prevent idle sleep">1</Setting>
+        <Setting name="Filteredit window size" />
+        <Setting name="Enable invalid char filter">1</Setting>
+        <Setting name="Invalid char replace">_</Setting>
+        <Setting name="Already connected choice">0</Setting>
+        <Setting name="Edit status dialog size" />
+        <Setting name="Display current speed">0</Setting>
+        <Setting name="Toolbar hidden">0</Setting>
+        <Setting name="Strip VMS revisions">0</Setting>
+        <Setting name="Show Site Manager on startup">0</Setting>
+        <Setting name="Prompt password change">1</Setting>
+        <Setting name="Config Location">C:\Users\Administrator\AppData\Roaming\FileZilla</Setting>
+        <Setting name="Kiosk mode">0</Setting>
+        <Setting name="Disable update check">0</Setting>
+        <LastServer>
+            <Host>101.66.255.95</Host>
+            <Port>22</Port>
+            <Protocol>1</Protocol>
+            <Type>0</Type>
+            <User>ubuntu</User>
+            <Pass encoding="base64">cGFuMTM5MTgzODczNTQ=</Pass>
+            <Logontype>1</Logontype>
+            <TimezoneOffset>0</TimezoneOffset>
+            <PasvMode>MODE_DEFAULT</PasvMode>
+            <MaximumMultipleConnections>0</MaximumMultipleConnections>
+            <EncodingType>Auto</EncodingType>
+            <BypassProxy>0</BypassProxy>
+            <Name>面霸</Name>
+        </LastServer>
+    </Settings>
+    <Queue />
+</FileZilla3>

@@ -1,0 +1,26 @@
+#define header()
+	<div class="header_top">
+        <div class="content">
+           <div class="ht_content clearfix">
+              <a class="logo fl" href="/"><img src="/images/Index/Group 46.png"/></a>
+              <span class="speech fl">欢迎来到长飞云制造平台！</span>
+              <!--已登录-->
+              #if(islogin!=null)
+              <div class="logon_state fr">
+                 <a class="blue_color" href="#">#(number)</a>
+                 <a href="/admin" target="_blank">商务合作</a>
+                  <!--<a href="#">草稿（<b>0</b>）</a>-->
+                 <a href="/admin" target="_blank">消息（<b>0</b>）</a>
+                 <a class="logout" href="/login/layout">退出</a>
+              </div>
+             #else	
+              <!--未登录-->
+              <div class="logon_state fr">
+                 <a class="blue_color" href="/login/go">登录</a>
+                 <a href="/regist/go">免费注册</a>
+              </div>
+              #end
+           </div>
+        </div>
+    </div>
+#end

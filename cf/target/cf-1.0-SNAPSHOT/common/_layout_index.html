@@ -1,0 +1,36 @@
+#define layout(type,title)
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no" name="format-detection">
+    <link rel="stylesheet" href="http://www.jq22.com/jquery/font-awesome.4.6.0.css">
+    <link rel="stylesheet" type="text/css" href="/libs/datepicker/css/foundation-datepicker.min.css">
+    <!--公共样式-->
+    <link rel="stylesheet" type="text/css" href="/css/common.css">
+    <!--页面样式-->
+    <link rel="stylesheet" type="text/css" href="/css/Lstyle.css">
+    <script type="text/javascript" src="/js/jquery-1.11.1.min.js"></script>
+    <title>#(title)</title>
+</head>
+<body class="index">
+<div class="header">
+#@header()
+<div class="content"> 
+#@search()
+#@tab() 
+</div>
+</div>
+#@banner()
+#@main()
+#@float()
+#@footer()
+</body>
+<script type="text/javascript" src="/js/base.js"></script>
+<script type="text/javascript" src="/js/layer.js"></script>
+#@script()
+</html>
+#end

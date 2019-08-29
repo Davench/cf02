@@ -1,0 +1,143 @@
+#@admin(1,"我的需求详情")
+#define main()
+        <!--内容区域-->
+        <div class="m_main">
+            <h3 class="h3_rank">查看需求</h3>
+            <div class="demand_info">
+                <div class="demand_head">
+                    <div class="demand_lt fl"><img src="/upload/#(demand.photo)"/></div>
+                    <div class="demand_cent fl">
+                        <h3>#(demand.title)</h3>
+                        <p class="demand_state">
+                           <span>状态：<b>#(demand.time<=0?'停止招标':demand.limitTime)</b></span>
+                           <span>已报价企业：<b>#(demand.quotecount)</b></span>
+                           <span>询价剩余时间 ：<b>#(demand.time<=0?'已过期':demand.limitTime)</b></span>
+                        </p>
+                        <p><span>联系人：#(demand.contacts)</span><span class="ml20">联系电话:#(demand.phone)</span></p>
+                    </div>
+                    <div class="demand_rt fl">
+                        #if(demand.status==1&&demand.time>0)
+                        <a href="/admin/locking?id=#(demand.id)" class="Bbg_btn">锁定</a>
+                        #end
+                        #if(demand.status==0)
+                        <a href="#" class="Ybg_btn">修改需求</a>
+                        #end
+                    </div>
+                </div>
+
+                <div class="demand_table" style="width:1140px;">
+                    <table width="100%">
+                        <tr>
+                            <th width="100">对象名称</th>
+                            <th>需求数量</th>
+                            <th>计量单位</th>
+                            <th>需求/备注</th>
+                            <th>报价单位（元）</th>
+                            <th>总价</th>
+                        </tr>
+                        #set(x=0)
+                        #if(demand.inquirys!=null)
+                        #for(sell:demand.inquirys)
+                        <tr>
+                            <td>#(sell.name)</td>
+                            <td>#(sell.number)</td>
+                            <td>#(sell.unit)</td>
+                            <td>#(sell.info)</td>
+                            <td>#(sell.price)</td>
+                            <td>#(sell.price*sell.number)#set(x=x+sell.price*sell.number)</td>
+                        </tr>
+                        #end
+                        #end
+                        <tr class="borderno">
+                            <td>总价</td>
+                            <td colspan="4"></td>
+                            <td class="red_color">#(x)</td>
+                        </tr>
+                    </table>
+                </div>
+
+            </div>
+            <h3 class="h3_rank">报价企业</h3>
+            <ul class="Demand_List">
+                #if(demand.quotedprice!=null)
+                #for(quo:demand.quotedprice)
+                <li>
+                <div class="demand_head">
+                    <div class="demand_lt fl"><img src="/upload/#(quo.company.photo)"/></div>
+                    <div class="demand_cent demand_wh fl">
+                        <h3><span class="fl">#(quo.company.name)</span><a class="fr f12 grey_color" href="#">查看订单></a></h3>
+                        <p class="demand_state">
+                            <span class="fl">报价：<b>#(x)元</b></span>
+                            #if(quo.id == demand.quotedpriceid)
+                                 <span class="Bsoild_btn fr">已选中</span>
+                            #end
+                            #if(demand.quotedpriceid == 0)
+                                <span class="Blue_Btn fr selects" id="select" data="#(quo.id)" values ="#(demand.id)">选中</span>
+                            #end
+                        </p>
+                        <p><span>联系人：#(quo.user)</span><span class="ml20">联系电话:#(quo.phone)</span><!--<span class="ml20">邮箱：27289910@163.com</span>--></p>
+                    </div>
+                </div>
+                <div class="demand_table" style="width:1140px;">
+                    <table width="40%">
+                        <tr class="borderno">
+                            <td>附加收费项：运费</td>
+                            <td colspan="4"></td>
+                            <td>#(quo.freight)</td>
+                        </tr>
+                        <tr class="borderno">
+                            <td>总价</td>
+                            <td colspan="4"></td>
+                            <td class="red_color">#(quo.freight+x)</td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="demand_intro">
+                    <div class="dem_intro">
+                        <span>报价说明</span>
+                        <p>#(quo.pricedescribe)</p>
+                    </div>
+                    #if(quo.enclosure!=null)
+                    <p><span class="grey_color">附件</span><a class="Ybg_btn ml20" href="#(quo.enclosure.url)" download>下载附件</a></p>
+                    #end
+                </div>
+                </li>
+                #end
+                #end
+            </ul>
+        </div>
+#end
+#define script()
+<script type="text/javascript">
+    $(function(){
+        $(".selects").click(function(){
+            var params = {};
+            params.id = $(this).attr("data");
+            params.demandId = $(this).attr("values");
+            $.ajax({
+                url:'/admin/selectCompany',
+                async:true,
+                type:'POST',
+                data:params,
+                timeout: 3000,
+                error: function(data){
+                    document.write("error"+data);
+                },
+                success: function(data){
+                    if(data.code==1){
+                        //登陆成功
+                        location.reload();
+                    }else{
+                        layer.tips(data.message, '#name', {
+                            tips: [1, '#3595CC'],
+                            time: 4000
+                        });
+                    }
+                }
+            });
+        })
+    })
+</script>
+#end
+</body>
+</html>

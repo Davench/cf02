@@ -1,0 +1,878 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no" name="format-detection">
+    <!--公共样式-->
+    <link rel="stylesheet" type="text/css" href="css/common.css">
+    <!--页面样式-->
+    <link rel="stylesheet" type="text/css" href="css/Lstyle.css">
+    <title>首页</title>
+</head>
+<body class="index">
+<!-- 页面头部 -->
+<div class="header">
+    <div class="header_top">
+        <div class="content">
+           <div class="ht_content clearfix">
+              <a class="logo fl" href="#"><img src="images/Index/Group 46.png"/></a>
+              <span class="speech fl">欢迎来到长飞云制造平台，您来了就不用走的平台</span>
+              <!--已登录-->
+              <!--<div class="logon_state fr">
+                 <a class="blue_color" href="#">您好，王天龙</a>
+                 <a href="#">商务合作</a>
+                 <a href="#">草稿（<b>0</b>）</a>
+                 <a href="#">消息（<b>0</b>）</a>
+                 <a class="logout" href="#">退出</a>
+              </div>-->
+              <!--未登录-->
+              <div class="logon_state fr">
+                 <a class="blue_color" href="/login/go">登录</a>
+                 <a href="#">免费注册</a>
+              </div>
+           </div>
+        </div>
+    </div>
+    <div class="content">
+        <!--搜索栏-->
+        <div class="search_form">
+            <div class="search_wrap clearfix">
+                <div class="search_lt fl">
+                    <div class="select_wrap">
+                        <i class="i_drop"></i>
+                        <span class="select_text"></span>
+                        <select>
+                           <option>找需求</option>
+                           <option>找服务</option>
+                           <option>找企业</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="search_cent fl">
+                    <i class="bl_line"></i>
+                    <input class="search_text" placeholder="找需求，找服务，找企业，应有尽有" type="text"/>
+                </div>
+                <div class="search_rt fr">
+                    <input class="search_btn" value="搜索" type="button"/>
+                </div>
+            </div>
+            <div class="hot_search clearfix">
+                <span>热门搜索</span>
+                <a href="#">光纤代工</a>
+                <a href="#">XX维修</a>
+                <a class="blue_color" href="#">生产线专家</a>
+                <a href="#">光纤检测 </a>
+            </div>
+        </div>
+        <!--导航栏-->
+        <div class="header_nav clearfix">
+            <div class="category current">
+               <span class="category_type fl"><i class="icont"></i>主要服务</span>
+               <ul class="category_list">
+                  <li>虚拟设计</li>
+                  <li>虚拟排产</li>
+                  <li>虚拟培训</li>
+                  <li>互联网+供应链</li>
+                  <li>数字化解决方案</li>
+                  <li>企业IDC解决方案</li>
+                  <li>体验中心</li>
+               </ul>
+               <div class="category_wrap">
+                  <div class="category_item">
+                     <div class="hot_line">
+                        <div class="line_title">分类一</div>
+                        <div class="line_con">
+                            <a href="#">子分类</a>
+                            <a href="#">子分类</a>
+                            <a href="#">子分类</a>
+                            <a href="#">子分类</a>
+                            <a href="#">子分类</a>
+                            <a href="#">子分类</a>
+                            <a href="#">子分类</a>
+                            <a href="#">子分类</a>
+                            <a href="#">子分类</a>
+                            <a href="#">子分类</a>
+                            <a href="#">子分类</a>
+                            <a href="#">子分类</a>
+                        </div>
+                     </div>
+                     <div class="hot_line">
+                        <div class="line_title">分类二</div>
+                        <div class="line_con">
+                            <a href="#">子分类</a>
+                            <a href="#">子分类</a>
+                            <a href="#">子分类</a>
+                            <a href="#">子分类</a>
+                            <a href="#">子分类</a>
+                            <a href="#">子分类</a>
+                            <a href="#">子分类</a>
+                            <a href="#">子分类</a>
+                            <a href="#">子分类</a>
+                            <a href="#">子分类</a>
+                            <a href="#">子分类</a>
+                            <a href="#">子分类</a>
+                            <a href="#">子分类</a>
+                            <a href="#">子分类</a>
+                            <a href="#">子分类</a>
+                            <a href="#">子分类</a>
+                            <a href="#">子分类</a>
+                            <a href="#">子分类</a>
+                        </div>
+                     </div>
+                     <div class="hot_line">
+                        <div class="line_title">分类三</div>
+                        <div class="line_con">
+                            <a href="#">子分类</a>
+                            <a href="#">子分类</a>
+                            <a href="#">子分类</a>
+                            <a href="#">子分类</a>
+                            <a href="#">子分类</a>
+                            <a href="#">子分类</a>
+                        </div>
+                     </div>
+                     <div class="hot_line">
+                        <div class="line_title">分类二</div>
+                        <div class="line_con">
+                            <a href="#">子分类</a>
+                            <a href="#">子分类</a>
+                            <a href="#">子分类</a>
+                            <a href="#">子分类</a>
+                            <a href="#">子分类</a>
+                            <a href="#">子分类</a>
+                        </div>
+                     </div>
+                     <div class="hot_line">
+                        <div class="line_title">分类三</div>
+                        <div class="line_con">
+                            <a href="#">子分类</a>
+                            <a href="#">子分类</a>
+                            <a href="#">子分类</a>
+                            <a href="#">子分类</a>
+                            <a href="#">子分类</a>
+                            <a href="#">子分类</a>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="category_item"></div>
+                  <div class="category_item"></div>
+                  <div class="category_item"></div>
+                  <div class="category_item"></div>
+                  <div class="category_item"></div>
+                  <div class="category_item">
+                     <div class="hot_line">
+                        <div class="line_title">分类一</div>
+                        <div class="line_con">
+                            <a href="#">子分类</a>
+                            <a href="#">子分类</a>
+                            <a href="#">子分类</a>
+                            <a href="#">子分类</a>
+                            <a href="#">子分类</a>
+                            <a href="#">子分类</a>
+                            <a href="#">子分类</a>
+                            <a href="#">子分类</a>
+                            <a href="#">子分类</a>
+                            <a href="#">子分类</a>
+                            <a href="#">子分类</a>
+                            <a href="#">子分类</a>
+                        </div>
+                     </div>
+                     <div class="hot_line">
+                        <div class="line_title">分类二</div>
+                        <div class="line_con">
+                            <a href="#">子分类</a>
+                            <a href="#">子分类</a>
+                            <a href="#">子分类</a>
+                            <a href="#">子分类</a>
+                            <a href="#">子分类</a>
+                            <a href="#">子分类</a>
+                            <a href="#">子分类</a>
+                            <a href="#">子分类</a>
+                            <a href="#">子分类</a>
+                            <a href="#">子分类</a>
+                            <a href="#">子分类</a>
+                            <a href="#">子分类</a>
+                            <a href="#">子分类</a>
+                            <a href="#">子分类</a>
+                            <a href="#">子分类</a>
+                            <a href="#">子分类</a>
+                            <a href="#">子分类</a>
+                            <a href="#">子分类</a>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <ul class="navigation fl">
+               <li class="active"><a href="#">销售与渠道</a></li>
+               <li>
+                  <span>资源和能力</span>
+                  <ul class="nav_abst">
+                     <li><a href="#">找需求</a></li>
+                     <li><a href="#">找能力</a></li>
+                     <li><a href="#">找企业</a></li>
+                     <li><a href="#">找专家</a></li>
+                     <li><a href="#">我要投标</a></li>
+                  </ul>
+               </li>
+               <li><a href="#">协同制造</a></li>
+               <li><a href="#">质量与检测</a></li>
+               <li><a href="#">远程诊断</a></li>
+               <li><a href="#">结算信控</a></li>
+               <li><a href="#">众创空间</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!--banner图-->
+<div class="banner_wrap">
+	<!--图片列表-->
+	<ul class="banner_ul">
+	  <li style="background-image:url(images/Index/Group%2055.png)"></li>
+      <li style="background-image:url(images/Index/Group%2055.png)"></li>
+	  <li style="background-image:url(images/Index/Group%2055.png)"></li>
+      <li style="background-image:url(images/Index/Group%2055.png)"></li>
+	</ul>
+	<!--轮播的按扭-->
+	<ul class="banner_btn"></ul>
+    <!--右侧悬浮框-->
+    <div class="content rel">
+      <div class="offside">
+          <p class="welcome">欢迎您，王天龙</p>
+          <ul class="publish_ul">
+             <li><a class="blue_btn" href="#">发布需求</a></li>
+             <li><a class="blue_btn" href="#">发布服务</a></li>
+             <li><a class="blue_btn" href="#">发布众创</a></li>
+          </ul>
+      </div>
+    </div>
+</div>
+<!-- 中间区域 -->
+<div class="main">
+    <!--最新需求-->
+    <div class="model_item">
+        <span class="icon bgicont_1"></span>
+        <span class="icon bgicont_2"></span>
+        <div class="content">
+            <h3 class="h3_title">
+               <p class="t_english">DEMAND</p>
+               <p class="t_chinese">最新需求</p>
+               <p class="btm_line"></p>
+            </h3>
+            <div class="product_wrap">
+               <ul class="product_list clearfix">
+                   <li>
+                      <div class="product">
+                         <div class="proTop clearfix">
+                             <span class="fl">河南 | 周口市</span>
+                             <div class="proImg fl"><img src="images/Index/Group 28.png"/></div>
+                             <span class="fl"><i class="icon icont_1"></i><i class="icon icont_2"></i></span>
+                         </div>
+                         <div class="proInt">
+                            <h3>3米SC-SC单模单芯光纤跳线尾纤</h3>
+                            <p>北京航天智造科技发展有限公司</p>
+                            <p class="clearfix"><span class="fl">发布时间：2017.09.07</span><span class="fr">截止时间：2017.12.30</span></p>
+                         </div>
+                         <div class="proBtn clearfix">
+                            <a class="y_btn fl" href="#">查看详情</a>
+                            <a class="b_btn fr" href="#">马上询价</a>
+                         </div>
+                      </div>
+                   </li>
+                   <li>
+                      <div class="product">
+                         <div class="proTop clearfix">
+                             <span class="fl">河南 | 周口市</span>
+                             <div class="proImg fl"><img src="images/Index/Group 29.png"/></div>
+                             <span class="fl"><i class="icon icont_1"></i><i class="icon icont_2"></i></span>
+                         </div>
+                         <div class="proInt">
+                            <h3>3米SC-SC单模单芯光纤跳线尾纤</h3>
+                            <p>北京航天智造科技发展有限公司</p>
+                            <p class="clearfix"><span class="fl">发布时间：2017.09.07</span><span class="fr">截止时间：2017.12.30</span></p>
+                         </div>
+                         <div class="proBtn clearfix">
+                            <a class="y_btn fl" href="#">查看详情</a>
+                            <a class="b_btn fr" href="#">马上询价</a>
+                         </div>
+                      </div>
+                   </li>
+                   <li>
+                      <div class="product">
+                         <div class="proTop clearfix">
+                             <span class="fl">河南 | 周口市</span>
+                             <div class="proImg fl"><img src="images/Index/Group 28.png"/></div>
+                             <span class="fl"><i class="icon icont_1"></i><i class="icon icont_2"></i></span>
+                         </div>
+                         <div class="proInt">
+                            <h3>3米SC-SC单模单芯光纤跳线尾纤</h3>
+                            <p>北京航天智造科技发展有限公司</p>
+                            <p class="clearfix"><span class="fl">发布时间：2017.09.07</span><span class="fr">截止时间：2017.12.30</span></p>
+                         </div>
+                         <div class="proBtn clearfix">
+                            <a class="y_btn fl" href="#">查看详情</a>
+                            <a class="b_btn fr" href="#">马上询价</a>
+                         </div>
+                      </div>
+                   </li>
+                   <li>
+                      <div class="product">
+                         <div class="proTop clearfix">
+                             <span class="fl">河南 | 周口市</span>
+                             <div class="proImg fl"><img src="images/Index/Group 28.png"/></div>
+                             <span class="fl"><i class="icon icont_1"></i><i class="icon icont_2"></i></span>
+                         </div>
+                         <div class="proInt">
+                            <h3>3米SC-SC单模单芯光纤跳线尾纤</h3>
+                            <p>北京航天智造科技发展有限公司</p>
+                            <p class="clearfix"><span class="fl">发布时间：2017.09.07</span><span class="fr">截止时间：2017.12.30</span></p>
+                         </div>
+                         <div class="proBtn clearfix">
+                            <a class="y_btn fl" href="#">查看详情</a>
+                            <a class="b_btn fr" href="#">马上询价</a>
+                         </div>
+                      </div>
+                   </li>
+                   <li>
+                      <div class="product">
+                         <div class="proTop clearfix">
+                             <span class="fl">河南 | 周口市</span>
+                             <div class="proImg fl"><img src="images/Index/Group 48.png"></div>
+                             <span class="fl"><i class="icon icont_1"></i><i class="icon icont_2"></i></span>
+                         </div>
+                         <div class="proInt">
+                            <h3>3米SC-SC单模单芯光纤跳线尾纤</h3>
+                            <p>北京航天智造科技发展有限公司</p>
+                            <p class="clearfix"><span class="fl">发布时间：2017.09.07</span><span class="fr">截止时间：2017.12.30</span></p>
+                         </div>
+                         <div class="proBtn clearfix">
+                            <a class="y_btn fl" href="#">查看详情</a>
+                            <a class="b_btn fr" href="#">马上询价</a>
+                         </div>
+                      </div>
+                   </li>
+                   <li>
+                      <div class="product">
+                         <div class="proTop clearfix">
+                             <span class="fl">河南 | 周口市</span>
+                             <div class="proImg fl"><img src="images/Index/Group 28.png"/></div>
+                             <span class="fl"><i class="icon icont_1"></i><i class="icon icont_2"></i></span>
+                         </div>
+                         <div class="proInt">
+                            <h3>3米SC-SC单模单芯光纤跳线尾纤</h3>
+                            <p>北京航天智造科技发展有限公司</p>
+                            <p class="clearfix"><span class="fl">发布时间：2017.09.07</span><span class="fr">截止时间：2017.12.30</span></p>
+                         </div>
+                         <div class="proBtn clearfix">
+                            <a class="y_btn fl" href="#">查看详情</a>
+                            <a class="b_btn fr" href="#">马上询价</a>
+                         </div>
+                      </div>
+                   </li>
+               </ul>
+            </div>
+        </div>
+    </div>
+    <!--推荐企业-->
+    <div class="model_item model_bg">
+        <div class="content">
+            <h3 class="h3_title">
+               <p class="t_english">DEMAND</p>
+               <p class="t_chinese">最新需求</p>
+               <p class="btm_line"></p>
+            </h3>
+            <div class="company_wrap">
+                <div class="company_box">
+                    <ul class="company_item active clearfix">
+                        <li>
+                           <a href="#"> 
+                               <div class="company">
+                                  <div class="proTop clearfix">
+                                     <span class="fl">全国</span>
+                                     <div class="proImg fl"><img src="images/Index/Group 28.png"/></div>
+                                     <span class="fr"><i class="icon icont_1"></i><i class="icon icont_2"></i></span>
+                                  </div> 
+                                  <div class="proInt">
+                                     <h3>3米SC-SC单模单芯光纤跳线尾纤</h3>
+                                     <p>经营模式 | 研发型</p>
+                                     <p>主营产品： 武器系统研发及防隔热产品生产</p>
+                                     <p>企业地址： 北京市海淀区永定路57号99号楼</p>
+                                  </div>
+                                  <div class="proBtm clearfix">
+                                     <span class="cp_num">产品 12</span>
+                                     <span class="xq_num">需求 22</span>
+                                     <span class="nl_num">能力 3</span>
+                                  </div>
+                               </div>
+                           </a>
+                        </li>
+                        <li>
+                           <a href="#"> 
+                               <div class="company">
+                                  <div class="proTop clearfix">
+                                     <span class="fl">全国</span>
+                                     <div class="proImg fl"><img src="images/Index/Group 28.png"/></div>
+                                     <span class="fr"><i class="icon icont_1"></i><i class="icon icont_2"></i></span>
+                                  </div> 
+                                  <div class="proInt">
+                                     <h3>3米SC-SC单模单芯光纤跳线尾纤</h3>
+                                     <p>经营模式 | 研发型</p>
+                                     <p>主营产品： 武器系统研发及防隔热产品生产</p>
+                                     <p>企业地址： 北京市海淀区永定路57号99号楼</p>
+                                  </div>
+                                  <div class="proBtm clearfix">
+                                     <span class="cp_num">产品 12</span>
+                                     <span class="xq_num">需求 22</span>
+                                     <span class="nl_num">能力 3</span>
+                                  </div>
+                               </div>
+                           </a>
+                        </li>
+                        <li>
+                           <a href="#"> 
+                               <div class="company">
+                                  <div class="proTop clearfix">
+                                     <span class="fl">全国</span>
+                                     <div class="proImg fl"><img src="images/Index/Group 28.png"/></div>
+                                     <span class="fr"><i class="icon icont_1"></i><i class="icon icont_2"></i></span>
+                                  </div> 
+                                  <div class="proInt">
+                                     <h3>3米SC-SC单模单芯光纤跳线尾纤</h3>
+                                     <p>经营模式 | 研发型</p>
+                                     <p>主营产品： 武器系统研发及防隔热产品生产</p>
+                                     <p>企业地址： 北京市海淀区永定路57号99号楼</p>
+                                  </div>
+                                  <div class="proBtm clearfix">
+                                     <span class="cp_num">产品 12</span>
+                                     <span class="xq_num">需求 22</span>
+                                     <span class="nl_num">能力 3</span>
+                                  </div>
+                               </div>
+                           </a>
+                        </li>
+                    </ul>
+                    <ul class="company_item clearfix">
+                        <li>
+                           <a href="#"> 
+                               <div class="company">
+                                  <div class="proTop clearfix">
+                                     <span class="fl">全国</span>
+                                     <div class="proImg fl"><img src="images/Index/Group 28.png"/></div>
+                                     <span class="fr"><i class="icon icont_1"></i><i class="icon icont_2"></i></span>
+                                  </div> 
+                                  <div class="proInt">
+                                     <h3>3米SC-SC单模单芯光纤跳线尾纤</h3>
+                                     <p>经营模式 | 研发型</p>
+                                     <p>主营产品： 武器系统研发及防隔热产品生产</p>
+                                     <p>企业地址： 北京市海淀区永定路57号99号楼</p>
+                                  </div>
+                                  <div class="proBtm clearfix">
+                                     <span class="cp_num">产品 12</span>
+                                     <span class="xq_num">需求 22</span>
+                                     <span class="nl_num">能力 3</span>
+                                  </div>
+                               </div>
+                           </a>
+                        </li>
+                        <li>
+                           <a href="#"> 
+                               <div class="company">
+                                  <div class="proTop clearfix">
+                                     <span class="fl">全国</span>
+                                     <div class="proImg fl"><img src="images/Index/Group 28.png"/></div>
+                                     <span class="fr"><i class="icon icont_1"></i><i class="icon icont_2"></i></span>
+                                  </div> 
+                                  <div class="proInt">
+                                     <h3>3米SC-SC单模单芯光纤跳线尾纤</h3>
+                                     <p>经营模式 | 研发型</p>
+                                     <p>主营产品： 武器系统研发及防隔热产品生产</p>
+                                     <p>企业地址： 北京市海淀区永定路57号99号楼</p>
+                                  </div>
+                                  <div class="proBtm clearfix">
+                                     <span class="cp_num">产品 12</span>
+                                     <span class="xq_num">需求 22</span>
+                                     <span class="nl_num">能力 3</span>
+                                  </div>
+                               </div>
+                           </a>
+                        </li>
+                        <li>
+                           <a href="#"> 
+                               <div class="company">
+                                  <div class="proTop clearfix">
+                                     <span class="fl">全国</span>
+                                     <div class="proImg fl"><img src="images/Index/Group 48.png"></div>
+                                     <span class="fr"><i class="icon icont_1"></i><i class="icon icont_2"></i></span>
+                                  </div> 
+                                  <div class="proInt">
+                                     <h3>3米SC-SC单模单芯光纤跳线尾纤</h3>
+                                     <p>经营模式 | 研发型</p>
+                                     <p>主营产品： 武器系统研发及防隔热产品生产</p>
+                                     <p>企业地址： 北京市海淀区永定路57号99号楼</p>
+                                  </div>
+                                  <div class="proBtm clearfix">
+                                     <span class="cp_num">产品 12</span>
+                                     <span class="xq_num">需求 22</span>
+                                     <span class="nl_num">能力 3</span>
+                                  </div>
+                               </div>
+                           </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="company_btn">
+                    <span class="active"></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--创新众筹-->
+    <div class="model_item">
+        <span class="icon bgicont_3"></span>
+        <div class="content">
+            <h3 class="h3_title">
+               <p class="t_english">CROWD-FUNDING</p>
+               <p class="t_chinese">创新众筹</p>
+               <p class="btm_line"></p>
+            </h3>
+            <div class="crowd_wrap">
+               <ul class="crowd_list clearfix">
+                   <li>
+                      <a href="#">
+                          <div class="crowd">
+                              <div class="crowdImg">
+                                 <img src="images/Index/Group 50.png"/>
+                                 <span class="rank_bg">全国</span>
+                                 <span class="abs_icont"><i class="icon Icont_1"></i><i class="icon Icont_2"></i></span>
+                              </div>
+                              <div class="crowd_intro">
+                                 <h3 class="ellips">工厂关键控制点无线监控众筹</h3> 
+                                 <p class="ellips">工厂关键控制点无线监控众筹项目，需要有相关......</p>
+                                 <div class="progress">
+                                    <p class="rate"><span style="width:30%;"></span></p>
+                                    <p class="plan clearfix"><span class="fl">30%</span><span class="fr">剩余21天</span></p>
+                                 </div>
+                                 <div class="crowdBtm clearfix">
+                                     <span class="fl tl">待投标数:12</span>
+                                     <span class="fl tc">已中标:4</span>
+                                     <span class="fr tr">项目预算:20万</span>
+                                 </div>
+                              </div>
+                          </div>
+                      </a>
+                   </li>
+                   <li>
+                      <a href="#">
+                          <div class="crowd">
+                              <div class="crowdImg">
+                                 <img src="images/Index/Group 50.png"/>
+                                 <span class="rank_bg">全国</span>
+                                 <span class="abs_icont"><i class="icon Icont_1"></i><i class="icon Icont_2"></i></span>
+                              </div>
+                              <div class="crowd_intro">
+                                 <h3 class="ellips">工厂关键控制点无线监控众筹</h3> 
+                                 <p class="ellips">工厂关键控制点无线监控众筹项目，需要有相关......</p>
+                                 <div class="progress">
+                                    <p class="rate"><span style="width:30%;"></span></p>
+                                    <p class="plan clearfix"><span class="fl">30%</span><span class="fr">剩余21天</span></p>
+                                 </div>
+                                 <div class="crowdBtm clearfix">
+                                     <span class="fl tl">待投标数:12</span>
+                                     <span class="fl tc">已中标:4</span>
+                                     <span class="fr tr">项目预算:20万</span>
+                                 </div>
+                              </div>
+                          </div>
+                      </a>
+                   </li>
+                   <li>
+                      <a href="#">
+                          <div class="crowd">
+                              <div class="crowdImg">
+                                 <img src="images/Index/Group 50.png"/>
+                                 <span class="rank_bg">全国</span>
+                                 <span class="abs_icont"><i class="icon Icont_1"></i><i class="icon Icont_2"></i></span>
+                              </div>
+                              <div class="crowd_intro">
+                                 <h3 class="ellips">工厂关键控制点无线监控众筹</h3> 
+                                 <p class="ellips">工厂关键控制点无线监控众筹项目，需要有相关......</p>
+                                 <div class="progress">
+                                    <p class="rate"><span style="width:30%;"></span></p>
+                                    <p class="plan clearfix"><span class="fl">30%</span><span class="fr">剩余21天</span></p>
+                                 </div>
+                                 <div class="crowdBtm clearfix">
+                                     <span class="fl tl">待投标数:12</span>
+                                     <span class="fl tc">已中标:4</span>
+                                     <span class="fr tr">项目预算:20万</span>
+                                 </div>
+                              </div>
+                          </div>
+                      </a>
+                   </li>
+               </ul>
+            </div>
+        </div>
+    </div>
+    <div class="model_item">
+        <span class="icon bgicont_4"></span>
+        <div class="content">
+            <h3 class="h3_title">
+               <p class="t_english">EXPERT</p>
+               <p class="t_chinese">专家牛人</p>
+               <p class="btm_line"></p>
+            </h3>
+            <div class="expert_wrap">
+               <div class="expert_Box"> 
+                   <span class="left_Btn icon"></span>
+                   <span class="right_Btn icon"></span>
+                   <div class="expert_item">
+                       <ul class="expert_list clearfix">
+                           <li>
+                             <a href="#">
+                                 <div class="expert">
+                                     <div class="expert_Top">
+                                        <div class="expertImg"><img src="images/Index/Group 48.png"/></div>
+                                     </div>
+                                     <p class="expert_Name">徐雅欣</p>
+                                     <div class="expertInt">
+                                        <p>二院工艺专家组专家</p>
+                                        <p><span class="site_icont">北京市</span></p>
+                                     </div>
+                                 </div>
+                             </a> 
+                           </li>
+                           <li>
+                             <a href="#">
+                                 <div class="expert">
+                                     <div class="expert_Top">
+                                        <div class="expertImg"><img src="images/Index/Group 48.png"/></div>
+                                     </div>
+                                     <p class="expert_Name">徐雅欣</p>
+                                     <div class="expertInt">
+                                        <p>二院工艺专家组专家</p>
+                                        <p><span class="site_icont">北京市</span></p>
+                                     </div>
+                                 </div>
+                             </a> 
+                           </li>
+                           <li>
+                             <a href="#">
+                                 <div class="expert">
+                                     <div class="expert_Top">
+                                        <div class="expertImg"><img src="images/Index/Group 48.png"/></div>
+                                     </div>
+                                     <p class="expert_Name">徐雅欣</p>
+                                     <div class="expertInt">
+                                        <p>二院工艺专家组专家</p>
+                                        <p><span class="site_icont">北京市</span></p>
+                                     </div>
+                                 </div>
+                             </a> 
+                           </li>
+                           <li>
+                             <a href="#">
+                                 <div class="expert">
+                                     <div class="expert_Top">
+                                        <div class="expertImg"><img src="images/Index/Group 48.png"/></div>
+                                     </div>
+                                     <p class="expert_Name">徐雅欣</p>
+                                     <div class="expertInt">
+                                        <p>二院工艺专家组专家</p>
+                                        <p><span class="site_icont">北京市</span></p>
+                                     </div>
+                                 </div>
+                             </a> 
+                           </li>
+                           <li>
+                             <a href="#">
+                                 <div class="expert">
+                                     <div class="expert_Top">
+                                        <div class="expertImg"><img src="images/Index/Group 48.png"/></div>
+                                     </div>
+                                     <p class="expert_Name">徐雅欣</p>
+                                     <div class="expertInt">
+                                        <p>二院工艺专家组专家</p>
+                                        <p><span class="site_icont">北京市</span></p>
+                                     </div>
+                                 </div>
+                             </a> 
+                           </li>
+                           <li>
+                             <a href="#">
+                                 <div class="expert">
+                                     <div class="expert_Top">
+                                        <div class="expertImg"><img src="images/Index/Group 48.png"/></div>
+                                     </div>
+                                     <p class="expert_Name">徐雅欣</p>
+                                     <div class="expertInt">
+                                        <p>二院工艺专家组专家</p>
+                                        <p><span class="site_icont">北京市</span></p>
+                                     </div>
+                                 </div>
+                             </a> 
+                           </li>
+                           <li>
+                             <a href="#">
+                                 <div class="expert">
+                                     <div class="expert_Top">
+                                        <div class="expertImg"><img src="images/Index/Group 48.png"/></div>
+                                     </div>
+                                     <p class="expert_Name">徐雅欣</p>
+                                     <div class="expertInt">
+                                        <p>二院工艺专家组专家</p>
+                                        <p><span class="site_icont">北京市</span></p>
+                                     </div>
+                                 </div>
+                             </a> 
+                           </li>
+                           <li>
+                             <a href="#">
+                                 <div class="expert">
+                                     <div class="expert_Top">
+                                        <div class="expertImg"><img src="images/Index/Group 48.png"/></div>
+                                     </div>
+                                     <p class="expert_Name">徐雅欣</p>
+                                     <div class="expertInt">
+                                        <p>二院工艺专家组专家</p>
+                                        <p><span class="site_icont">北京市</span></p>
+                                     </div>
+                                 </div>
+                             </a> 
+                           </li>
+                           <li>
+                             <a href="#">
+                                 <div class="expert">
+                                     <div class="expert_Top">
+                                        <div class="expertImg"><img src="images/Index/Group 48.png"/></div>
+                                     </div>
+                                     <p class="expert_Name">徐雅欣</p>
+                                     <div class="expertInt">
+                                        <p>二院工艺专家组专家</p>
+                                        <p><span class="site_icont">北京市</span></p>
+                                     </div>
+                                 </div>
+                             </a> 
+                           </li>
+                       </ul> 
+                   </div>
+               </div>
+            </div>
+        </div>
+    </div> 
+</div>
+<!--侧边悬浮回到顶部-->
+<div class="Rightside">
+    <a href="javascript:;" class="return_top"><i class="icon"></i><p>回到顶部</p></a>
+    <a href="#" class="check_in"><i class="icon"></i><p>我要入住</p></a>
+</div>
+<!-- 页面底部 -->
+<div class="footer">
+    <div class="content">
+        <div class="footer_wrap clearfix">
+           <div class="foot_item fl">
+               <p class="p_contact"><a class="blue_Btn" href="#">联系我们</a></p>
+               <p class="p_line"><span class="lt">传真：</span><span class="rt">+86-27-87802536</span></p>
+               <p class="p_line"><span class="lt">传真：</span><span class="rt">+86-27-87802536</span></p>
+               <p class="p_line"><span class="lt">地址：</span><span class="rt">湖北省武汉市东湖高新技术开发区光谷大道9号</span></p>
+           </div>
+           <div class="code_item fl">
+               <img src="img/code_1.jpg"/>
+               <p>扫描关注微信号</p>
+           </div>
+           <div class="foot_items fl">
+               <p>关于我们</p>
+               <p>江西长飞云平台</p>
+               <p>贵州长飞云平台</p>
+               <p>孝感长飞云平台</p>
+           </div>
+           <div class="foot_items fl">
+               <p>友情链接</p>
+               <p>友情链接2</p>
+               <p>友情链接3</p>
+               <p>友情链接4</p>
+           </div>
+           <div class="foot_items fl">
+               <p>服务支持</p>
+               <p>用户帮助</p>
+               <p>客服中心</p>
+               <p>售后保障</p>
+           </div>
+        </div>
+        <p class="tc">鄂ICP备16006498号-1Copyright  2005-2016  长飞有限公司    版权所有 </p>
+    </div>
+</div>
+<!--底部悬浮-->
+<!--未登录-->
+<!--<div class="Borrom_side">
+    <div class="side_bg"></div>
+    <div class="side_rel">
+        <i class="Btm_rack"></i>
+        <div class="content">  
+           <div class="side_wrap">
+              <img class="fl" src="images/Index/Group 46.png"/>
+              <span class="fl ml10">找需求，找服务，找企业，应有尽有</span>
+              <span class="fl ml120">21231 供应商  |  12123需求</span>
+              <a class="white_btn fr" href="#">注册</a>
+              <a class="white_btn fr mr24" href="#">登录</a>
+           </div>
+        </div>
+    </div>
+</div>-->
+<!--已登录-->
+<div class="Borrom_side">
+    <div class="side_bg"></div>
+    <div class="side_rel">
+        <i class="Btm_rack"></i>
+        <div class="content">  
+           <div class="side_wrap">
+              <img class="fl" src="images/Index/Group 46.png"/>
+              <span class="fl ml10">找需求，找服务，找企业，应有尽有</span>
+              <span class="fl ml120">21231 供应商  |  12123需求</span>
+              <a class="white_btn fr" href="#">发布众创</a>
+              <a class="white_btn fr mr24" href="#">发布服务</a>
+              <a class="white_btn fr mr24" href="#">发布需求</a>
+           </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+<script type="text/javascript" src="js/base.js"></script>
+<script type="text/javascript">
+$(function(){
+	/*分类选项卡*/
+	category();
+	/*广告轮播图*/
+	BannerInit();
+	$(".company_btn span").hover(function(){
+		var _index=$(this).index();
+		$(this).addClass("active").siblings().removeClass("active");
+		$(".company_wrap .company_item").eq(_index).addClass("active").siblings().removeClass("active");
+	})
+	
+	
+	/*专家牛人*/
+	var index=0;
+	var timer=null;
+	var len=$(".expert_list li").length;
+	$(".expert_Box>span").click(function(){
+		if($(this).hasClass("left_Btn")){
+		   index--;	
+		   if(index==-1){index=0};
+		   $(".expert_list").stop().animate({left:-218*index+"px"},1000); 
+		}else{
+		   index++;
+       	   if(index==len-4){index=len-5};
+       	   $(".expert_list").stop().animate({"left":-218*index+"px"},1000); 	
+		}
+		//console.log(index);
+	})
+	
+})
+
+</script>
+</body>
+</html>

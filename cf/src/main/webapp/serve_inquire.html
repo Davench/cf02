@@ -1,0 +1,324 @@
+#@layout(1,"服务询价") 
+#define search()
+ <div class="content">
+        <h3 class="h3_title">
+           <p class="t_english">INQUIRY</p>
+           <p class="t_chinese">我要询价</p>
+           <p class="btm_line"></p>
+        </h3>
+    </div>
+#end 
+#define tab() 
+#end 
+#define banner() 
+#end 
+#define main()
+
+<!-- 中间区域 -->
+<div class="main">
+    <div class="content pt20">
+       <div class="offer_wrap">
+           <h3 class="h3_rank">询价信息</h3>
+           <div class="menu_Info">
+               <h3 class="blue_color pt20 pb24">向武汉长飞光纤制造公司询价</h3>
+               <div class="select_item clearfix">
+                    <div class="line_item fl">
+                        <span class="red_star">选择分类</span>
+                        <div class="item_rt">
+                            <div class="select_wrap item_select">
+                                <i class="i_drop2"></i>
+                                <span class="select_text"></span>
+                                <select>
+                                    <option>产品外协</option>
+                                    <option>设计</option>
+                                    <option>制造</option>
+                                    <option>试验</option>
+                                    <option>服务</option>
+                                    <option>其他</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="line_item fr">
+                        <span class="red_star">选择分类</span>
+                        <div class="item_rt">
+                            <div class="select_wrap item_select">
+                                <i class="i_drop2"></i>
+                                <span class="select_text"></span>
+                                <select>
+                                    <option>功能材料制造及成型</option>
+                                    <option>热处理</option>
+                                    <option>工艺检测</option>
+                                    <option>符合材料成型</option>
+                                    <option>焊接</option>
+                                    <option>其他制造</option>
+                                    <option>表面工程</option>
+                                    <option>机加工</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+               </div>
+               <div class="line_item">
+                    <span class="red_star">询价主题</span>
+                    <div class="item_rt">
+                       <input class="l_text" placeholder="请输入询价主题" type="text"/>
+                    </div>
+               </div>
+               <div class="line_item">
+                    <span class="red_star">询价截止日期</span>
+                    <div class="item_rt">
+                       <input class="l_text" id="date1" placeholder="请输入询价截止日期" readonly type="text"/>
+                    </div>
+               </div>
+               <div class="line_item">
+                    <span class="red_star">要求交付日期</span>
+                    <div class="item_rt">
+                       <input class="l_text" id="date2" placeholder="请输入要求交付日期" readonly type="text"/>
+                    </div>
+               </div>
+           </div>
+           <h3 class="h3_rank">询价对象信息</h3>
+           <div class="add_item"><a href="javascript:;" class="BBtn">添加询价对象</a></div>
+           <div class="offer_form">
+               <table width="100%">
+                  <tr>
+                    <th width="200"><span class="red_star">对象名称</span></th>
+                    <th width="200"><span class="red_star">需求数量</span></th>
+                    <th width="200"><span class="red_star">计量单位</span></th>
+                    <th width="200"><span class="">要求/备注</span></th>
+                    <th width="200"><span class="red_star">期望单价（元）</span></th>
+                    <th width="200"><span class="">操作</span></th>
+                  </tr>
+                  <tr>
+                    <td><input placeholder="请输入对象名称" type="text"/></td>
+                    <td><input placeholder="请输入需求数量" type="text"/></td>
+                    <td><input placeholder="请输入计量单位" type="text"/></td>
+                    <td><input placeholder="请输入要求/备注" type="text"/></td>
+                    <td><input placeholder="请输入期望单价" type="text"/></td>
+                    <td><span class="delete_Btn">删除</span></td>
+                  </tr>
+               </table>
+           </div>
+           <div class="menu_Info">
+               <div class="line_item">
+                    <span class="red_star">上传图片</span>
+                    <div class="item_rt">
+                         <ul class="upload_ul fl">
+                            <li><img src="/images/Find_fw/Group 22.png"/><i class="x_delete"></i></li>
+                         </ul>
+                         <div class="uploading fl">
+                            <i class="i_upload"></i>
+                            <input class="file" type="file"/>
+                         </div>
+                    </div>
+               </div>
+               <div class="line_item">
+                    <span class="red_star">上传附件</span>
+                    <div class="item_rt">
+                       <a class="YBtn" href="javascript:;">添加附件</a>
+                    </div>
+               </div>
+               <div class="line_item">
+                   <span class="red_star">需求详细描述</span>
+                   <div class="item_rt">
+                      <div class="textArae"><textarea placeholder="请输入详细需求"></textarea></div>
+                   </div>
+               </div>
+               <div class="line_item">
+                    <span class="red_star">要求关键字</span>
+                    <div class="item_rt">
+                       <input class="l_text" placeholder="用逗号隔开" type="text"/>
+                    </div>
+               </div>
+           </div>
+           <h3 class="h3_rank">联系方式</h3>
+           <div class="menu_Info">
+               <div class="line_item">
+                    <span class="red_star">收货地址</span>
+                    <div class="item_rt select_width">
+                       <div class="select_wrap item_select fl mr51">
+                            <i class="i_drop2"></i>
+                            <span class="select_text"></span>
+                            <select>
+                                <option>省</option>
+                            </select>
+                       </div>
+                       <div class="select_wrap item_select fl mr51">
+                            <i class="i_drop2"></i>
+                            <span class="select_text"></span>
+                            <select>
+                                <option>市</option>
+                            </select>
+                       </div>
+                       <div class="select_wrap item_select fr">
+                            <i class="i_drop2"></i>
+                            <span class="select_text"></span>
+                            <select>
+                                <option>县</option>
+                            </select>
+                       </div>
+                    </div>
+               </div>
+               <div class="line_item">
+                    <span class="red_star">详细地址</span>
+                    <div class="item_rt">
+                       <input class="l_text" placeholder="请输入详细地址" type="text"/>
+                    </div>
+               </div>
+               <div class="line_item">
+                    <span class="red_star">联系人</span>
+                    <div class="item_rt">
+                       <input class="l_text" placeholder="请输入联系人" type="text"/>
+                    </div>
+               </div>
+               <div class="select_item clearfix">
+                    <div class="line_item fl">
+                        <span class="red_star">联系电话</span>
+                        <div class="item_rt">
+                            <div class="h_item"><i class="i_check"></i>注册手机号</div>
+                        </div>
+                    </div>
+                    <div class="line_item fr">
+                        <span class="red_star">其他联系电话</span>
+                        <div class="item_rt">
+                            <input class="s_text" type="text"/>
+                        </div>
+                    </div>
+               </div>
+           </div>
+           <h3 class="h3_rank">商务条款</h3>
+           <div class="menu_Info">
+               <div class="line_item">
+                    <span class="red_star">交易方式</span>
+                    <div class="item_rt">
+                       <ul class="check_item clearfix">
+                           <li><i class="i_check"></i><span>担保交易</span></li>
+                           <li><i class="i_check"></i><span>货到付款</span></li>
+                           <li><i class="i_check"></i><span>预付款</span></li>
+                           <li><i class="i_check"></i><span>其他</span></li>
+                       </ul>
+                    </div>
+               </div>
+               <div class="line_item">
+                    <span class="red_star">付款方式</span>
+                    <div class="item_rt">
+                       <ul class="check_item clearfix">
+                           <li><i class="i_check"></i><span>第三方支付</span></li>
+                           <li><i class="i_check"></i><span>现金</span></li>
+                           <li><i class="i_check"></i><span>银行转账</span></li>
+                           <li><i class="i_check"></i><span>支票</span></li>
+                           <li><i class="i_check"></i><span>汇票</span></li>
+                           <li><i class="i_check"></i><span>本票</span></li>
+                           <li><i class="i_check"></i><span>其他</span></li>
+                       </ul>
+                    </div>
+               </div>
+               <div class="line_item">
+                    <span class="">发票要求</span>
+                    <div class="item_rt">
+                       <ul class="check_item clearfix">
+                           <li><i class="i_check"></i><span>无需发票</span></li>
+                           <li><i class="i_check"></i><span>增值税普通发票</span></li>
+                           <li><i class="i_check"></i><span>增值税专用发票</span></li>
+                           <li><i class="i_check"></i><span>个人发票</span></li>
+                       </ul>
+                    </div>
+               </div>
+               <div class="line_item">
+                    <span class="">运费承担方</span>
+                    <div class="item_rt">
+                       <ul class="check_item clearfix">
+                           <li><i class="i_check"></i><span>供应方</span></li>
+                           <li><i class="i_check"></i><span>采购方</span></li>
+                           <li><i class="i_check"></i><span>其他</span></li>
+                       </ul>
+                    </div>
+               </div>
+               <div class="line_item">
+                    <span class="">原材料提供商</span>
+                    <div class="item_rt">
+                       <ul class="check_item clearfix">
+                           <li><i class="i_check"></i><span>供应方</span></li>
+                           <li><i class="i_check"></i><span>采购方</span></li>
+                           <li><i class="i_check"></i><span>其他</span></li>
+                       </ul>
+                    </div>
+               </div>
+               <div class="line_item">
+                    <span class="">是否需要开票</span>
+                    <div class="item_rt">
+                       <ul class="check_item clearfix">
+                           <li><i class="i_check"></i><span>是</span></li>
+                           <li><i class="i_check"></i><span>否</span></li>
+                       </ul>
+                    </div>
+               </div>
+           </div>
+           <h3 class="h3_rank">限制</h3>
+           <div class="menu_Info">
+               <div class="line_item">
+                    <div class="h_item"><i class="i_check"></i>只允许通过实地认证供方报价</div>
+               </div>
+           </div>
+           <div class="submit_item">
+               <a class="BBtn mr30" id="ReleaseBtn" href="/serve/priceReview">发布询价</a>
+               <a class="bBtn" href="javascript:;">取消</a>
+           </div>
+    </div>
+</div>
+</div>
+
+#end #define script()
+<script type="text/javascript">
+$(function(){
+	$(".check_item li .i_check").click(function(){
+		$(this).parents("li").addClass("active").siblings().removeClass("active");
+	})
+	$(".h_item .i_check").click(function(){
+		$(this).hasClass("i_checked")?$(this).removeClass("i_checked"):$(this).addClass("i_checked")
+	})
+	/*日期选择*/
+	var nowTemp = new Date();
+    var now = new Date(nowTemp.getFullYear(), nowTemp.getMonth(), nowTemp.getDate(), 0, 0, 0, 0);
+    var checkin = $('#date1').fdatepicker({
+        onRender: function (date) {
+            return date.valueOf() < now.valueOf() ? 'disabled' : '';
+        },
+        format:"yyyy-mm-dd"
+    }).on('changeDate', function (ev) {
+        /*if (ev.date.valueOf() > checkout.date.valueOf()) {
+            var newDate = new Date(ev.date)
+            newDate.setDate(newDate.getDate()+1);
+            checkout.update(newDate);
+        }*/
+        checkin.hide();
+        //$('#date2')[0].focus();
+
+    }).data('datepicker');
+	
+	var checkout = $('#date2').fdatepicker({
+        format:"yyyy-mm-dd",
+        onRender: function (date) {
+            return date.valueOf() < now.valueOf() ? 'disabled' : '';
+        }
+    }).on('changeDate', function (ev) {
+        checkout.hide();
+    }).data('datepicker');
+	
+	/*弹框*/
+	$("#ReleaseBtn").click(function(){
+		$(".popup_wrap").show();
+	})
+	$(".select_btn span").click(function(){
+		if($(this).attr("val")==0){
+		   location.href="offer_review_3.html";	
+		}
+		$(".popup_wrap").hide();
+	})
+})
+
+</script>
+#end
+</body>
+</html>

@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no" name="format-detection">
+    <!--公共样式-->
+    <link rel="stylesheet" type="text/css" href="css/common.css">
+    <!--页面样式-->
+    <link rel="stylesheet" type="text/css" href="css/Lstyle.css">
+    <title>众创空间列表页</title>
+</head>
+<body class="index">
+<!-- 页面头部 -->
+<div class="header">
+    <div class="header_top">
+        <div class="content">
+           <div class="ht_content clearfix">
+              <a class="logo fl" href="#"><img src="images/Index/Group 46.png"/></a>
+              <span class="speech fl">欢迎来到长飞云制造平台，您来了就不用走的平台</span>
+              <!--已登录-->
+              <div class="logon_state fr">
+                 <a class="blue_color" href="#">您好，王天龙</a>
+                 <a href="#">商务合作</a>
+                 <a href="#">草稿（<b>0</b>）</a>
+                 <a href="#">消息（<b>0</b>）</a>
+                 <a class="logout" href="#">退出</a>
+              </div>
+              <!--未登录-->
+              <!--<div class="logon_state fr">
+                 <a class="blue_color" href="#">登录</a>
+                 <a href="#">免费注册</a>
+              </div>-->
+           </div>
+        </div>
+    </div>
+    <div class="content">
+        <!--搜索栏-->
+        <div class="search_form">
+            <div class="search_wrap clearfix">
+                <div class="search_lt fl">
+                    <div class="select_wrap">
+                        <i class="i_drop"></i>
+                        <span class="select_text"></span>
+                        <select>
+                           <option>找需求</option>
+                           <option>找服务</option>
+                           <option>找企业</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="search_cent fl">
+                    <i class="bl_line"></i>
+                    <input class="search_text" placeholder="找需求，找服务，找企业，应有尽有" type="text"/>
+                </div>
+                <div class="search_rt fr">
+                    <input class="search_btn" value="搜索" type="button"/>
+                </div>
+            </div>
+            <div class="hot_search clearfix">
+                <span>热门搜索</span>
+                <a href="#">光纤代工</a>
+                <a href="#">XX维修</a>
+                <a class="blue_color" href="#">生产线专家</a>
+                <a href="#">光纤检测 </a>
+            </div>
+        </div>
+        <!--导航栏-->
+        <div class="header_nav clearfix">
+            <div class="category">
+               <span class="category_type fl"><i class="icont"></i>主要服务</span> 
+            </div>
+            <ul class="navigation fl">
+               <li><a href="#">销售与渠道</a></li>
+               <li class="">
+                  <span>资源和能力</span>
+                  <ul class="nav_abst">
+                     <li><a href="#">找需求</a></li>
+                     <li><a href="#">找能力</a></li>
+                     <li><a href="#">找企业</a></li>
+                     <li><a href="#">找专家</a></li>
+                     <li><a href="#">我要投标</a></li>
+                  </ul>
+               </li>
+               <li><a href="#">协同制造</a></li>
+               <li><a href="#">质量与检测</a></li>
+               <li><a href="#">远程诊断</a></li>
+               <li><a href="#">结算信控</a></li>
+               <li class="active"><a href="wework_list.html">众创空间</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<!-- 中间区域 -->
+<div class="main">
+    <div class="content pt20">
+        <div class="screen_wrap">
+            <h3 class="h3_rank"><span class="fl">众创空间</span><span class="fr release">发布众创</span></h3>
+            <div class="screen_Box">
+                <div class="screen_list">
+                   <span class="label">需求类型：</span>
+                   <div class="sort">
+                      <span>全部</span>
+                      <span class="active">产品需求</span>
+                      <span>技术需求</span>
+                      <span>制造需求</span>
+                      <span>设备需求</span>
+                      <span>服务需求</span>
+                   </div>
+                </div>
+                <div class="screen_list">
+                   <span class="label">企业类型：</span>
+                   <div class="sort">
+                      <span class="active">全部</span>
+                      <span>国有企业</span>
+                      <span>集体企业</span>
+                      <span>股份合作企业</span>
+                      <span>联营企业</span>
+                      <span>有限责任公司</span>
+                      <span>股份有限公司</span>
+                      <span>私营企业</span>
+                      <span>其他企业</span>
+                      <span>合资经营企业（港或澳、台资）</span>
+                      <span>港、澳、台商独资</span>
+                      <span>港、澳、台商投资有限公司</span>
+                      <span>港、澳、台商投资企业</span>
+                      <span>港、澳、台商投资有限公司</span>
+                      <span>其他港、澳、台商投资企业</span>
+                      <span>中外合资经营企业</span>
+                   </div>
+                </div>
+                <div class="screen_list">
+                   <span class="label">经营方式：</span>
+                   <div class="sort">
+                      <span class="active">全部</span>
+                      <span>生产型</span>
+                      <span>贸易型</span>
+                      <span>服务型</span>
+                      <span>研发型</span>
+                      <span>其他型</span>
+                   </div>
+                </div>
+                <div class="screen_list">
+                   <span class="label">企业规模：</span>
+                   <div class="sort">
+                      <span class="active">全部</span>
+                      <span>5人以下</span>
+                      <span>5-10人</span>
+                      <span>11-50人</span>
+                      <span>51-100人</span>
+                      <span>101-200人</span>
+                      <span>201-300人</span>
+                      <span>301-500人</span>
+                      <span>501-1000人</span>
+                      <span>1000人以上</span>
+                   </div>
+                </div>
+                <div class="screen_list">
+                   <span class="label">客户认证：</span>
+                   <div class="sort">
+                      <span class="active">全部</span>
+                      <span>安全认证</span>
+                      <span>质量认证</span>
+                   </div>
+                </div>
+                <div class="screen_list">
+                   <span class="label">信誉评分：</span>
+                   <div class="sort">
+                      <span class="active">全部</span>
+                      <span>0-4分</span>
+                      <span>5-7分</span>
+                      <span>8-10分</span>
+                   </div>
+                </div>
+                <div class="screen_list">
+                   <span class="label">是否可投标：</span>
+                   <div class="sort">
+                      <span class="active">全部</span>
+                      <span>是</span>
+                      <span>否</span>
+                   </div>
+                </div>
+            </div>
+        </div>
+        <div class="filter clearfix">
+            <div class="filter_list fl">
+                <span class="active">综合</span>
+                <span>发布时间</span>
+                <span>截止时间</span>
+                <span>众筹创新</span>
+                <span>实名认证</span>
+                <span>质量认证</span>
+            </div>
+            <div class="select_wrap filter_select fl">
+                <i class="i_drop2"></i>
+                <span class="select_text ellips"></span>
+                <select>
+                   <option>全国</option>
+                </select>
+            </div>
+            <div class="search_box fr">
+                <input class="search_text fl mr30" placeholder="输入需求关键字" type="text"/>
+                <input class="butn fl" value="确定" type="button"/>
+            </div>
+        </div>
+        <!--报价列表-->
+        <ul class="demand_list">
+            <li>
+               <div class="demand_Int clearfix">
+                   <div class="tab_Int th_1">
+                       <div class="t_cell">
+                           <p>精密零部件机械加工、模具加工、钣金成型、银焊、氩弧焊等  精密零部件机械加工</p>
+                           <p class="grey">发布时间：2017-05-12 | 截止时间：2017-05-12</p>
+                       </div>
+                   </div>
+                   <div class="tab_Int th_2">
+                       <div class="t_cell">
+                           <p>南京晨光汉森柔性管有限公司</p>
+                           <p><span class="icon icont_1"></span><span class="icon icont_2 ml20"></span></p>
+                       </div>
+                   </div>
+                   <div class="tab_Int th_3">
+                       <div class="t_cell">
+                           <p>已报价企业<b>10</b>家</p>
+                           <p>还剩：<b>9</b>小时</p>
+                           <p>交付地点：南京市航天晨光管</p>
+                       </div>
+                   </div>
+                   <div class="tab_Int th_4">
+                       <div class="t_cell">
+                           <a class="Yellow_Btn mb12" href="wework_details.html">查看详情</a>
+                           <a class="Blue_Btn" href="javascript:;">我要报价</a>
+                       </div>
+                   </div>
+               </div>
+            </li>
+            <li>
+               <div class="demand_Int clearfix">
+                   <div class="tab_Int th_1">
+                       <div class="t_cell">
+                           <p>精密零部件机械加工、模具加工、钣金成型、银焊、氩弧焊等  精密零部件机械加工</p>
+                           <p class="grey">发布时间：2017-05-12 | 截止时间：2017-05-12</p>
+                       </div>
+                   </div>
+                   <div class="tab_Int th_2">
+                       <div class="t_cell">
+                           <p>南京晨光汉森柔性管有限公司</p>
+                           <p><span class="icon icont_1"></span><span class="icon icont_2 ml20"></span></p>
+                       </div>
+                   </div>
+                   <div class="tab_Int th_3">
+                       <div class="t_cell">
+                           <p>已报价企业<b>10</b>家</p>
+                           <p>还剩：<b>9</b>小时</p>
+                           <p>交付地点：南京市航天晨光管</p>
+                       </div>
+                   </div>
+                   <div class="tab_Int th_4">
+                       <div class="t_cell">
+                           <a class="Yellow_Btn mb12" href="wework_details.html">查看详情</a>
+                           <a class="Blue_Btn" href="javascript:;">我要报价</a>
+                       </div>
+                   </div>
+               </div>
+            </li>
+            <li>
+               <div class="demand_Int clearfix">
+                   <div class="tab_Int th_1">
+                       <div class="t_cell">
+                           <p>精密零部件机械加工、模具加工、钣金成型、银焊、氩弧焊等  精密零部件机械加工</p>
+                           <p class="grey">发布时间：2017-05-12 | 截止时间：2017-05-12</p>
+                       </div>
+                   </div>
+                   <div class="tab_Int th_2">
+                       <div class="t_cell">
+                           <p>南京晨光汉森柔性管有限公司</p>
+                           <p><span class="icon icont_1"></span><span class="icon icont_2 ml20"></span></p>
+                       </div>
+                   </div>
+                   <div class="tab_Int th_3">
+                       <div class="t_cell">
+                           <p>已报价企业<b>10</b>家</p>
+                           <p>还剩：<b>9</b>小时</p>
+                           <p>交付地点：南京市航天晨光管</p>
+                       </div>
+                   </div>
+                   <div class="tab_Int th_4">
+                       <div class="t_cell">
+                           <a class="Yellow_Btn mb12" href="wework_details.html">查看详情</a>
+                           <a class="Blue_Btn" href="javascript:;">我要报价</a>
+                       </div>
+                   </div>
+               </div>
+            </li>
+            <li>
+               <div class="demand_Int clearfix">
+                   <div class="tab_Int th_1">
+                       <div class="t_cell">
+                           <p>精密零部件机械加工、模具加工、钣金成型、银焊、氩弧焊等  精密零部件机械加工</p>
+                           <p class="grey">发布时间：2017-05-12 | 截止时间：2017-05-12</p>
+                       </div>
+                   </div>
+                   <div class="tab_Int th_2">
+                       <div class="t_cell">
+                           <p>南京晨光汉森柔性管有限公司</p>
+                           <p><span class="icon icont_1"></span><span class="icon icont_2 ml20"></span></p>
+                       </div>
+                   </div>
+                   <div class="tab_Int th_3">
+                       <div class="t_cell">
+                           <p>已报价企业<b>10</b>家</p>
+                           <p>还剩：<b>9</b>小时</p>
+                           <p>交付地点：南京市航天晨光管</p>
+                       </div>
+                   </div>
+                   <div class="tab_Int th_4">
+                       <div class="t_cell">
+                           <a class="Yellow_Btn mb12" href="wework_details.html">查看详情</a>
+                           <a class="Blue_Btn" href="javascript:;">我要报价</a>
+                       </div>
+                   </div>
+               </div>
+            </li>
+            <li>
+               <div class="demand_Int clearfix">
+                   <div class="tab_Int th_1">
+                       <div class="t_cell">
+                           <p>精密零部件机械加工、模具加工、钣金成型、银焊、氩弧焊等  精密零部件机械加工</p>
+                           <p class="grey">发布时间：2017-05-12 | 截止时间：2017-05-12</p>
+                       </div>
+                   </div>
+                   <div class="tab_Int th_2">
+                       <div class="t_cell">
+                           <p>南京晨光汉森柔性管有限公司</p>
+                           <p><span class="icon icont_1"></span><span class="icon icont_2 ml20"></span></p>
+                       </div>
+                   </div>
+                   <div class="tab_Int th_3">
+                       <div class="t_cell">
+                           <p>已报价企业<b>10</b>家</p>
+                           <p>还剩：<b>9</b>小时</p>
+                           <p>交付地点：南京市航天晨光管</p>
+                       </div>
+                   </div>
+                   <div class="tab_Int th_4">
+                       <div class="t_cell">
+                           <a class="Yellow_Btn mb12" href="wework_details.html">查看详情</a>
+                           <a class="Blue_Btn" href="javascript:;">我要报价</a>
+                       </div>
+                   </div>
+               </div>
+            </li>
+            <li>
+               <div class="demand_Int clearfix">
+                   <div class="tab_Int th_1">
+                       <div class="t_cell">
+                           <p>精密零部件机械加工、模具加工、钣金成型、银焊、氩弧焊等  精密零部件机械加工</p>
+                           <p class="grey">发布时间：2017-05-12 | 截止时间：2017-05-12</p>
+                       </div>
+                   </div>
+                   <div class="tab_Int th_2">
+                       <div class="t_cell">
+                           <p>南京晨光汉森柔性管有限公司</p>
+                           <p><span class="icon icont_1"></span><span class="icon icont_2 ml20"></span></p>
+                       </div>
+                   </div>
+                   <div class="tab_Int th_3">
+                       <div class="t_cell">
+                           <p>已报价企业<b>10</b>家</p>
+                           <p>还剩：<b>9</b>小时</p>
+                           <p>交付地点：南京市航天晨光管</p>
+                       </div>
+                   </div>
+                   <div class="tab_Int th_4">
+                       <div class="t_cell">
+                           <a class="Yellow_Btn mb12" href="wework_details.html">查看详情</a>
+                           <a class="Blue_Btn" href="javascript:;">我要报价</a>
+                       </div>
+                   </div>
+               </div>
+            </li>
+        </ul>
+        <!--分页-->
+        <div class="pagination">
+            <span>共3条</span>
+            <a href="#">首页</a>
+            <a href="#">上页</a>
+            <a class="current" href="#">1</a>
+            <a href="#">下页</a>
+            <a href="#">尾页</a>
+            <span>共1页</span>
+        </div>
+        <!--分页 end-->
+    </div>
+</div>
+<!--侧边悬浮回到顶部-->
+<div class="Rightside">
+    <a href="javascript:;" class="return_top"><i class="icon"></i><p>回到顶部</p></a>
+    <a href="#" class="check_in"><i class="icon"></i><p>我要入住</p></a>
+</div>
+<!-- 页面底部 -->
+<div class="footer">
+    <div class="content">
+        <div class="footer_wrap clearfix">
+           <div class="foot_item fl">
+               <p class="p_contact"><a class="blue_Btn" href="#">联系我们</a></p>
+               <p class="p_line"><span class="lt">传真：</span><span class="rt">+86-27-87802536</span></p>
+               <p class="p_line"><span class="lt">传真：</span><span class="rt">+86-27-87802536</span></p>
+               <p class="p_line"><span class="lt">地址：</span><span class="rt">湖北省武汉市东湖高新技术开发区光谷大道9号</span></p>
+           </div>
+           <div class="code_item fl">
+               <img src="img/code_1.jpg"/>
+               <p>扫描关注微信号</p>
+           </div>
+           <div class="foot_items fl">
+               <p>关于我们</p>
+               <p>江西长飞云平台</p>
+               <p>贵州长飞云平台</p>
+               <p>孝感长飞云平台</p>
+           </div>
+           <div class="foot_items fl">
+               <p>友情链接</p>
+               <p>友情链接2</p>
+               <p>友情链接3</p>
+               <p>友情链接4</p>
+           </div>
+           <div class="foot_items fl">
+               <p>服务支持</p>
+               <p>用户帮助</p>
+               <p>客服中心</p>
+               <p>售后保障</p>
+           </div>
+        </div>
+        <p class="tc">鄂ICP备16006498号-1Copyright  2005-2016  长飞有限公司    版权所有 </p>
+    </div>
+</div>
+
+<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+<script type="text/javascript" src="js/base.js"></script>
+<script type="text/javascript">
+$(function(){
+	$(".sort span").click(function(){
+		$(this).addClass("active").siblings().removeClass("active");
+	})
+})
+</script>
+
+</body>
+</html>

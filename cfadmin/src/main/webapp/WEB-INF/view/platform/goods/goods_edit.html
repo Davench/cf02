@@ -1,0 +1,63 @@
+@layout("/common/_curd/_container.html"){
+
+	<form data-url="${basePath}/${code}/update" method="post" class="form-horizontal" role="form">
+		<!-- 表单 -->
+		<div class="form-group" style="display:block">
+			<label class="col-sm-2 control-label no-padding-right">类别选择</label>
+			<div class="col-sm-8">
+				一级类别：
+				<select id="type1" name="type1">
+				</select>
+				二级类别
+				<select  id="type2" name="type2">
+				</select>
+				<!--<input type="text" id="_id" name="goods.id" required="" value="" placeholder="暂无" class="form-control">-->
+			</div>
+		</div>
+		@ var _table="goods";
+		@ var _key="id";
+		@ var _col=[
+		@			  {name:"产品名", index:"name", type:"text",newline:true,length:8,required:"required"},
+		@			  {name:"产品编码", index:"code", type:"text",newline:true,length:8,required:"required"},
+		@			  {name:"计量单位", index:"unit", type:"text",newline:true,length:8,required:"required"},
+		@			  {name:"型号", index:"model", type:"text",newline:true,length:8,required:"required"},
+		@			  {name:"属性", index:"attribute", type:"text",newline:true,length:8,required:"required"},
+		@			  {name:"有效时间", index:"effective", type:"text",newline:true,length:8,required:"required"},
+		@			  {name:"产品价格", index:"expected", type:"text",newline:true,length:8,required:"required"}
+		@		   ];
+		@ include("/common/_curd/_edit.html", {"col":_col, "table":_table, "key":_key}){}
+		
+		<!-- 按钮 -->
+		@ include("/common/_curd/_btn.html", {btn_save:"修改", btn_close:"关闭"}) {}
+	</form>
+<script type="text/javascript">
+    var city_obj = '${types!}';
+    var types=eval('('+city_obj+')');
+
+    for (var key in types)
+    {
+   		 if('${TYP1}' == key){
+       		 $("#type1").append("<option value='"+key+"' selected = \"selected\" >"+key+"</option>");
+             var now_province=key;
+             $("#type2").html('<option value="">请选择类别</option>');
+             jQuery.each(types[now_province], function(i, val) {
+                 if('${TYP2}' == val) {
+                     $("#type2").append('<option selected = "selected" value="' + val + '">' + val + '</option>');
+                 }else{
+                     $("#type2").append('<option value="'+val+'">'+val+'</option>');
+				 }
+             });
+		  }else{
+             $("#type1").append("<option value='"+key+"'>"+key+"</option>");
+  		  }
+
+    }
+    $("#type1").change(function(){
+        var now_province=$(this).val();
+        $("#type2").html('<option value="">请选择类别</option>');
+        jQuery.each(types[now_province], function(i, val) {
+            $("#type2").append('<option value="'+val+'">'+val+'</option>');
+        });
+    });
+</script>
+@}

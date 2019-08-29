@@ -1,0 +1,41 @@
+@layout("/common/_curd/_container.html"){
+
+	<form data-url="${basePath}/${code}/update" method="post" class="form-horizontal" role="form">
+		<!-- 表单 -->
+		@ var _table="demand";
+		@ var _key="id";
+		@ var _col=[
+@			  {name:"", index:"id", type:"text",newline:true,length:8,required:"required"},
+		@			  {name:"需求一级类型", index:"demandtype1", type:"text",newline:true,length:8,required:"required"},
+		@			  {name:"需求二级类型", index:"demandtype2", type:"text",newline:true,length:8,required:"required"},
+		@			  {name:"询价主题", index:"title", type:"text",newline:true,length:8,required:"required"},
+		@			  {name:"询价结束日期", index:"endtime", type:"text",newline:true,length:8,required:"required"},
+		@			  {name:"企业ID", index:"companyid", type:"text",newline:true,length:8,required:"required"},
+		@			  {name:"交付日期", index:"deliverydate", type:"text",newline:true,length:8,required:"required"},
+		@			  {name:"", index:"creatdate", type:"text",newline:true,length:8,required:"required"},
+		@			  {name:"需求图片附件", index:"photo", type:"text",newline:true,length:8,required:"required"},
+		@			  {name:"详细描述", index:"description", type:"text",newline:true,length:8,required:"required"},
+		@			  {name:"", index:"provincial", type:"text",newline:true,length:8,required:"required"},
+		@			  {name:"", index:"cities", type:"text",newline:true,length:8,required:"required"},
+		@			  {name:"", index:"counties", type:"text",newline:true,length:8,required:"required"},
+		@			  {name:"", index:"address", type:"text",newline:true,length:8,required:"required"},
+		@			  {name:"", index:"contacts", type:"text",newline:true,length:8,required:"required"},
+		@			  {name:"", index:"phone", type:"text",newline:true,length:8,required:"required"},
+		@			  {name:"交易方式 担保交易1 货到付款2 预付款3 其他0", index:"mode", type:"text",newline:true,length:8,required:"required"},
+		@			  {name:"发票要求 无需发票0 增值税普通发票1 增值税专用发票2 个人发票3", index:"invoice", type:"text",newline:true,length:8,required:"required"},
+		@			  {name:"运费承担方 供应方1 采购方2 其他0", index:"freight", type:"text",newline:true,length:8,required:"required"},
+		@			  {name:"原材料提供商 供应方1 采购方2 其他0", index:"rawmaterial", type:"text",newline:true,length:8,required:"required"},
+		@			  {name:"是否需要开票", index:"billing", type:"text",newline:true,length:8,required:"required"},
+		@			  {name:"是否需要实名认证", index:"certification", type:"text",newline:true,length:8,required:"required"},
+		@			  {name:"草稿 还是预览", index:"type", type:"text",newline:true,length:8,required:"required"},
+		@			  {name:"被选中的报价ID", index:"quotedpriceid", type:"text",newline:true,length:8,required:"required"},
+		@			  {name:"", index:"payment", type:"text",newline:true,length:8,required:"required"},
+		@			  {name:"需求状态0审核1招标中2签署合同3项目进行中4锁定暂停5已完结6已关闭", index:"status", type:"text",newline:true,length:8,required:"required"}		
+		@		   ];
+		@ include("/common/_curd/_edit.html", {"col":_col, "table":_table, "key":_key}){}
+		
+		<!-- 按钮 -->
+		@ include("/common/_curd/_btn.html", {btn_save:"修改", btn_close:"关闭"}) {}
+	</form>
+
+@}

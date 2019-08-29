@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no" name="format-detection">
+    <link rel="stylesheet" href="http://www.jq22.com/jquery/font-awesome.4.6.0.css">
+    <link rel="stylesheet" type="text/css" href="libs/datepicker/css/foundation-datepicker.min.css">
+    <!--公共样式-->
+    <link rel="stylesheet" type="text/css" href="css/common.css">
+    <!--页面样式-->
+    <link rel="stylesheet" type="text/css" href="css/Lstyle.css">
+    <title>我的合同</title>
+</head>
+<body>
+<div class="manage_wrap">
+    <div class="manage_Left">
+        <h3><a href="#"><i class="icontm"></i>商务中心</a></h3>
+        <ul class="manage_Nav">
+            <li>
+               <div class="show"><i class="icontm_1"></i>发布的需求</div>
+               <ul class="sub_Nav">
+                  <li class="active"><a href="#">我的需求</a></li>
+                  <li><a href="#">需求订单</a></li>
+               </ul>
+            </li>
+            <li>
+               <div class="show"><i class="icontm_2"></i>我提供的服务</div>
+               <ul class="sub_Nav">
+                  <li><a href="#">我的服务</a></li>
+                  <li><a href="#">我的报价</a></li>
+                  <li><a href="#">服务订单</a></li>
+               </ul>
+            </li>
+            <li>
+               <div class="show"><i class="icontm_3"></i>合同管理</div>
+               <ul class="sub_Nav">
+                  <li><a href="#">合同管理</a></li>
+               </ul>
+            </li>
+            <li>
+               <div class="show"><i class="icontm_4"></i>众创空间</div>
+               <ul class="sub_Nav">
+                  <li><a href="#">我的众筹</a></li>
+                  <li><a href="#">参与众筹</a></li>
+               </ul>
+            </li>
+            <li>
+               <div class="show"><i class="icontm_5"></i>企业管理</div>
+               <ul class="sub_Nav">
+                  <li><a href="#">企业信息</a></li>
+                  <li><a href="#">企业认证</a></li>
+               </ul>
+            </li>
+            <li>
+               <div class="show"><i class="icontm_6"></i>质量认证</div>
+               <ul class="sub_Nav">
+                  <li><a href="#">质量认证申请</a></li>
+               </ul>
+            </li>
+        </ul> 
+    </div>
+    <div class="manage_Right">
+        <!--头部-->
+        <div class="m_headerTop clearfix">
+            <a class="m_logo fl" href="#"><img src="images/manage/Group 26.png"/></a>
+            <div class="m_user fr">
+               <span class="user_info">
+                  <img src="images/manage/Group 31.png"/>
+                  <a class="userName" title="暂无提示" href="#">王昭君</a>
+               </span>
+               <a class="news" href="#"></a>
+               <a class="logoff" href="#"></a>
+            </div>
+        </div>
+        <!--内容区域-->
+        <div class="m_main">
+            <h3 class="h3_rank">我的合同</h3>
+            <div class="approve_info">
+                <div class="demand_tab clearfix">
+                   <span class="lab fl">需求状态</span>
+                   <div class="select_demand fl">
+                       <i class="i_drop3"></i>
+                       <span class="select_show"></span>
+                       <ul class="">
+                           <li>待审核</li>
+                           <li>招标中</li>
+                           <li>暂停招标</li>
+                           <li>已完结</li>
+                           <li>已关闭</li>
+                       </ul>
+                   </div>
+                   <div class="select_demand fl"><input class="time_text" id="date1" readonly placeholder="发布时间" type="text"/></div>
+                   <div class="select_demand fl"><input class="time_text" id="date2" readonly placeholder="截止时间" type="text"/></div>
+                   <a href="javascript:;" class="Wbg_btn fl">筛选</a>
+                </div> 
+                <div class="demand_table">
+                   <table width="100%">
+                      <tr>
+                         <th width="5%"></th>
+                         <th width="14%">需求名</th>
+                         <th width="8%">订单编号</th>
+                         <th width="8%">合同编号</th>
+                         <th width="6%">总金额</th>
+                         <th width="20%">服务商</th>
+                         <th width="7%">订单时间</th>
+                         <th width="7%">合同时间</th>
+                         <th width="8%">订单状态</th>
+                         <th width="17%">操作</th>
+                      </tr>
+                      <tr>
+                         <td>1</td>
+                         <td>零件表面处理</td>
+                         <td>1231331111</td>
+                         <td>1231331111</td>
+                         <td>23423</td>
+                         <td>武汉海天科技有限公司</td>
+                         <td>2017年9月19日</td>
+                         <td>2017年9月19日</td>
+                         <td>待确认</td>
+                         <td>
+                             <a class="Blue_Btn" href="#">查看订单</a>
+                             <a class="Bsoild_btn" href="#">查看合同</a>
+                         </td>
+                      </tr>
+                      <tr>
+                         <td>2</td>
+                         <td>零件表面处理</td>
+                         <td>1231331111</td>
+                         <td>1231331111</td>
+                         <td>23423</td>
+                         <td>武汉海天科技有限公司</td>
+                         <td>2017年9月19日</td>
+                         <td>2017年9月19日</td>
+                         <td>合同待确认</td>
+                         <td>
+                             <a class="Blue_Btn" href="#">查看订单</a>
+                             <a class="Bsoild_btn" href="#">查看合同</a>
+                         </td>
+                      </tr>
+                      <tr>
+                         <td>3</td>
+                         <td>零件表面处理</td>
+                         <td>1231331111</td>
+                         <td>1231331111</td>
+                         <td>23423</td>
+                         <td>武汉海天科技有限公司</td>
+                         <td>2017年9月19日</td>
+                         <td>2017年9月19日</td>
+                         <td>待验收</td>
+                         <td>
+                             <a class="Blue_Btn" href="#">查看订单</a>
+                             <a class="Bsoild_btn" href="#">查看合同</a>
+                         </td>
+                      </tr>
+                      <tr>
+                         <td>4</td>
+                         <td>零件表面处理</td>
+                         <td>1231331111</td>
+                         <td>1231331111</td>
+                         <td>23423</td>
+                         <td>武汉海天科技有限公司</td>
+                         <td>2017年9月19日</td>
+                         <td>2017年9月19日</td>
+                         <td>待评价</td>
+                         <td>
+                             <a class="Blue_Btn" href="#">查看订单</a>
+                             <a class="Bsoild_btn" href="#">查看合同</a>
+                         </td>
+                      </tr>
+                   </table>
+                </div>
+                <!--分页-->
+                <div class="pagination">
+                    <span>共3条</span>
+                    <a href="#">首页</a>
+                    <a href="#">上页</a>
+                    <a class="current" href="#">1</a>
+                    <a href="#">下页</a>
+                    <a href="#">尾页</a>
+                    <span>共1页</span>
+                </div>
+                <!--分页 end-->
+            </div> 
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+<script type="text/javascript" src="libs/datepicker/js/foundation-datepicker.js"></script>
+<script type="text/javascript" src="libs/datepicker/js/locales/foundation-datepicker.zh-CN.js"></script>
+<script type="text/javascript" src="js/base.js"></script>
+<script type="text/javascript">
+$(function(){
+	var nowTemp = new Date();
+    var now = new Date(nowTemp.getFullYear(), nowTemp.getMonth(), nowTemp.getDate(), 0, 0, 0, 0);
+    var checkin = $('#date1').fdatepicker({
+        onRender: function (date) {
+            return date.valueOf() < now.valueOf() ? 'disabled' : '';
+        },
+        format:"yyyy-mm-dd"
+    }).on('changeDate', function (ev) {
+        if (ev.date.valueOf() > checkout.date.valueOf()) {
+            var newDate = new Date(ev.date)
+            newDate.setDate(newDate.getDate()+1);
+            checkout.update(newDate);
+        }
+        checkin.hide();
+        $('#date2')[0].focus();
+
+    }).data('datepicker');
+	
+	var checkout = $('#date2').fdatepicker({
+        format:"yyyy-mm-dd",
+        onRender: function (date) {
+            return date.valueOf() <= checkin.date.valueOf() ? 'disabled' : '';
+        }
+    }).on('changeDate', function (ev) {
+        checkout.hide();
+    }).data('datepicker');
+	
+	
+	$(".select_demand>ul li").each(function(index, element) {
+		if(index==0){
+		   $(".select_demand span.select_show").text($(".select_demand>ul li").eq(0).text())
+		}
+    });
+	$(".select_demand span.select_show,.i_drop3").on("click", function(){
+		$(this).siblings().show();
+	})
+	$(".select_demand>ul li").on("click",function(){
+		$(".select_demand span.select_show").text($(this).text());
+		$(".select_demand>ul").hide();
+	})
+})
+</script>
+</body>
+</html>
