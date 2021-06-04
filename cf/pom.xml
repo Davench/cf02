@@ -30,7 +30,7 @@
         <dependency>
             <groupId>org.apache.httpcomponents</groupId>
             <artifactId>httpclient</artifactId>
-            <version>4.3.5</version>
+            <version>4.5.13</version>
         </dependency>
         <!--这里是网站的公共module所引用的jar 编译时候引用-->
         <dependency>
